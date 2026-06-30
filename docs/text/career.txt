@@ -1,0 +1,404 @@
+# Contexto: mi historia como desarrollador de software
+
+El siguiente texto es un contexto de mi historia como desarrollador de software.
+Quiero que se entienda:
+
+- cómo pienso
+- qué es lo que he hecho
+- a qué me he dedicado
+- qué me gusta y qué no
+- qué se me da bien y qué se me da mal
+- cómo trabajo ahora y cómo trabajaba antes
+
+Todo lo que se me ha ido ocurriendo lo cuento aquí para tener información sobre mí,
+ya que después la utilizaremos para diferentes secciones del portfolio.
+
+---
+
+## 1. Quién soy y de dónde vengo
+
+Soy Jesús Gutiérrez, desarrollador de software desde hace más de cuatro años.
+
+Empecé estudiando ingeniería informática. Después me especialicé en desarrollo de
+aplicaciones web, porque tenía la sensación de que todo tendía hacia lo web y de que
+cualquier aplicación móvil, multiplataforma o de escritorio se iba a poder replicar
+en la web. Cualquier persona, desde el móvil o el ordenador, sin tener que descargar
+nada, podía acceder a ella. Así que dije: «Vale, vamos hacia web».
+
+Mi intención era clara: aprender mientras estudiaba la especialización y formarme en
+las tecnologías modernas. Me informé sobre Vue.js. Me interesó porque era un framework
+conocido y usado principalmente por desarrolladores independientes, y eso encajaba con
+uno de mis objetivos: en algún momento ser independiente, ya fuera como freelance o
+como desarrollador remoto.
+
+Después me di cuenta de que React era lo que más lideraba, junto con otras tecnologías,
+en lo que estudié. La base que nos daban era más clásica: JavaScript, jQuery, Vanilla,
+HTML y CSS en profundidad. Me di cuenta de que el frontend no era tan malo como me lo
+había imaginado al principio. Cuando empecé a estudiar pensaba: «Uy, qué pereza hacer
+frontend, los estilos son un poco aburridos». Pero me informé y comprendí que, con una
+buena base de CSS, se podían hacer cosas muy bonitas. Yo siempre he tenido un gusto y
+un estilo un poco diferente, y se me daba bien diseñar: distinguía qué era bonito, qué
+feo, qué funcionaba y qué no.
+
+## 2. Formación y referentes
+
+Mientras estudiaba empecé a leer libros como _Color Studies_. Me compré libros de la
+colección _Smashing Magazine_ sobre frontend (no recuerdo el título exacto, era el
+número 6 o similar) y me pareció muy interesante. Aprendí muchas cosas sobre todas
+esas tecnologías que luego he ido profundizando.
+
+Leí _The Pragmatic Programmer_ y _Clean Code_. Por ahí empecé a darme cuenta de lo que
+era un buen código, un código legible: no se trataba solo de poner comentarios, sino de
+que el propio código fuese el texto y se entendiera por sí mismo. Esto me gustaba y me
+diferenciaba de mis compañeros.
+
+Mis referentes:
+
+- **Matt Pocock** para TypeScript. Leía y veía muchos vídeos suyos y aprendí mucho
+  con él. También vi tutoriales avanzados de React (no recuerdo el nombre exacto) para
+  entender a fondo cómo funcionaba React.
+- **Midudev** como referente español. Vi algún vídeo suyo; tampoco me encantaba porque
+  era bastante más simple, pero me parecía correcto.
+- **Kevin Powell** para CSS. Es un chico inglés, afeitado y con gafas, que hace
+  básicamente solo CSS. Aquí aprendí muchísimo y aquí me diferencio de la mayoría de
+  mis compañeros: ser muy bueno y saber perfectamente lo que hace el CSS.
+- **Dev as Life** (Takuya), un YouTuber japonés con su propio desarrollo independiente
+  y su app de notas **Inkdrop**. Veía muchos de sus vídeos y aprendí mucho sobre
+  configuraciones de Ubuntu, Neovim y un montón de frikadas de consola en Ubuntu/Linux.
+  En su día me gustaba configurarme mi terminal y demás.
+
+## 3. Primer trabajo: Java Spring Boot
+
+Siempre me pasó lo mismo: mientras los demás sobrevolaban, yo profundizaba. Me
+recomendaron una de las mejores empresas posibles y allí entré; me quisieron coger.
+Pero el puesto era Java Spring Boot, no me interesaba el frontend puro. Estuve
+trabajando en ello, era un poco complicado, pero se me dio bien y me quisieron coger.
+
+## 4. La startup de visión artificial
+
+Entonces me salió otra oportunidad: unos compañeros de clase tenían una startup de
+visión artificial y buscaban a alguien que le diese una nueva cara y liderase el
+frontend. Me iban a coger como frontend engineer para una startup con mucho potencial,
+que hacía cosas que nadie hacía y que eran interesantes.
+
+Me hicieron una entrevista y, en un momentín, hice el TFG. Todo genial, lo conseguí y
+me cogieron.
+
+A partir de ahí empecé a profundizar en React y Tailwind. Descubrí Tailwind en la
+empresa y aprendí cómo funcionaba y cómo compararlo con Angular y Vue.
+
+Después me fui informando sobre:
+
+- Next.js
+- Nuxt
+- un montón de frameworks que fueron saliendo
+- buenas prácticas de arquitectura de software
+- cómo organizar el software
+- cómo programar en equipo, ya que era todo muy diverso
+
+## 5. Liderazgo de equipo
+
+Llevo años llevando un equipo. Llegué a liderar hasta 12 programadores de frontend.
+Hacía bastante de product designer junto con el CTO, un gran compañero que me ayudaba
+mucho a tomar decisiones. Se me da muy bien opinar sobre todo tipo de temas de
+software, porque me informo mucho, busco, investigo y suelo tomar buenas decisiones.
+
+## 6. Productos construidos
+
+### 6.1 rely (producción)
+
+Hice la primera fase del producto **rely**, que ahora mismo está produciendo en
+muchísimas fábricas. Está en React vanilla, sin problemas, funcionando. Como en
+cualquier startup, todo se hacía muy rápido, pero yo trabajaba bien. Sabía cómo hacer
+las cosas bien y rápido, y eso es lo que más me gusta: coger una feature y hacerla lo
+más profesional posible en el menor tiempo posible.
+
+Habiendo leído esos libros, no me gusta la sensación de hacer código espagueti sin
+tener nada en cuenta, sabiendo que en un futuro se va a refactorizar. Como además yo
+tomaba parte de las decisiones del producto, quería que fueran lo más robustas posible,
+lo que me hacía trabajar bastante.
+
+Me fui informando de nuevas tecnologías (Sentry, Next, Vercel…) y enseñándolas.
+
+Empezamos a cambiar el paradigma:
+
+- menos código localizado en fábrica
+- sacar todo más a la web
+- conexiones por túneles
+- encriptar la conexión
+- mover trabajo a compilado
+- un montón de cambios que fuimos tomando
+
+Aunque mi rol era **frontend team leader**, tomé muchísimas decisiones de backend
+simple (sin implementarlas), sobre todo de arquitectura de software.
+
+rely es la interfaz que va en la fábrica, en la línea de producción: te deja ver en
+vivo, debuguear, ver el histórico de todas las piezas que han pasado, graficar para ver
+mejoras, auditorías y configuración de PLCs y cámaras de forma sencilla.
+
+### 6.2 Plataforma de entrenamientos y etiquetado
+
+También hicimos nuestra propia plataforma de entrenamiento de modelos: multi-tenant,
+multi-usuario, con múltiples datasets por proyecto, entrenamientos con gráficas en
+tiempo real, calidad de dataset y visualización de etiquetado.
+
+Aquí empezó nuestra propia plataforma de etiquetado: **b-box**, segmentación y
+**oriented bounding box (OBB)**, con su lógica para que funcionara bien. La estamos
+usando con muchísimos usuarios a la vez: todo el entrenamiento de la empresa,
+etiquetando clientes, creando lanzamientos, entrenamientos encolados y un montón de
+cosas por detrás.
+
+### 6.3 Safe (prevención de riesgos)
+
+Safe fue otro producto de cero. Creamos una base aplicada a prevención de riesgos:
+equipamos cámaras propias en las fábricas e instalaciones para detección de carretillas,
+velocidad de carretillas, seguridad en general… Todo con visión artificial, porque
+hacíamos modelos muy buenos y generábamos buenos resultados.
+
+Es una aplicación de monitoreo en tiempo real, multicámara, multi-tenant, multi-usuario,
+con cámaras que están en fábricas, en red privada, que hay que sacar por un túnel para
+verlas desde la cloud. Incluye gráficas, histórico por evento, gráficas de resultados,
+auditorías, reportes, visuales semanales a tu gusto.
+
+### 6.4 Motor de flujos no-code
+
+Desarrollamos además una plataforma totalmente independiente en la que el usuario la
+pueda utilizar por sí mismo: un SaaS en el que te montas tu propio flujo. Hicimos un
+motor de flujos con **React Flow**, todo nativo nuestro: te doy una cámara, te doy un
+flujo, te doy una detección, te doy un modelo; quiero que levantes una alarma, que
+avises aquí; si pasa esta velocidad, esta carretilla, una bocina y una luz; quiero que
+lo veas aquí y aquí. Todo un motor de flujos.
+
+A esta plataforma también se le pueden etiquetar los propios eventos para corregir
+detecciones erróneas: el usuario valida si está bien o mal, corrige y crea detecciones
+nuevas. Para ello reutilizamos el etiquetador, sin necesidad de etiquetar lo mismo en
+otros productos. Más adelante también lo implementamos en rely producción, para que el
+propio usuario, sin entrar al generador de modelos rely Cloud, etiquete al momento los
+errores que vaya viendo en el histórico. El hecho de que sea repetible y se use en
+varios sitios es una buena señal.
+
+### 6.5 Hablar (detección de bacterias en agua)
+
+Teníamos otro software llamado **Hablar**, que surgió para un proyecto sobre detección
+de bacterias en agua con modelos de visión artificial. Lo productivizamos, se lo
+vendimos a una empresa y lo utilizaron biólogas que no eran muy informáticas (les
+costaba, pero ahí estaba). Se quedó parado al año y pico por falta de feedback. Monté
+la interfaz entera en casi tres días, cuando no existía ChatGPT ni ningún LLM. Se
+montaron cosas interesantes y se desplegó, casi como trabajamos en la startup.
+
+### 6.6 Refactor de rely (Next.js + Go)
+
+He hecho nuevos productos y ha llegado el momento de refactorizar aquel rely que hice
+hace 4 años en React vanilla. Llevo años trabajando con Next y ya considero que sé a la
+perfección cómo funciona, con Tailwind 4, con toda la arquitectura de software que conozco
+sobre frontend, monorepos y demás.
+
+Hemos montado un nuevo producto: yo de frontend y una compañera de backend, con un motor
+en Go para que vaya mucho más rápido. Es multi-tenant, multi-site, con **hubs y
+agentes**: el hub controla los agentes, donde instalamos diferentes hardware para
+trabajar con estos motores particionados desde el frontend. Todo el código está en Next.
+
+Hicimos un sistema de flujos nuevos en el que ya no hay programación en Python nativa,
+sino bloques programados: nodos en un sistema de flujos no-code propio para crear
+recetas para las referencias que se están produciendo. Se ve el flujo en tiempo real
+con websockets del motor de Go, con banderas, websockets multi-site, multi-tenant,
+multi-usuario, multimáquina y multiestación. En una organización puede haber múltiples
+estaciones y cada una ejecuta un flujo diferente, programado a distintas horas, encolando
+despliegues.
+
+Esto va a ir en una fábrica, lo va a utilizar gente con los dedos gordos (fat finger),
+con guantes y una interfaz táctil. Lo adaptamos a táctil aplicando ideas, patrones de
+diseño y un sistema de diseño con componentes grandes que se vean bien, que puedas
+moverte, **invisible design**. Vengo muy influenciado por **Linear** y **Squarespace**:
+diseño de interfaces súper limpio, súper intuitivo, algo que probablemente solo
+valoramos los diseñadores y desarrolladores; el usuario no se da cuenta, pero lo
+disfruta y no sabe por qué.
+
+Lo apliqué manteniendo un poco el estilo antiguo para que nadie se pierda, para que
+quien ya lo tiene instalado sepa utilizarlo. Lo estoy desarrollando con **harness
+engineering**: un buen plan, buena arquitectura y documentos de contexto.
+
+## 7. Monorepo siali-toolkit y librería Sorolla
+
+Empecé a investigar y me di cuenta de que existían buenos repositorios open source
+como **xyflow**, **Lane**, **n8n**, **Label Studio**… Me fui fijando y leyendo. Descubrí
+lo de **monorepo**: primero vi Nx, luego TurboRepo y dije «vale, esto es un monorepo».
+Básicamente, en un mismo repositorio puedes tener tus propios paquetes y librerías,
+publicarlas en npm y trabajar con ellas en diferentes proyectos, todo centralizado para
+trabajar mejor en vez de lidiar con cientos y cientos de repositorios, que era lo que
+teníamos antes.
+
+Dije: «Vale, voy a hacer un monorepo y lo voy a llamar **siali-toolkit**». Creé
+distintos paquetes para:
+
+- nuestra librería de UI
+- nuestra librería de configuraciones de Tailwind
+- nuestra librería de tema (slim)
+- nuestra librería del etiquetador
+
+Fue mi primera librería de npm. Creé una librería en React y la llamé **Sorolla**, como
+el pintor. Es un componente tipo React Flow: lo importas con un montón de propiedades
+según el tipo de etiquetado, para poder importarlo en cualquiera de nuestros proyectos,
+utilizarlo y mantenerlo por nosotros mismos, con versión propia y pública. También
+aportamos al público.
+
+La documentación, por el exceso de trabajo, proyectos y cambios, se quedó un poco atrás
+y no se mantuvo todo lo que me gustaría. Se hizo muy a las prisas, pero se ha utilizado
+y se utiliza. Estoy trabajando en mejorarla y en actualizarla, ya que llevo un año y
+pico sin tocarla.
+
+Aquí aprendí lo que era npm, cómo se hacen paquetes, cómo se mantienen y cómo todo esto
+se trabaja con TypeScript. Me mejoró mucho.
+
+## 8. LLMs: crisis de motivación y reinvento
+
+Empiezan a salir los LLM: ChatGPT, Gemini, Cursor. Todos nos damos cuenta de que hasta
+el desarrollador más malo está produciendo código. Como estamos en una startup, ese
+código le vale a cualquiera; empiezan a aceptar cualquier tipo de código.
+
+Me empiezo a sentir un poco infravalorado. Mi trabajo, mi calidad, mi punto de vista, mi
+toque, mi forma de trabajar empiezan a ser más lentos y dejan de ser tan útiles, porque
+parece que los LLM sacan aplicaciones enteras sin apenas esfuerzo, con tokens infinitos.
+La burbuja.
+
+Me desmotivo bastante. Empiezo a pensar que ya no vale para nada mi trabajo, que todo ha
+cambiado, que lo que me gustaba y se me daba bien ya no tiene valor, por lo menos en mi
+empresa. Empiezo a buscar empresas como **PostHog**, **Linear** o **Attio**, cuyos CEOs
+son diseñadores gráficos / de interfaces UI/UX, que es lo que me ha gustado y en lo que
+me he informado mucho. Tienen aplicaciones cuidadas al detalle, que son las que empiezan
+a despuntar.
+
+Todo este software barato que todo el mundo está haciendo se replica: uno saca una app,
+otro la replica en una semana, la pone un poco más barata o gratis, intentan captar,
+captar, captar… pero nadie capta nada, todo el mundo se aprovecha. Mi empresa empieza a
+dar vueltas a sacar nuevos productos, a cambiarlo todo, a refactorizar todo con spaghetti
+code, y yo me desmoto.
+
+Después de un tiempo desmotivado, trabajando sin más, sin estar tan atento ni tan
+activo, me tomo un tiempo de reflexión y decido: «Si no puedes con el enemigo, únete a
+él, pero no me voy a unir sin más».
+
+Digo: «Voy a ser el mejor ingeniero posible utilizando IA». Ves todo esto de AI
+engineering y prompt engineering, y yo, que me dedico a la visión artificial y he
+trabajado con modelos de IA desde los inicios hasta visión tradicional, me doy cuenta de
+que es mentira que nadie sea AI engineer ni prompt engineer. Es una farsa que se han
+inventado: un pequeño estudio hecho en casa con ciertos resultados y ya se creen que
+tienen una carrera distinta. Es un estudio que hemos hecho todos los programadores por
+necesidad en nuestro propio trabajo.
+
+Pasa el tiempo, salen modelos mejores, todo parece que no tiene sentido y que cada vez
+es más fácil programar. Pero la gente se estanca: gasta tokens y tokens y no avanza, el
+código empieza a ser muy malo y no hay quien lo mantenga. El famoso _vibe code_ ya no es
+vibe code, porque el código es malo.
+
+Me doy cuenta de que las bases de la programación (_The Pragmatic Programmer_, _Clean
+Code_, patrones de diseño, algoritmos, arquitectura…) vuelven a tener sentido. Y ahí
+aparecen las **skills**. Digo: «Yo con esto puedo hacer lo que sé hacer bien. Puedo
+decirle a mi LLM que actúe como yo e intentar que lo haga lo más parecido a mí, que
+aplique todas las pautas que yo aplico». Pero es pesadísimo: en cada prompt acabas
+escribiendo megapárrafos, guardándote textos por ahí, copiándolos, haciendo apaños,
+usando la propia IA para mejorar tu prompt. Todo por instinto.
+
+Las skills te permiten decirle a la IA cómo tiene que trabajar. Tú eres su profesor y
+tiene que seguir unas directrices. Aplicas testing, nuevos patrones de diseño como el
+harness engineering, el triage de issues, y algoritmos de iteración de prompts.
+
+Empiezo a informarme sobre toda esta nueva era y me vuelvo a motivar. Me doy cuenta de
+que puedo diferenciarme otra vez.
+
+## 9. Cómo trabajo ahora
+
+Soy una persona que, antes de hacer cualquier cosa, piensa cómo la quiere hacer. Me
+hago un plan y ejecuto una serie de preguntas en profundidad sobre el tema (grilling).
+Descubro skills como las de **Matt Pocock**, que tiene su propio sistema de grilling y
+de PRD para guardar imágenes, información y resúmenes que aumentan una conversación.
+
+Me doy cuenta de que los LLM trabajan mejor por debajo de 100.000 tokens, por mucho que
+los sigan mejorando. Su ventana útil sigue estando en torno a los 100.000–150.000
+tokens. Te das cuenta de todas las cosas que has hecho mal en el pasado y dices: «Vale».
+
+Ahora ya puedo empezar a trabajar bien. Mantengo al **human in the loop**: yo sigo
+planteando los problemas, doy forma a las issues, las corrijo, leo lo que se supone que
+estamos haciendo, respondo preguntas y dudas. Al principio, cuando alguien te propone
+una issue o una feature, no puedes saberlo todo de primeras; las vas respondiendo y
+aclarando. Generas archivos de contexto muy grandes que tienes que compactar. Aquí
+entran el **handoff** y la **compactación**: coges información, la compactas y se la
+pasas a un chat limpio, manteniendo esa _smart zone_ (zona de contexto útil). Aunque
+pierdas algo, el modelo a tope es capaz de recuperarlo rápidamente. Creas un PRD para
+recoger toda la información del planning sin ejecutar un plan directamente desde un IDE
+(Cursor) o desde consola (Claude Code, OpenCode u otros). Los he ido tanteando, viendo
+cómo funcionan y cómo gastan tokens. Te das cuenta de que, si haces bien todo este
+planteamiento, puedes sacar buen código con directrices buenas usando modelos rápidos y
+baratos, como Composer, DeepSeek V4 Flash o DeepSeek V4 Pro (que también es barato).
+
+Con todo esto voy creando la aplicación. Hacemos en dos meses el trabajo que antes
+hubiéramos hecho tranquilamente en tres años. Es una locura, porque es infinitas líneas
+de código: los agentes LLM escriben muchísimo, muchos no saben cómo hacerlo de manera
+eficiente y acaban repitiendo y sacando contexto de más.
+
+Cuanto más grande es la aplicación, más tokens gastas, por mucho que lo hagas de la
+manera más precisa posible. Si el código sigue siendo malo, funciona gracias a tests de
+regresión (haces el test y luego el código), pero acabas con infinitos tests que no
+puedes mantener ni revisar todos. Estás en una startup, te piden código ya, tienes un
+producto casi de cero y tres clientes esperándolo.
+
+Te tienes que salvaguardar para el futuro y entender el código. Si no sabes dónde está
+algo y hay bugs, tienes que ir a mano a buscar ese archivo. No disponemos de tokens
+infinitos.
+
+Así que empiezas a hacer **code review de tu propio código**. Como has delegado la
+implementación, vas a tener que delegar también la refactorización. Te creas una skill
+de code review ambiciosa y otra de mejoras de arquitectura que revisen el código issue
+por issue. Las issues las divido en slices verticales: empiezo siempre sacando algún
+resultado para probar, ver algo, corregir y sentir que avanzo, en vez de ir horizontal
+(primero todo el backend, luego todos los servicios, luego todos los estilos), que al
+final no funciona porque el contexto es demasiado amplio.
+
+Con el reviewing simplifico la feature. Busco maneras de que, aunque no esté hecho en
+cien líneas (como lo haría a mano, pero tardando mucho), al menos se entienda: que la
+propia IA lo entienda, que haya corregido y que haya encontrado los fallos que pueden
+pasar en el futuro, que serán costosos de encontrar porque se ha generado muchísimo
+código muy rápido.
+
+De esta manera haces software con un código… bueno, no spaghetti code a mansalva, sino
+un código que puedes entender. Puedes ir a un archivo, sabes dónde están las cosas,
+aplicas Clean Code y una serie de principios con los que estás contento.
+
+Todo esto lo he trabajado en equipos pequeños, haciendo PRs, corrigiendo PRs, haciendo
+pocas, pero mucho código muy rápido. Sé que si estuviera aplicando esto con varios
+revisores, con un proyecto grande, con muchas pautas y en una empresa tranquila y
+segura sin necesidad de vender infinito, seguramente tendría que revisar mucho más:
+
+- borrar
+- reducir ciertos archivos
+- mejorar el naming
+- darle más tiempo a pensar el naming de conceptos
+- hacer commits propios
+
+Pero así es como yo trabajo ahora mismo. Así es como estoy aprendiendo. Estoy abierto a
+todo lo nuevo que sale y estoy activo.
+
+## 10. Portfolio y motivación
+
+Esa es mi historia en mi empresa actual. Por mi parte he querido hacer este portfolio
+que estáis viendo: sencillo y rápido, en el que me intento centrar en formas de trabajo
+y prácticas que utilizo, y no tanto en la creación en sí. Porque ahora mismo lo que tú
+ves o lo que tú puedes hacer, uno se lo puede creer, ya que todo se hace muy sencillo.
+Puede parecer que funciona y luego no; puede estar hecho por otra persona, por otra
+idea. Puede haber muchas maneras en las que tú no sepas o no te fíes, y todo el mundo
+utiliza mil plantillas. Ahora mismo hay muchísimas buenas plantillas que conozco, como
+las de **Ascenity** para portfolios. Hay gente que sabe mucho de ello, gente de UX/UI.
+
+Yo, al final, es en lo que me especializo, pero de una manera sencilla lo estoy
+intentando explicar, porque no estoy intentando vender con el portfolio lo bonito que
+es, porque para eso está mi trabajo. Yo sé que ese trabajo siempre ha sido con productos
+técnicos que necesitan que la persona menos técnica los entienda. La UX que yo conozco y
+aplico no intenta vender belleza absoluta, aunque soy muy perfeccionista y muy
+detallista. Intento que, cuando tengo tiempo y me dejan dejar detalles, estén
+implementados sin que el resto lo note, de modo que alguien con buen ojo sepa que está
+hecho con mimo y que es diferente a lo habitual. Eso es lo que va a diferenciar ahora a
+toda esta masa de SaaS, productos y copias.
+
+Tengo muchísimas ganas de aprender, porque sé que en equipos grandes hay gente con
+muchísimo más valor y conocimiento que aportarme para mejorar yo de manera muy rápida y
+ser un auténtico asset para cuando sea que trabaje.

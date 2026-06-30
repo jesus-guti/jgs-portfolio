@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, useContext, useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useState, useSyncExternalStore } from "react";
 import type { ReactNode } from "react";
 
 type Theme = "ibm" | "apple";
@@ -14,23 +14,29 @@ export function useTheme() {
   return useContext(ThemeContext);
 }
 
+function getStoredTheme(): Theme {
+  const stored = localStorage.getItem("theme");
+  return stored === "ibm" || stored === "apple" ? stored : "apple";
+}
+
+function subscribeToStorage(callback: () => void) {
+  window.addEventListener("storage", callback);
+  return () => window.removeEventListener("storage", callback);
+}
+
 export function ThemeProvider({ children }: { children: ReactNode }) {
-  const [theme, setTheme] = useState<Theme>("apple");
-  const [mounted, setMounted] = useState(false);
+  const storedTheme = useSyncExternalStore<Theme>(
+    subscribeToStorage,
+    getStoredTheme,
+    () => "apple"
+  );
+
+  const [theme, setTheme] = useState<Theme>(storedTheme);
 
   useEffect(() => {
-    const stored = localStorage.getItem("theme") as Theme | null;
-    if (stored === "ibm" || stored === "apple") {
-      setTheme(stored);
-    }
-    setMounted(true);
-  }, []);
-
-  useEffect(() => {
-    if (!mounted) return;
     document.documentElement.setAttribute("data-theme", theme);
     localStorage.setItem("theme", theme);
-  }, [theme, mounted]);
+  }, [theme]);
 
   const toggle = () => setTheme((prev) => (prev === "ibm" ? "apple" : "ibm"));
 
