@@ -6,6 +6,11 @@ import {
     Mountains,
 } from "@phosphor-icons/react/dist/ssr";
 import { ProjectCard } from "./components/project-card";
+import { Ruler } from "./components/ruler";
+import { SectionIntersection } from "./components/section-intersection";
+import { GridBackground } from "./components/grid-background";
+import { Button } from "./components/button";
+import { cn } from "@/lib/utils";
 
 const projects = [
     {
@@ -87,17 +92,34 @@ export default function Home() {
                 </span>
             </header>
 
-            <section className="border-b border-border-general py-section-py px-6 md:px-container-px">
-                <div className="flex flex-col items-center">
+            <section className="relative border-b border-border-general py-section-py px-6 md:px-container-px">
+                {/* Grid background */}
+                <GridBackground gridSize={20} fadeIntensity={30} />
+
+                {/* Rulers - positioned at padding edge, ticks extend outward */}
+                <div className="absolute -left-4 top-0 bottom-0 hidden md:block">
+                    <Ruler orientation="vertical" length={100} tickInterval={2} majorTickInterval={10} tickDirection="left" />
+                </div>
+                <div className="absolute -right-4 top-0 bottom-0 hidden md:block">
+                    <Ruler orientation="vertical" length={100} tickInterval={2} majorTickInterval={10} tickDirection="right" />
+                </div>
+
+                {/* Section intersection details */}
+                <SectionIntersection position="top-left" className="hidden md:block" />
+                <SectionIntersection position="top-right" className="hidden md:block" />
+                <SectionIntersection position="bottom-left" className="hidden md:block" />
+                <SectionIntersection position="bottom-right" className="hidden md:block" />
+
+                <div className="relative z-10 flex flex-col items-center">
                     <div className="flex flex-col items-center gap-1">
                         <Image
                             src="/jesus-profile.jpeg"
                             alt="Jesús Gutiérrez"
                             width={80}
                             height={80}
-                            className="mb-3 rounded-full object-cover"
+                            className="mb-3 rounded-full object-cover border-2 border-text-weak"
                         />
-                        <h1 className="text-heading-section font-bold text-text-strong">
+                        <h1 className="text-heading-display font-bold text-text-strong">
                             Jesús Gutiérrez Siliceo
                         </h1>
                         <p className="text-body text-text-default">
@@ -131,69 +153,74 @@ export default function Home() {
                             hands on physical engineering and high-end
                             woodworking projects.
                         </p>
-                    </div>
+            </div>
+
 
                     <div className="mt-12 flex flex-wrap items-center justify-center gap-4">
-                        <a
+                        <Button
                             href="https://github.com/jesus-guti"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="flex items-center gap-2.5 rounded-md border border-border-general px-4 py-2.5 text-body text-text-default transition-colors hover:border-text-weak hover:text-text-strong"
+                            variant="neutral"
+                            size="md"
                         >
-                            <GithubLogo
-                                weight="regular"
-                                size={20}
-                                className="shrink-0"
-                            />
+                            <GithubLogo weight="regular" size={20} />
                             <span>GitHub</span>
-                        </a>
-                        <a
+                        </Button>
+                        <Button
                             href="https://www.linkedin.com/in/jesús-gutiérrez-siliceo-52108524a"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="flex items-center gap-2.5 rounded-md border border-border-general px-4 py-2.5 text-body text-text-default transition-colors hover:border-text-weak hover:text-text-strong"
+                            variant="neutral"
+                            size="md"
                         >
-                            <LinkedinLogo
-                                weight="regular"
-                                size={20}
-                                className="shrink-0"
-                            />
+                            <LinkedinLogo weight="regular" size={20} />
                             <span>LinkedIn</span>
-                        </a>
-                        <a
+                        </Button>
+                        <Button
                             href="mailto:jesusgutierrezsiliceo@gmail.com"
-                            className="flex items-center gap-2.5 rounded-md border border-border-general px-4 py-2.5 text-body text-text-default transition-colors hover:border-text-weak hover:text-text-strong"
+                            variant="neutral"
+                            size="md"
                         >
-                            <Envelope
-                                weight="regular"
-                                size={20}
-                                className="shrink-0"
-                            />
+                            <Envelope weight="regular" size={20} />
                             <span>Email</span>
-                        </a>
+                        </Button>
                     </div>
                 </div>
             </section>
+              {/* Diagonal stripe pattern */}
+              <div
+                className={cn(
+                  "absolute w-[1080px] h-4",
+                  "[background-image:repeating-linear-gradient(45deg,transparent,transparent_2px,var(--color-border-special)_2px,var(--color-border-special)_4px)]"
+                )}
+              />
 
-            <section className="border-b border-border-general py-section-py px-6 md:px-container-px">
-                <h2 className="mb-8 text-heading-section font-semibold text-text-strong">
+            <section className="relative border-b border-border-general py-section-py px-6 md:px-container-px overflow-hidden">
+                {/* Section intersection details */}
+                <SectionIntersection position="top-left" className="hidden md:block" />
+                <SectionIntersection position="top-right" className="hidden md:block" />
+                <SectionIntersection position="bottom-left" className="hidden md:block" />
+                <SectionIntersection position="bottom-right" className="hidden md:block" />
+
+                <h2 className="relative z-10 mb-8 text-heading-section font-semibold text-text-strong">
                     Projects
                 </h2>
-                <div className="grid gap-5 md:grid-cols-2">
+                <div className="relative z-10 grid gap-5 md:grid-cols-2">
                     {projects.map((project) => (
                         <ProjectCard key={project.slug} {...project} />
                     ))}
                 </div>
             </section>
 
-            <section className="py-section-py px-6 md:px-container-px">
-                <h2 className="mb-6 text-heading-section font-semibold text-text-strong">
+            <section className="relative py-section-py px-6 md:px-container-px overflow-hidden">
+                {/* Section intersection details */}
+                <SectionIntersection position="top-left" className="hidden md:block" />
+                <SectionIntersection position="top-right" className="hidden md:block" />
+
+                <h2 className="relative z-10 mb-6 text-heading-section font-semibold text-text-strong">
                     1-Week Projects
                 </h2>
-                <p className="mb-8 text-body text-text-weak">
+                <p className="relative z-10 mb-8 text-body text-text-weak">
                     Short consulting engagements and side experiments, shipped in roughly one week.
                 </p>
-                <div className="flex flex-col gap-4">
+                <div className="relative z-10 flex flex-col gap-4">
                     {oneWeekProjects.map((project, i) => (
                         <div
                             key={i}
