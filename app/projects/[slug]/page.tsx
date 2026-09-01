@@ -2,6 +2,8 @@ import Link from "next/link";
 import { ArrowLeft } from "@phosphor-icons/react/dist/ssr";
 import { notFound } from "next/navigation";
 
+import { StreakCromoPhone } from "../loadzone/streak-cromo-phone";
+
 type ProjectStatus = "production" | "in progress" | "open source";
 
 interface CaseStudy {
@@ -115,6 +117,11 @@ const caseStudies: Record<string, CaseStudy> = {
       "Lorem ipsum placeholder. Small football clubs and lower-division academies lack affordable tools to track training load and player wellness across teams.",
     decisions: [
       {
+        title: "Recoverable Streak and the Streak Cromo",
+        content:
+          "Amateur academies do not need a shame calendar. A Recoverable Streak only moves on days the Player was actually expected to check in: a non-cancelled Session they are on, with PRE/POST DailyEntry. Days without that Session neither increment nor break the count. The Streak Cromo is the identity that grows with that habit — club crest, optional playing line and shirt number, team rank as ink, chrome that changes with the streak. Material names stay off the card; the foil is the reward. It is not a staff Wellness card and not a FIFA-style stat dump.",
+      },
+      {
         title: "Simple UX for non-technical users",
         content:
           "Lorem ipsum placeholder. Coaches and young players need an interface that requires zero training to log daily wellness and training sessions.",
@@ -206,7 +213,7 @@ export default async function CaseStudyPage({
           </h2>
           <div className="flex flex-col gap-6">
             {study.decisions.map((decision, i) => (
-              <div key={i}>
+              <div key={decision.title}>
                 <h3 className="mb-2 text-body font-semibold text-text-strong">
                   {i + 1}. {decision.title}
                 </h3>
@@ -222,6 +229,19 @@ export default async function CaseStudyPage({
           </h2>
           <p className="text-body text-text-default">{study.result}</p>
         </section>
+
+        {slug === "loadzone" ? (
+          <section className="mt-12">
+            <h2 className="mb-4 text-heading-section font-semibold text-text-strong">
+              Artifacts
+            </h2>
+            <p className="mb-6 text-body text-text-default">
+              One Esmeralda Streak Cromo in the player check-in app. Tilt the
+              card with pointer or touch; reduced motion keeps it still.
+            </p>
+            <StreakCromoPhone />
+          </section>
+        ) : null}
       </article>
     </div>
   );

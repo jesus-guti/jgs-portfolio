@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <circle cx="32" cy="32" r="30" fill="#0f3d32"/>
+  <circle cx="32" cy="32" r="26" stroke="#d4c48a" stroke-width="2"/>
+  <path d="M32 12 L38 28 H22 Z" fill="#d4c48a"/>
+  <path d="M18 36h28v4H18z" fill="#e8f5ef"/>
+  <text x="32" y="50" text-anchor="middle" fill="#e8f5ef" font-size="8" font-family="Georgia, serif" font-weight="700">VN</text>
+</svg>

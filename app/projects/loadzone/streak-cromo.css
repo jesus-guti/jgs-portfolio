@@ -1,0 +1,372 @@
+/* Streak Cromo (Esmeralda demo) + phone frame. Ported from LoadZone player; no GPL CSS. */
+
+.cromo-root {
+    --lz-pointer-x: 50%;
+    --lz-pointer-y: 50%;
+    --lz-from-center: 0;
+    --lz-from-left: 0.5;
+    --lz-from-top: 0.5;
+    --lz-rotate-x: 0deg;
+    --lz-rotate-y: 0deg;
+    --lz-bg-x: 50%;
+    --lz-bg-y: 50%;
+    --lz-card-opacity: 0.38;
+    --lz-foil-brightness: 0.72;
+    --lz-interacting: 0;
+}
+
+.cromo-stage {
+    perspective: 700px;
+    perspective-origin: 50% 40%;
+    padding: 0.5rem 0.25rem 0.75rem;
+    width: min(100%, 16.5rem);
+}
+
+.cromo-translater {
+    transform-origin: center center;
+    transform-style: preserve-3d;
+}
+
+.cromo-rotator {
+    position: relative;
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border: none;
+    border-radius: 0.58rem;
+    background: transparent;
+    color: inherit;
+    text-align: inherit;
+    appearance: none;
+    -webkit-appearance: none;
+    outline: none;
+    transform: rotateX(var(--lz-rotate-x)) rotateY(var(--lz-rotate-y));
+    transform-style: preserve-3d;
+    will-change: transform;
+    touch-action: none;
+    cursor: pointer;
+}
+
+.cromo-rotator:focus,
+.cromo-rotator:focus-visible {
+    outline: none;
+}
+
+.cromo-flip {
+    position: relative;
+    border-radius: 0.58rem;
+    transform-style: preserve-3d;
+    transform: rotateY(0deg);
+    transition: transform 1000ms cubic-bezier(0.22, 0.7, 0.28, 1);
+}
+
+.cromo-flip.is-spinning {
+    transform: rotateY(360deg);
+}
+
+.cromo-flip.is-instant {
+    transition: none;
+}
+
+.cromo-back {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1.25rem;
+    border-radius: 0.58rem;
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    color: oklch(0.97 0.02 160);
+    background-color: oklch(0.28 0.06 162);
+    background-image:
+        radial-gradient(ellipse 80% 50% at 50% 18%, oklch(0.45 0.08 160 / 0.55), transparent 70%),
+        linear-gradient(165deg, oklch(0.34 0.07 160) 0%, oklch(0.22 0.05 164) 100%);
+    box-shadow:
+        0 2px 6px oklch(0 0 0 / 0.45),
+        0 14px 28px oklch(0 0 0 / 0.5),
+        0 32px 48px oklch(0 0 0 / 0.32);
+}
+
+.cromo-back::before {
+    content: "";
+    position: absolute;
+    inset: 1.1rem;
+    border-radius: 0.32rem;
+    border: 1px solid oklch(0.82 0.06 160 / 0.28);
+    box-shadow: inset 0 0 0 6px oklch(0.22 0.05 164 / 0.35);
+    pointer-events: none;
+}
+
+.cromo-back-mark {
+    position: relative;
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.28em;
+    text-indent: 0.28em;
+}
+
+.cromo-front {
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+.cromo-frame {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    color: var(--cromo-fg);
+    background-color: var(--cromo-bottom);
+    background-image: linear-gradient(165deg, var(--cromo-top) 0%, var(--cromo-bottom) 100%);
+    animation: none;
+    --cromo-bezel: 0.85rem;
+    padding: var(--cromo-bezel);
+    border-radius: 0.58rem;
+    outline: none;
+    box-shadow:
+        0 2px 6px oklch(0 0 0 / 0.45),
+        0 14px 28px oklch(0 0 0 / 0.5),
+        0 32px 48px oklch(0 0 0 / 0.32);
+}
+
+.cromo-mat {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    isolation: isolate;
+    border-radius: 0.32rem;
+    padding: 0.35rem 0.35rem 0.7rem;
+    gap: 0.7rem;
+    background-color: var(--cromo-bottom);
+    background-image: radial-gradient(ellipse 80% 55% at 50% 12%, color-mix(in oklch, var(--cromo-top) calc(var(--cromo-glow) * 100%), transparent) 0%, transparent 72%), linear-gradient(180deg, var(--cromo-top) 0%, var(--cromo-bottom) 100%);
+}
+
+.cromo-window {
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+    aspect-ratio: 5 / 5.05;
+    border-radius: 50% 50% 0.2rem 0.2rem / 42% 42% 0.2rem 0.2rem;
+    background: oklch(0.22 0.02 160);
+}
+
+.cromo-silhouette {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    padding-bottom: 1.5rem;
+}
+
+.cromo-silhouette-stack {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+    opacity: 0.7;
+}
+
+.cromo-silhouette-head {
+    display: flex;
+    height: 5rem;
+    width: 5rem;
+    align-items: center;
+    justify-content: center;
+    border-radius: 9999px;
+    background: oklch(0.992 0.003 160 / 0.4);
+}
+
+.cromo-silhouette-body {
+    height: 2.5rem;
+    width: 4rem;
+    border-radius: 1.5rem 1.5rem 0 0;
+    background: oklch(0.992 0.003 160 / 0.4);
+}
+
+.cromo-shine {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    border-radius: inherit;
+    overflow: hidden;
+}
+
+.cromo-shine::before,
+.cromo-shine::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+}
+
+.cromo-glare {
+    position: absolute;
+    inset: 0;
+    z-index: 8;
+    pointer-events: none;
+    border-radius: inherit;
+    mix-blend-mode: soft-light;
+    opacity: calc(var(--lz-card-opacity) * 0.5);
+    background-image: radial-gradient(farthest-corner circle at var(--lz-pointer-x) var(--lz-pointer-y), oklch(1 0 0 / 0.5) 0%, oklch(1 0 0 / 0.14) 28%, transparent 62%);
+}
+
+.cromo-frame[data-streak-cromo-tier="5"] {
+    --cromo-top: oklch(0.58 0.16 152);
+    --cromo-bottom: oklch(0.3 0.12 164);
+    --cromo-glow: 0.26;
+    --cromo-fg: oklch(0.97 0.03 148);
+    --lz-emerald-plate: url("/cromo/esmeralda-plate.jpg");
+    background-color: oklch(0.28 0.11 162);
+    background-image: linear-gradient(165deg, oklch(0.56 0.17 150) 0%, oklch(0.38 0.14 158) 46%, oklch(0.22 0.1 168) 100%), var(--lz-emerald-plate);
+    background-size: 100% 100%, cover;
+    background-position: center center, center center;
+    background-blend-mode: soft-light, normal;
+}
+
+.cromo-frame[data-streak-cromo-tier="5"] .cromo-mat {
+    background-color: oklch(0.44 0.14 156);
+    background-image: var(--lz-emerald-plate), linear-gradient(180deg, oklch(0.52 0.16 150) 0%, oklch(0.38 0.14 158) 58%, oklch(0.28 0.12 166) 100%);
+    background-size: cover, 100% 100%;
+    background-position: center center, center;
+    background-repeat: no-repeat;
+    background-blend-mode: soft-light, normal;
+}
+
+.cromo-frame[data-streak-cromo-tier="5"] .cromo-mat .cromo-shine::before {
+    mix-blend-mode: normal;
+    filter: none;
+    opacity: 1;
+    background-image: repeating-linear-gradient(42deg, rgb(0 0 0 / 0) 0 20px, oklch(0.48 0.14 155 / 0.35) 20px 32px, oklch(0.58 0.16 152 / 0.55) 32px 42px, oklch(0.68 0.16 150 / 0.75) 42px 50px, oklch(0.76 0.15 148 / 0.9) 50px 56px, oklch(0.68 0.16 150 / 0.75) 56px 64px, oklch(0.58 0.16 152 / 0.55) 64px 74px, oklch(0.48 0.14 155 / 0.35) 74px 86px, rgb(0 0 0 / 0) 86px 110px);
+    background-size: 72rem 72rem;
+    background-position: calc(-12rem + var(--lz-from-left) * -18rem) calc(-12rem + var(--lz-from-top) * -18rem);
+    background-repeat: no-repeat;
+}
+
+.cromo-frame[data-streak-cromo-tier="5"] .cromo-mat .cromo-shine::after {
+    mix-blend-mode: normal;
+    filter: none;
+    opacity: 1;
+    background-image: repeating-linear-gradient(-48deg, rgb(0 0 0 / 0) 0 22px, oklch(0.46 0.14 158 / 0.32) 22px 34px, oklch(0.56 0.16 154 / 0.52) 34px 44px, oklch(0.66 0.16 151 / 0.72) 44px 52px, oklch(0.74 0.15 148 / 0.88) 52px 58px, oklch(0.66 0.16 151 / 0.72) 58px 66px, oklch(0.56 0.16 154 / 0.52) 66px 76px, oklch(0.46 0.14 158 / 0.32) 76px 88px, rgb(0 0 0 / 0) 88px 112px);
+    background-size: 72rem 72rem;
+    background-position: calc(-12rem + (1 - var(--lz-from-left)) * -18rem) calc(-12rem + (1 - var(--lz-from-top)) * -18rem);
+    background-repeat: no-repeat;
+}
+
+.cromo-frame[data-streak-cromo-tier="5"] .cromo-glare {
+    mix-blend-mode: soft-light;
+    opacity: calc(var(--lz-card-opacity) * 0.55);
+    background-image: radial-gradient(farthest-corner circle at var(--lz-pointer-x) var(--lz-pointer-y), oklch(0.72 0.14 152 / 0.35) 0%, oklch(0.58 0.12 155 / 0.12) 38%, transparent 62%);
+}
+
+.cromo-chip {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+}
+
+.cromo-chip::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    opacity: calc(0.1 + var(--lz-card-opacity) * 0.4);
+    background: linear-gradient(125deg, oklch(1 0 0 / 0.55), transparent 42%, oklch(0 0 0 / 0.28));
+    background-size: 180% 180%;
+    background-position: var(--lz-bg-x) var(--lz-bg-y);
+}
+
+.cromo-dorsal {
+    background-size: 180% 180%;
+    background-position: var(--lz-bg-x) var(--lz-bg-y);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-stroke: 1.5px oklch(1 0 0 / 0.85);
+    background-image: linear-gradient(120deg, oklch(1 0 0 / 0.95), oklch(0.75 0.02 80 / 0.45) 45%, oklch(1 0 0 / 0.9));
+}
+
+.cromo-frame[data-streak-cromo-tier="5"] .cromo-dorsal {
+    background-image: linear-gradient(120deg, oklch(1 0.04 148 / 0.96), oklch(0.78 0.14 155 / 0.5) 45%, oklch(1 0.03 140 / 0.92));
+}
+
+.cromo-team-name {
+    font-family: ui-serif, Georgia, serif;
+    font-size: 0.7rem;
+    line-height: 1.15;
+    max-width: 9.5rem;
+    overflow-wrap: anywhere;
+}
+
+.cromo-crest {
+    margin-left: auto;
+    height: 2.75rem;
+    width: 2.75rem;
+    flex-shrink: 0;
+    overflow: hidden;
+    border-radius: 9999px;
+    border: 1px solid oklch(0.82 0.06 160 / 0.35);
+    background: oklch(0.986 0.004 160);
+    padding: 0.25rem;
+}
+
+.cromo-crest img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .cromo-rotator {
+        transform: none;
+    }
+    .cromo-flip {
+        transition: none;
+    }
+    .cromo-shine::before,
+    .cromo-shine::after,
+    .cromo-glare,
+    .cromo-chip::before {
+        opacity: 0;
+        animation: none;
+    }
+}
+
+.player-phone {
+    width: min(100%, 22rem);
+    margin-inline: auto;
+    border-radius: 2.25rem;
+    background: oklch(0.18 0.01 260);
+    padding: 0.85rem 0.55rem 0.55rem;
+    box-shadow:
+        0 0 0 1px oklch(1 0 0 / 0.08),
+        0 24px 48px oklch(0 0 0 / 0.45);
+}
+
+.player-phone-screen {
+    display: flex;
+    min-height: 28rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1.5rem;
+    background: oklch(0.992 0.003 160);
+    padding: 1.25rem 0.5rem 1.5rem;
+}
+
+.player-phone-home {
+    width: 6.5rem;
+    height: 0.28rem;
+    margin: 0.5rem auto 0;
+    border-radius: 999px;
+    background: oklch(0.42 0.01 260);
+}
