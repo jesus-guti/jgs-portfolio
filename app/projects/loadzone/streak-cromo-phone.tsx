@@ -3,8 +3,9 @@
 import { UserIcon } from "@phosphor-icons/react/dist/ssr";
 import { type JSX, useEffect, useId, useState } from "react";
 
-import "./streak-cromo.css";
+import { PlayerPhoneFrame } from "./player-phone-frame";
 import { usePointerTilt } from "./use-cromo-pointer-tilt";
+import "./streak-cromo.css";
 
 /** Invented adult seed — not a real academy Player. */
 const SEED = {
@@ -139,7 +140,7 @@ function CromoPortrait(): JSX.Element {
   );
 }
 
-function StreakCromoCard(): JSX.Element {
+export function StreakCromoCard(): JSX.Element {
   const reducedMotion = useReducedMotion();
   const tilt = usePointerTilt(reducedMotion);
 
@@ -224,11 +225,8 @@ function StreakCromoCard(): JSX.Element {
 
 export function StreakCromoPhone(): JSX.Element {
   return (
-    <figure className="player-phone" aria-label="Player check-in on a phone">
-      <div className="player-phone-screen">
-        <StreakCromoCard />
-      </div>
-      <div className="player-phone-home" aria-hidden />
-    </figure>
+    <PlayerPhoneFrame>
+      <StreakCromoCard />
+    </PlayerPhoneFrame>
   );
 }

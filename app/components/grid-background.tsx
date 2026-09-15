@@ -3,33 +3,39 @@ import { cn } from "@/lib/utils";
 interface GridBackgroundProps {
   className?: string;
   gridSize?: number;
-  fadeIntensity?: number;
 }
 
 export function GridBackground({
   className,
-  gridSize = 40,
-  fadeIntensity = 20,
+  gridSize = 8,
 }: GridBackgroundProps) {
   return (
-    <div className={cn("absolute inset-0", className)}>
-      {/* Grid pattern */}
+    <div
+      aria-hidden
+      className={cn(
+        "pointer-events-none absolute inset-0 overflow-hidden",
+        className,
+      )}
+    >
+      <div
+        className="absolute inset-0 opacity-40"
+        style={{
+          backgroundImage: `
+            linear-gradient(to right, rgb(255 255 255 / 0.06) 1px, transparent 1px),
+            linear-gradient(to bottom, rgb(255 255 255 / 0.06) 1px, transparent 1px)
+          `,
+          backgroundSize: `${gridSize}px ${gridSize}px`,
+          maskImage:
+            "radial-gradient(ellipse 70% 65% at 50% 42%, transparent 0%, transparent 18%, black 72%)",
+          WebkitMaskImage:
+            "radial-gradient(ellipse 70% 65% at 50% 42%, transparent 0%, transparent 18%, black 72%)",
+        }}
+      />
       <div
         className="absolute inset-0"
         style={{
-          backgroundSize: `${gridSize}px ${gridSize}px`,
-          backgroundImage: `
-            linear-gradient(to right, var(--color-border-special) 1px, transparent 1px),
-            linear-gradient(to bottom, var(--color-border-special) 1px, transparent 1px)
-          `,
-        }}
-      />
-      {/* Radial gradient fade */}
-      <div
-        className="absolute inset-0 bg-surface-root"
-        style={{
-          maskImage: `radial-gradient(ellipse at center, transparent ${fadeIntensity}%, black)`,
-          WebkitMaskImage: `radial-gradient(ellipse at center, transparent ${fadeIntensity}%, black)`,
+          background:
+            "radial-gradient(ellipse 78% 80% at 50% 40%, hsl(0 9% 7%) 0%, hsl(0 9% 7% / 0.94) 32%, hsl(0 9% 7% / 0.45) 58%, transparent 78%)",
         }}
       />
     </div>

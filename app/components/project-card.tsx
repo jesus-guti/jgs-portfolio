@@ -1,40 +1,55 @@
 import Link from "next/link";
+import { ArrowSquareOut } from "@phosphor-icons/react/dist/ssr";
+import type { JSX } from "react";
 
-type ProjectStatus = "production" | "in progress" | "open source";
+type ProjectStatus = "production" | "open source";
 
 interface ProjectCardProps {
-  slug: string;
   name: string;
   year: string;
   stack: string[];
   description: string;
   status: ProjectStatus;
+  href?: string;
 }
 
 const statusStyles: Record<ProjectStatus, string> = {
   production: "border-green-800/50 text-green-400",
-  "in progress": "border-amber-800/50 text-amber-400",
   "open source": "border-blue-800/50 text-blue-400",
 };
 
+const cardClassName =
+  "flex h-full flex-col gap-3 rounded-lg border border-border-general p-5";
+
+function isExternalHref(href: string): boolean {
+  return /^https?:\/\//.test(href);
+}
+
 export function ProjectCard({
-  slug,
   name,
   year,
   stack,
   description,
   status,
-}: ProjectCardProps) {
-  return (
-    <Link
-      href={`/projects/${slug}`}
-      className="group flex flex-col gap-3 rounded-lg border border-border-general p-5 transition-colors hover:border-text-weak"
-    >
+  href,
+}: ProjectCardProps): JSX.Element {
+  const external = href !== undefined && isExternalHref(href);
+
+  const inner = (
+    <>
       <div className="flex items-start justify-between">
-        <h3 className="text-heading-section font-semibold text-text-strong">
+        <h3 className="flex items-center gap-1.5 text-heading-section font-semibold text-text-strong">
           {name}
+          {external ? (
+            <ArrowSquareOut
+              aria-hidden="true"
+              className="text-text-weak"
+              size={14}
+              weight="regular"
+            />
+          ) : null}
         </h3>
-        <span className="text-caption font-mono text-text-weak">{year}</span>
+        <span className="font-mono text-caption text-text-weak">{year}</span>
       </div>
 
       <div className="flex flex-wrap gap-1.5">
@@ -48,7 +63,7 @@ export function ProjectCard({
         ))}
       </div>
 
-      <p className="text-body text-text-default line-clamp-2">{description}</p>
+      <p className="line-clamp-2 text-body text-text-default">{description}</p>
 
       <div className="mt-auto pt-2">
         <span
@@ -57,6 +72,32 @@ export function ProjectCard({
           {status}
         </span>
       </div>
-    </Link>
+    </>
   );
+
+  if (href && external) {
+    return (
+      <a
+        className={`${cardClassName} transition-colors hover:border-text-weak`}
+        href={href}
+        rel="noreferrer"
+        target="_blank"
+      >
+        {inner}
+      </a>
+    );
+  }
+
+  if (href) {
+    return (
+      <Link
+        className={`${cardClassName} transition-colors hover:border-text-weak`}
+        href={href}
+      >
+        {inner}
+      </Link>
+    );
+  }
+
+  return <div className={cardClassName}>{inner}</div>;
 }
