@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { ArrowSquareOut } from "@phosphor-icons/react/dist/ssr";
-import type { JSX } from "react";
+import type { JSX, ReactNode } from "react";
 
 type ProjectStatus = "production" | "open source";
 
@@ -13,19 +13,14 @@ interface ProjectCardProps {
   href?: string;
 }
 
-const statusStyles: Record<ProjectStatus, string> = {
-  production: "border-green-800/50 text-green-400",
-  "open source": "border-blue-800/50 text-blue-400",
-};
-
-const cardClassName =
-  "flex h-full flex-col gap-3 rounded-lg border border-border-general p-5";
+const rowClassName =
+  "group block py-8 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-text-strong";
 
 function isExternalHref(href: string): boolean {
   return /^https?:\/\//.test(href);
 }
 
-export function ProjectCard({
+function ProjectBody({
   name,
   year,
   stack,
@@ -35,10 +30,11 @@ export function ProjectCard({
 }: ProjectCardProps): JSX.Element {
   const external = href !== undefined && isExternalHref(href);
 
-  const inner = (
+  return (
     <>
-      <div className="flex items-start justify-between">
-        <h3 className="flex items-center gap-1.5 text-heading-section font-semibold text-text-strong">
+      <p className="font-mono text-caption capitalize text-text-weak">{status}</p>
+      <div className="mt-2 flex items-baseline justify-between gap-4">
+        <h3 className="flex items-center gap-1.5 text-heading-section font-semibold text-text-strong group-hover:underline group-hover:decoration-border-general group-hover:underline-offset-4">
           {name}
           {external ? (
             <ArrowSquareOut
@@ -51,53 +47,51 @@ export function ProjectCard({
         </h3>
         <span className="font-mono text-caption text-text-weak">{year}</span>
       </div>
-
-      <div className="flex flex-wrap gap-1.5">
-        {stack.map((tech) => (
-          <span
-            key={tech}
-            className="rounded border border-border-special px-1.5 py-0.5 font-mono text-[11px] text-text-weak"
-          >
-            {tech}
-          </span>
-        ))}
-      </div>
-
-      <p className="line-clamp-2 text-body text-text-default">{description}</p>
-
-      <div className="mt-auto pt-2">
-        <span
-          className={`inline-block rounded border px-2 py-0.5 font-mono text-[11px] ${statusStyles[status]}`}
-        >
-          {status}
-        </span>
-      </div>
+      <p className="mt-3 max-w-[36rem] text-body text-text-default">
+        {description}
+      </p>
+      <p className="mt-4 font-mono text-caption text-text-weak">
+        {stack.join(" · ")}
+      </p>
     </>
   );
+}
 
-  if (href && external) {
+function ProjectHref({
+  href,
+  children,
+}: {
+  href?: string;
+  children: ReactNode;
+}): JSX.Element {
+  if (!href) {
+    return <div className={rowClassName}>{children}</div>;
+  }
+
+  if (isExternalHref(href)) {
     return (
       <a
-        className={`${cardClassName} transition-colors hover:border-text-weak`}
+        className={rowClassName}
         href={href}
         rel="noreferrer"
         target="_blank"
       >
-        {inner}
+        {children}
       </a>
     );
   }
 
-  if (href) {
-    return (
-      <Link
-        className={`${cardClassName} transition-colors hover:border-text-weak`}
-        href={href}
-      >
-        {inner}
-      </Link>
-    );
-  }
+  return (
+    <Link className={rowClassName} href={href}>
+      {children}
+    </Link>
+  );
+}
 
-  return <div className={cardClassName}>{inner}</div>;
+export function ProjectCard(props: ProjectCardProps): JSX.Element {
+  return (
+    <ProjectHref href={props.href}>
+      <ProjectBody {...props} />
+    </ProjectHref>
+  );
 }

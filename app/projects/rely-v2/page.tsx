@@ -41,7 +41,7 @@ export default function RelyCaseStudyPage(): JSX.Element {
             Employment work
           </p>
           <h1 className="mt-1 text-heading-display font-bold text-text-strong">
-            rely v2
+            Rely
           </h1>
           <div className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-1 text-caption text-text-weak">
             <span>Frontend Lead &amp; Product Designer</span>

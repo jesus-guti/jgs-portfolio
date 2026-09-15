@@ -163,10 +163,10 @@ export default function Home() {
       <section className="relative border-b border-border-general px-6 py-10 md:px-container-px">
         <SectionIntersection className="hidden md:block" position="top-left" />
         <SectionIntersection className="hidden md:block" position="top-right" />
-        <h2 className="relative z-10 mb-6 text-heading-section font-semibold text-text-strong">
+        <h2 className="relative z-10 mb-2 text-heading-section font-semibold text-text-strong">
           Employment work
         </h2>
-        <div className="relative z-10 grid gap-5 md:grid-cols-2">
+        <div className="relative z-10 divide-y divide-border-special">
           {employmentWork.map((project) => (
             <ProjectCard key={project.name} {...project} />
           ))}
@@ -176,36 +176,34 @@ export default function Home() {
       <section className="relative border-b border-border-general px-6 py-10 md:px-container-px">
         <SectionIntersection className="hidden md:block" position="top-left" />
         <SectionIntersection className="hidden md:block" position="top-right" />
-        <p className="relative z-10 mb-3 font-mono text-caption uppercase tracking-wide text-text-weak">
+        <p className="relative z-10 mb-2 font-mono text-caption text-text-weak">
           Personal product
         </p>
         <Link
-          className="relative z-10 block rounded-lg border border-border-general transition-colors hover:border-text-weak"
+          className="group relative z-10 flex flex-col gap-6 py-6 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-text-strong md:flex-row md:items-center"
           href="/projects/loadzone"
         >
-          <div className="flex flex-col gap-6 p-5 md:flex-row md:items-center">
-            <div className="min-w-0 flex-1">
-              <div className="flex items-start justify-between gap-4">
-                <h2 className="text-heading-section font-semibold text-text-strong">
-                  Loadzone
-                </h2>
-                <span className="shrink-0 font-mono text-caption text-text-weak">
-                  2025
-                </span>
-              </div>
-              <p className="mt-3 text-body text-text-default">
-                One club, two products — an operational staff scan of wellness
-                and load, and a player check-in that is one question at a time.
-                The Streak Cromo is the identity that grows with that habit.
-              </p>
-              <span className="mt-4 inline-block rounded border border-green-800/50 px-2 py-0.5 font-mono text-[11px] text-green-400">
-                production
+          <div className="min-w-0 flex-1">
+            <p className="font-mono text-caption capitalize text-text-weak">
+              production
+            </p>
+            <div className="mt-2 flex items-baseline justify-between gap-4">
+              <h2 className="text-heading-section font-semibold text-text-strong group-hover:underline group-hover:decoration-border-general group-hover:underline-offset-4">
+                Loadzone
+              </h2>
+              <span className="font-mono text-caption text-text-weak">
+                2025
               </span>
             </div>
-            <div className="pointer-events-none mx-auto h-[15.5rem] w-[11.5rem] shrink-0 overflow-hidden md:mx-0">
-              <div className="origin-top scale-[0.7]">
-                <StreakCromoCard />
-              </div>
+            <p className="mt-3 max-w-[36rem] text-body text-text-default">
+              One club, two products — an operational staff scan of wellness
+              and load, and a player check-in that is one question at a time.
+              The Streak Cromo is the identity that grows with that habit.
+            </p>
+          </div>
+          <div className="pointer-events-none mx-auto h-[15.5rem] w-[11.5rem] shrink-0 overflow-hidden md:mx-0">
+            <div className="origin-top scale-[0.7]">
+              <StreakCromoCard />
             </div>
           </div>
         </Link>
