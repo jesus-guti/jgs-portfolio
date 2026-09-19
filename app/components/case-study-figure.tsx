@@ -1,6 +1,8 @@
 import Image from "next/image";
 import type { JSX } from "react";
 
+import { ImageLightbox } from "./image-lightbox";
+
 type CaseStudyFigureProperties = {
   readonly src: string;
   readonly alt: string;
@@ -22,12 +24,16 @@ export function CaseStudyFigure({
 }: CaseStudyFigureProperties): JSX.Element {
   return (
     <figure className="mb-8">
-      <div
-        className={
+      <ImageLightbox
+        alt={alt}
+        height={height}
+        src={src}
+        triggerClassName={
           maxWidthClassName
-            ? `mx-auto w-full overflow-hidden rounded border border-border-general ${maxWidthClassName}`
-            : "overflow-hidden rounded border border-border-general"
+            ? `mx-auto block w-full overflow-hidden rounded border border-border-general ${maxWidthClassName}`
+            : "block w-full overflow-hidden rounded border border-border-general"
         }
+        width={width}
       >
         <Image
           alt={alt}
@@ -42,7 +48,7 @@ export function CaseStudyFigure({
           src={src}
           width={width}
         />
-      </div>
+      </ImageLightbox>
       <figcaption className="mt-3 text-caption text-text-weak">
         {caption}
       </figcaption>

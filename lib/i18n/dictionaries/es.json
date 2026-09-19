@@ -1,0 +1,180 @@
+{
+  "meta": {
+    "title": "Jesús Gutiérrez Siliceo — Frontend e ingeniería de producto",
+    "titleTemplate": "%s — Jesús Gutiérrez Siliceo",
+    "description": "Interfaces y sistemas de producto entregados bajo restricciones reales — plantas de fábrica, equipos de producción.",
+    "ogLocale": "es_ES"
+  },
+  "nav": {
+    "work": "Trabajo",
+    "about": "Sobre mí"
+  },
+  "home": {
+    "role": "Frontend e ingeniería de producto",
+    "thesis": "Interfaces y sistemas de producto entregados bajo restricciones reales — plantas de fábrica, equipos de producción.",
+    "employmentWork": "Trabajo en empresa",
+    "personalProduct": "Producto propio",
+    "oneWeek": "Proyectos de 1 semana",
+    "loadzoneThesis": "Un club, dos productos: una lectura operativa de wellness y carga para el staff, y un check-in del jugador de una pregunta cada vez. El Cromo de racha es la identidad que crece con ese hábito.",
+    "projects": [
+      {
+        "name": "rely v2",
+        "year": "2025",
+        "stack": ["Next.js", "Go", "WebSockets", "Tailwind v4"],
+        "description": "Inspección de calidad industrial en línea. Hub multi-tenant de Stations, grafo de Recipe sin código, OK/KO en vivo para operadores.",
+        "status": "production",
+        "href": "/projects/rely-v2"
+      },
+      {
+        "name": "Safe",
+        "year": "2023",
+        "stack": ["React", "WebRTC", "Multi-tenant", "Tailwind"],
+        "description": "Seguridad laboral sobre CCTV existente. Eventos de riesgo en tiempo real, auditorías e informes, acceso por red privada.",
+        "status": "production",
+        "href": "https://www.safehs.ai/"
+      },
+      {
+        "name": "Sorolla",
+        "year": "2023",
+        "stack": ["React", "TypeScript", "npm", "TurboRepo"],
+        "description": "Librería React open source para anotación de imagen y vídeo. Bounding box, segmentación y bounding box orientado.",
+        "status": "open source"
+      }
+    ],
+    "oneWeekProjects": [
+      {
+        "year": "2025",
+        "name": "Bloques Storyblok",
+        "description": "Bloques CMS reutilizables detrás de las webs de marketing de rely y Safe.",
+        "stack": "Storyblok, Tailwind",
+        "hrefs": [
+          { "label": "relyqa.com", "href": "https://relyqa.com/" },
+          { "label": "safehs.ai", "href": "https://www.safehs.ai/" }
+        ]
+      },
+      {
+        "year": "2024",
+        "name": "Sistema de visión para clasificación de huevos",
+        "description": "Inspección automática de calidad en una línea de producción de huevos con visión por computador.",
+        "stack": "Python, OpenCV",
+        "duration": "7 días"
+      },
+      {
+        "year": "2024",
+        "name": "Tracker de ejercicio para racing",
+        "description": "Modelo de estimación de pose para seguir y analizar la sentadilla de un equipo de racing.",
+        "stack": "Python, MediaPipe",
+        "duration": "6 días"
+      },
+      {
+        "year": "2023",
+        "name": "Dashboard interno",
+        "description": "Visualización de datos para que operaciones monitoree métricas de rendimiento de modelos.",
+        "stack": "Next.js, Recharts",
+        "duration": "5 días"
+      }
+    ]
+  },
+  "about": {
+    "title": "Sobre mí",
+    "location": "Cantabria, Suances",
+    "paragraphs": [
+      "Soy ingeniero frontend senior y diseñador de interfaces. Me gusta construir cosas digitales que tengan sentido. Vengo del ecosistema startup, donde ser resolutivo y ágil no es una opción: es el núcleo del trabajo.",
+      "Soy generalista de fondo y decidí especializarme en frontend. Por eso no me limito a “pintar pantallas”: entiendo las APIs, la arquitectura y los trade-offs técnicos detrás de cada interacción.",
+      "Cuando no estoy afinando tokens de Tailwind o layouts, suelo pensar en estrategia de producto o desconectar con las manos: ingeniería física y ebanistería de alto nivel."
+    ]
+  },
+  "case": {
+    "decisions": "Decisiones",
+    "result": "Resultado",
+    "proof": "Prueba",
+    "production": "production"
+  },
+  "rely": {
+    "origin": "Trabajo en empresa",
+    "role": "Frontend Lead y Product Designer",
+    "stack": "Next.js, Go, WebSockets, Tailwind v4",
+    "thesis": "Un Hub de Stations: Preview en vivo con OK/KO sobre la pieza, y un grafo de Recipe que ingeniería despliega a planta.",
+    "result": "En producción en plantas, multi-tenant / multi-sede. Hub en la nube, un agent por Station en la línea.",
+    "previewAlt": "Preview de Station con cámara en vivo de una PCB, identidad de pieza, recuento de defectos y totales OK/KO",
+    "previewCaption": "Preview es la planta: la pieza, un veredicto, OK/KO/Rework. La tarjeta roja es el estado, no un gráfico.",
+    "decisions": [
+      {
+        "title": "La Station es el producto",
+        "content": "El Hub es una lista de Stations, no un zoo de modelos. Abrir una es la planta: cámara en vivo, identidad de la pieza, OK/KO. El operador lee un veredicto. Recipes, overlays y analytics viven al lado de esa superficie — no la sustituyen."
+      },
+      {
+        "title": "Una Recipe es un grafo que se despliega",
+        "content": "La inspección no es un script por línea. Trigger → imágenes → detect → Evaluación es un flujo visual con inspector contextual. Evaluación es una regla sobre detecciones (conteo, confianza) que escribe el estado de la Station: OK si se cumple, KO si no. Deploy publica la Recipe; el borrador del canvas no es lo que corre en planta."
+      },
+      {
+        "title": "Los overlays son el lenguaje del operador",
+        "content": "Las detecciones tienen que leerse sobre la imagen: esquina de etiqueta, ROI discontinuo, humano vs modelo. Ese overlay se configura por Station para que Preview y revisión compartan el mismo lenguaje visual — el estado es el color, no el nombre de clase."
+      }
+    ],
+    "figures": [
+      {
+        "alt": "Lista de Stations del Hub con Línea 1 y miniatura en vivo y una tarjeta vacía de Línea 2",
+        "caption": "Hub: Stations de la organización. Entra en una para trabajar la línea."
+      },
+      {
+        "alt": "Canvas de Recipe con trigger, imágenes, detector, vista en vivo e inspector de Evaluación",
+        "caption": "Recipe como grafo: trigger → imágenes → detect → Evaluación. Inspector a la derecha; Deploy publica a la Station."
+      },
+      {
+        "alt": "Ajustes de overlays con esquina de etiqueta, ROI discontinuo, humano vs modelo y vista previa de cajas",
+        "caption": "Lenguaje de overlay: esquina de etiqueta, ROI discontinuo, humano vs modelo. La misma imagen en planta y en configuración."
+      },
+      {
+        "alt": "Editor de layout de analytics de Station con widgets KPI y un catálogo para añadir first-pass, reject y volume",
+        "caption": "Analytics (prueba): layout de widgets de la Station — first-pass, reject, volume — desde un catálogo, no un dashboard fijo."
+      }
+    ]
+  },
+  "loadzone": {
+    "origin": "Producto propio",
+    "role": "Desarrollador y Product Designer",
+    "thesis": "Un club, dos productos: una lectura operativa de wellness y carga para el staff, y un check-in del jugador de una pregunta cada vez. El Cromo de racha es la identidad que crece con ese hábito.",
+    "cromoCaption": "Cromo de racha en el teléfono del jugador. Inclínalo. Los nombres de material no van en la carta; el foil es la recompensa.",
+    "decisions": [
+      {
+        "title": "Wellness y carga de un vistazo",
+        "content": "Los coordinadores necesitan al equipo en un barrido operativo antes y después de la Session: recuperación, energía, dolor, horas de sueño, calidad de sueño y luego RPE POST. Un DailyEntry que falta sigue siendo un guion — la tabla no inventa completitud. El color es señal de triaje, no un dump tipo FIFA. Esta superficie no es el Cromo de racha."
+      },
+      {
+        "title": "Una pregunta cada vez",
+        "content": "El check-in no es un portapapeles. PRE y POST son momentos distintos en la Session, pero cada formulario es un WellnessMetric cada vez: tipografía grande, slider al tamaño del pulgar, etiquetas en los extremos, un recuento de lo que falta. La identidad (el Cromo) va después de rellenar, no como un segundo cuestionario."
+      },
+      {
+        "title": "Ejercicios que construyen Sessions de verdad",
+        "content": "El staff no escribe una Session desde una página en blanco. Un Exercise es un drill con duración, tamaño de campo, número de jugadores y una clasificación táctica breve. Crearlo es un formulario con defaults y desplegables. Colocar Exercises en una Session es cómo la semana se vuelve real."
+      }
+    ],
+    "figures": [
+      {
+        "alt": "Tarjetas de Wellness del staff de Loadzone con check-ins pendientes, medias del equipo y recuperación, energía y dolor",
+        "caption": "Barrido de Wellness del staff: formularios pendientes, medias del equipo, luego tarjetas de jugador — recuperación, energía, dolor, RPE. Lectura de portátil, no de teléfono."
+      },
+      {
+        "alt": "Detalle de la tabla de Wellness del staff con recuperación, energía, dolor, sueño, calidad y RPE",
+        "caption": "PRE (recuperación, energía, dolor, sueño, calidad) y RPE POST. Las celdas vacías se quedan vacías. El color es triaje."
+      },
+      {
+        "alt": "Pantalla de check-in del jugador con pregunta de recuperación tipo slider y estado pre/post sesión",
+        "caption": "Formulario del jugador: una pregunta (recuperación), pulsa o desliza, extremos etiquetados. Lo que falta se nota en el botón."
+      },
+      {
+        "alt": "Formulario del staff para crear un ejercicio con espacio, duración, jugadores y desplegables de clasificación táctica",
+        "caption": "Crear Exercise: configuración y luego clasificación. Desplegables antes que texto libre para armar una Session sin manual."
+      },
+      {
+        "alt": "Vista de lesiones del staff con figura del jugador, marcadores numerados y listas de abiertas, cerradas e historial",
+        "caption": "Lesiones (prueba): mapa corporal frente/espalda, luego abiertas, cerradas e historial."
+      },
+      {
+        "alt": "Sidebar de ajustes del staff con checklist de Primeros pasos en cuatro de cinco pasos",
+        "caption": "Primeros pasos (prueba): cinco datos del Club, progreso 4/5, minimizar y descartar. No bloquea Wellness."
+      }
+    ]
+  }
+}

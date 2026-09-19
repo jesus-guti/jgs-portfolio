@@ -6,98 +6,41 @@ import {
   GithubLogo,
   LinkedinLogo,
 } from "@phosphor-icons/react/dist/ssr";
-import { ProjectCard } from "./components/project-card";
-import { SiteHeader } from "./components/site-header";
-import { SectionIntersection } from "./components/section-intersection";
-import { GridBackground } from "./components/grid-background";
+
+import { ProjectCard } from "../components/project-card";
+import { SiteHeader } from "../components/site-header";
+import { SectionIntersection } from "../components/section-intersection";
+import { GridBackground } from "../components/grid-background";
+import { ImageLightbox } from "../components/image-lightbox";
 import { StreakCromoCard } from "./projects/loadzone/streak-cromo-phone";
+import { localePath } from "@/lib/i18n/config";
+import { getDictionary } from "@/lib/i18n/get-dictionary";
+import { requireLocale } from "@/lib/i18n/require-locale";
 
-export const metadata: Metadata = {
-  alternates: {
-    canonical: "/",
-  },
-};
+export async function generateMetadata({
+  params,
+}: PageProps<"/[lang]">): Promise<Metadata> {
+  const locale = await requireLocale(params);
+  return {
+    alternates: {
+      canonical: localePath(locale),
+      languages: {
+        en: "/en",
+        es: "/es",
+        "x-default": "/en",
+      },
+    },
+  };
+}
 
-const employmentWork = [
-  {
-    name: "rely v2",
-    year: "2025",
-    stack: ["Next.js", "Go", "WebSockets", "Tailwind v4"],
-    description:
-      "Industrial quality inspection on the line. Multi-tenant Hub of Stations, no-code Recipe graph, live OK/KO for operators.",
-    status: "production" as const,
-    href: "/projects/rely-v2",
-  },
-  {
-    name: "Safe",
-    year: "2023",
-    stack: ["React", "WebRTC", "Multi-tenant", "Tailwind"],
-    description:
-      "Workplace safety on existing CCTV. Real-time risk events, audits and reporting, private network access.",
-    status: "production" as const,
-    href: "https://www.safehs.ai/",
-  },
-  {
-    name: "Sorolla",
-    year: "2023",
-    stack: ["React", "TypeScript", "npm", "TurboRepo"],
-    description:
-      "Open-source React component library for image and video annotation. Bounding box, segmentation, and oriented bounding box support.",
-    status: "open source" as const,
-  },
-];
+export default async function Home({ params }: PageProps<"/[lang]">) {
+  const locale = await requireLocale(params);
+  const dict = await getDictionary(locale);
+  const { home } = dict;
 
-type OneWeekProject = {
-  year: string;
-  name: string;
-  description: string;
-  stack: string;
-  duration?: string;
-  hrefs?: { label: string; href: string }[];
-};
-
-const oneWeekProjects: OneWeekProject[] = [
-  {
-    year: "2025",
-    name: "Storyblok blocks",
-    description:
-      "Reusable CMS blocks behind the live rely and Safe marketing sites.",
-    stack: "Storyblok, Tailwind",
-    hrefs: [
-      { label: "relyqa.com", href: "https://relyqa.com/" },
-      { label: "safehs.ai", href: "https://www.safehs.ai/" },
-    ],
-  },
-  {
-    year: "2024",
-    name: "Egg grading vision system",
-    description:
-      "Automated quality inspection for an egg production line using computer vision.",
-    stack: "Python, OpenCV",
-    duration: "7 days",
-  },
-  {
-    year: "2024",
-    name: "Racing exercise tracker",
-    description:
-      "Pose estimation model to track and analyze squat form for a racing team.",
-    stack: "Python, MediaPipe",
-    duration: "6 days",
-  },
-  {
-    year: "2023",
-    name: "Internal dashboard",
-    description:
-      "Data visualization tool for operations team to monitor model performance metrics.",
-    stack: "Next.js, Recharts",
-    duration: "5 days",
-  },
-];
-
-export default function Home() {
   return (
     <div className="mx-auto max-w-[1080px] border-x border-b border-border-general">
-      <SiteHeader />
+      <SiteHeader locale={locale} nav={dict.nav} />
 
       <section className="relative border-b border-border-general px-6 py-12 md:px-container-px">
         <GridBackground />
@@ -113,22 +56,29 @@ export default function Home() {
         />
 
         <div className="relative z-10 flex flex-col items-center text-center">
-          <Image
+          <ImageLightbox
             alt="Jesús Gutiérrez"
-            className="mb-4 rounded-full border border-border-general object-cover"
-            height={48}
+            height={800}
             src="/jesus-profile.jpeg"
-            width={48}
-          />
+            triggerClassName="mb-4 overflow-hidden rounded-full border border-border-general"
+            width={800}
+          >
+            <Image
+              alt="Jesús Gutiérrez"
+              className="block rounded-full object-cover"
+              height={48}
+              src="/jesus-profile.jpeg"
+              width={48}
+            />
+          </ImageLightbox>
           <h1 className="text-heading-display font-bold tracking-[-0.02em] text-text-strong">
             Jesús Gutiérrez Siliceo
           </h1>
           <p className="mt-1.5 font-mono text-caption tracking-[0.04em] text-text-weak">
-            Frontend &amp; Product Engineering
+            {home.role}
           </p>
           <p className="mt-4 max-w-[28rem] text-[15px] leading-[1.65] text-text-strong">
-            Interfaces and product systems shipped under real constraints —
-            factory floors, production teams.
+            {home.thesis}
           </p>
           <div className="mt-6 flex items-center gap-3">
             <a
@@ -164,11 +114,23 @@ export default function Home() {
         <SectionIntersection className="hidden md:block" position="top-left" />
         <SectionIntersection className="hidden md:block" position="top-right" />
         <h2 className="relative z-10 mb-2 text-heading-section font-semibold text-text-strong">
-          Employment work
+          {home.employmentWork}
         </h2>
         <div className="relative z-10 divide-y divide-border-special">
-          {employmentWork.map((project) => (
-            <ProjectCard key={project.name} {...project} />
+          {home.projects.map((project) => (
+            <ProjectCard
+              key={project.name}
+              description={project.description}
+              href={
+                project.href?.startsWith("/")
+                  ? localePath(locale, project.href)
+                  : project.href
+              }
+              name={project.name}
+              stack={project.stack}
+              status={project.status as "production" | "open source"}
+              year={project.year}
+            />
           ))}
         </div>
       </section>
@@ -177,11 +139,11 @@ export default function Home() {
         <SectionIntersection className="hidden md:block" position="top-left" />
         <SectionIntersection className="hidden md:block" position="top-right" />
         <p className="relative z-10 mb-2 font-mono text-caption text-text-weak">
-          Personal product
+          {home.personalProduct}
         </p>
         <Link
           className="group relative z-10 flex flex-col gap-6 py-6 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-text-strong md:flex-row md:items-center"
-          href="/projects/loadzone"
+          href={localePath(locale, "/projects/loadzone")}
         >
           <div className="min-w-0 flex-1">
             <p className="font-mono text-caption capitalize text-text-weak">
@@ -196,9 +158,7 @@ export default function Home() {
               </span>
             </div>
             <p className="mt-3 max-w-[36rem] text-body text-text-default">
-              One club, two products — an operational staff scan of wellness
-              and load, and a player check-in that is one question at a time.
-              The Streak Cromo is the identity that grows with that habit.
+              {home.loadzoneThesis}
             </p>
           </div>
           <div className="pointer-events-none mx-auto h-[15.5rem] w-[11.5rem] shrink-0 overflow-hidden md:mx-0">
@@ -213,10 +173,10 @@ export default function Home() {
         <SectionIntersection className="hidden md:block" position="top-left" />
         <SectionIntersection className="hidden md:block" position="top-right" />
         <h2 className="relative z-10 mb-4 text-heading-section font-semibold text-text-strong">
-          1-Week Projects
+          {home.oneWeek}
         </h2>
         <div className="relative z-10 flex flex-col gap-3">
-          {oneWeekProjects.map((project) => (
+          {home.oneWeekProjects.map((project) => (
             <div
               key={project.name}
               className="flex flex-col gap-0.5 border-b border-border-special pb-3 last:border-b-0 last:pb-0 md:flex-row md:items-baseline md:gap-4"
@@ -232,7 +192,7 @@ export default function Home() {
                   {" "}
                   — {project.description}
                 </span>
-                {project.hrefs ? (
+                {"hrefs" in project && project.hrefs ? (
                   <span className="mt-1 flex flex-wrap gap-x-3">
                     {project.hrefs.map((link) => (
                       <a
@@ -250,7 +210,7 @@ export default function Home() {
               </div>
               <div className="flex shrink-0 items-center gap-3 font-mono text-caption text-text-weak">
                 <span>{project.stack}</span>
-                {project.duration ? (
+                {"duration" in project && project.duration ? (
                   <>
                     <span className="text-text-weaker">·</span>
                     <span>{project.duration}</span>
