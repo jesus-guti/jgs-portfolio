@@ -7,7 +7,8 @@
   },
   "nav": {
     "work": "Trabajo",
-    "about": "Sobre mí"
+    "about": "Sobre mí",
+    "menu": "Menú"
   },
   "home": {
     "role": "Frontend e ingeniería de producto",
@@ -79,9 +80,9 @@
     "title": "Sobre mí",
     "location": "Cantabria, Suances",
     "paragraphs": [
-      "Soy ingeniero frontend senior y diseñador de interfaces. Me gusta construir cosas digitales que tengan sentido. Vengo del ecosistema startup, donde ser resolutivo y ágil no es una opción: es el núcleo del trabajo.",
-      "Soy generalista de fondo y decidí especializarme en frontend. Por eso no me limito a “pintar pantallas”: entiendo las APIs, la arquitectura y los trade-offs técnicos detrás de cada interacción.",
-      "Cuando no estoy afinando tokens de Tailwind o layouts, suelo pensar en estrategia de producto o desconectar con las manos: ingeniería física y ebanistería de alto nivel."
+      "Construyo software para gente que ya está en medio de otra cosa. En Siali esa cosa es una planta. Decido para qué sirve el producto y lo construyo: la interfaz, el sistema que hay detrás y lo que lo mantiene en marcha. Si esas partes no coinciden, la persona en planta toma la decisión equivocada. Vivo en Cantabria y trabajo desde aquí.",
+      "Cómo se ve una cosa y para qué sirve son fáciles de separar y difíciles de mantener juntas. Una pantalla puede estar terminada y seguir sin servir. Prefiero quitar una parte que explicarla. La forma de los datos suele decidir la forma de la pantalla, así que las trato como la misma decisión.",
+      "También mantengo un producto pequeño para una academia de fútbol. Lo usan el staff y los jugadores. Tiene que ser obvio en una tarde cansada. Ese es el brief en el que confío."
     ]
   },
   "case": {

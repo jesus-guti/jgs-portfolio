@@ -7,7 +7,8 @@
   },
   "nav": {
     "work": "Work",
-    "about": "About"
+    "about": "About",
+    "menu": "Menu"
   },
   "home": {
     "role": "Frontend & Product Engineering",
@@ -79,9 +80,9 @@
     "title": "About",
     "location": "Cantabria, Suances",
     "paragraphs": [
-      "I am a senior frontend engineer and interface designer who loves building digital stuff that makes sense. My background is rooted in the startup ecosystem, where being resourceful and agile isn't an option—it's the core of the job.",
-      "I'm a generalist at heart who decided to specialize in the frontend. Because of that, I don't just “paint screens”; I understand the APIs, the architecture, and the technical trade-offs behind every user interaction.",
-      "When I'm not tweaking Tailwind tokens or refining layouts, I'm usually thinking about product strategy or disconnected, working with my hands on physical engineering and high-end woodworking projects."
+      "I build software for people who are already in the middle of something else. At Siali that something is a factory floor. I decide what the product is for, and I build it: the interface, the system behind it, and what keeps it running. If those parts do not agree, the person on the floor makes the wrong call. I live in Cantabria and work from here.",
+      "How a thing looks and what it is for are easy to split and hard to keep together. A screen can be finished and still be useless. I would rather take a part away than explain it. The shape of the data usually decides the shape of the screen, so I treat them as the same decision.",
+      "I also keep a small product for one football academy. Staff and players use it. It has to be obvious on a tired evening. That is the brief I trust."
     ]
   },
   "case": {

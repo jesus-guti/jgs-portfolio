@@ -6,9 +6,9 @@ import type { JSX } from "react";
 
 import { locales, localePath, stripLocalePrefix, type Locale } from "@/lib/i18n/config";
 
-const flags: Record<Locale, { label: string; flag: string }> = {
-  en: { label: "English", flag: "🇺🇸" },
-  es: { label: "Español", flag: "🇪🇸" },
+const labels: Record<Locale, string> = {
+  en: "English",
+  es: "Español",
 };
 
 export function LanguageToggle({ locale }: { locale: Locale }): JSX.Element {
@@ -18,7 +18,7 @@ export function LanguageToggle({ locale }: { locale: Locale }): JSX.Element {
   return (
     <div
       aria-label="Language"
-      className="flex items-center gap-0.5 rounded border border-border-general p-0.5"
+      className="flex items-center gap-1"
       role="group"
     >
       {locales.map((option) => {
@@ -26,18 +26,18 @@ export function LanguageToggle({ locale }: { locale: Locale }): JSX.Element {
         return (
           <Link
             aria-current={active ? "true" : undefined}
-            aria-label={flags[option].label}
+            aria-label={labels[option]}
             className={
               active
-                ? "flex size-7 items-center justify-center rounded-sm bg-border-special text-[15px] leading-none"
-                : "flex size-7 items-center justify-center rounded-sm text-[15px] leading-none opacity-55 transition-opacity hover:opacity-100"
+                ? "font-mono text-caption text-text-strong"
+                : "font-mono text-caption text-text-weaker transition-colors hover:text-text-strong"
             }
             href={localePath(option, pathWithoutLocale)}
             hrefLang={option}
             key={option}
-            title={flags[option].label}
+            title={labels[option]}
           >
-            <span aria-hidden="true">{flags[option].flag}</span>
+            {option}
           </Link>
         );
       })}

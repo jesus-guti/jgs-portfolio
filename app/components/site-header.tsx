@@ -6,6 +6,7 @@ import { localePath, type Locale } from "@/lib/i18n/config";
 import type { Dictionary } from "@/lib/i18n/get-dictionary";
 
 import { LanguageToggle } from "./language-toggle";
+import { SiteMenu } from "./site-menu";
 
 export function SiteHeader({
   locale,
@@ -15,29 +16,18 @@ export function SiteHeader({
   nav: Dictionary["nav"];
 }): JSX.Element {
   return (
-    <header className="flex items-center justify-between border-b border-border-general px-6 py-5 md:px-container-px">
+    <header className="flex items-center justify-between gap-4 border-b border-border-general px-6 py-5 md:px-container-px">
       <Link
-        className="flex items-center gap-2 text-body font-medium text-text-strong"
+        className="flex min-w-0 items-center gap-2 text-body font-medium text-text-strong"
         href={localePath(locale)}
       >
-        <Mountains size={18} weight="fill" />
-        Jesús Gutiérrez Siliceo
+        <Mountains className="shrink-0" size={18} weight="fill" />
+        <span className="truncate">Jesús Gutiérrez Siliceo</span>
       </Link>
-      <nav className="flex items-center gap-5 text-caption text-text-weak">
-        <Link
-          className="transition-colors hover:text-text-strong"
-          href={localePath(locale)}
-        >
-          {nav.work}
-        </Link>
-        <Link
-          className="transition-colors hover:text-text-strong"
-          href={localePath(locale, "/about")}
-        >
-          {nav.about}
-        </Link>
+      <div className="flex shrink-0 items-center gap-5">
+        <SiteMenu locale={locale} nav={nav} />
         <LanguageToggle locale={locale} />
-      </nav>
+      </div>
     </header>
   );
 }
