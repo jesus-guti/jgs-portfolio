@@ -1,47 +1,86 @@
 "use client";
 
-import { createContext, useContext, useEffect, useState, useSyncExternalStore } from "react";
-import type { ReactNode } from "react";
+import {
+  createContext,
+  useCallback,
+  useContext,
+  useSyncExternalStore,
+  type ReactNode,
+} from "react";
 
-type Theme = "ibm" | "apple";
+export type ColorTheme = "light" | "dark";
+
+const STORAGE_KEY = "color-theme";
+
+type Listener = () => void;
+
+let memoryTheme: ColorTheme | null = null;
+const listeners = new Set<Listener>();
+
+function getPreferredTheme(): ColorTheme {
+  if (typeof window === "undefined") return "light";
+  return window.matchMedia("(prefers-color-scheme: dark)").matches
+    ? "dark"
+    : "light";
+}
+
+function readTheme(): ColorTheme {
+  if (memoryTheme) return memoryTheme;
+  if (typeof window === "undefined") return "light";
+  const stored = localStorage.getItem(STORAGE_KEY);
+  if (stored === "light" || stored === "dark") {
+    memoryTheme = stored;
+    return stored;
+  }
+  memoryTheme = getPreferredTheme();
+  return memoryTheme;
+}
+
+function writeTheme(theme: ColorTheme) {
+  memoryTheme = theme;
+  document.documentElement.setAttribute("data-theme", theme);
+  localStorage.setItem(STORAGE_KEY, theme);
+  listeners.forEach((listener) => listener());
+}
+
+function subscribe(listener: Listener) {
+  listeners.add(listener);
+  return () => {
+    listeners.delete(listener);
+  };
+}
 
 const ThemeContext = createContext<{
-  theme: Theme;
+  theme: ColorTheme;
   toggle: () => void;
-}>({ theme: "apple", toggle: () => {} });
+  setTheme: (theme: ColorTheme) => void;
+}>({
+  theme: "light",
+  toggle: () => {},
+  setTheme: () => {},
+});
 
 export function useTheme() {
   return useContext(ThemeContext);
 }
 
-function getStoredTheme(): Theme {
-  const stored = localStorage.getItem("theme");
-  return stored === "ibm" || stored === "apple" ? stored : "apple";
-}
-
-function subscribeToStorage(callback: () => void) {
-  window.addEventListener("storage", callback);
-  return () => window.removeEventListener("storage", callback);
-}
-
 export function ThemeProvider({ children }: { children: ReactNode }) {
-  const storedTheme = useSyncExternalStore<Theme>(
-    subscribeToStorage,
-    getStoredTheme,
-    () => "apple"
+  const theme = useSyncExternalStore<ColorTheme>(
+    subscribe,
+    readTheme,
+    (): ColorTheme => "light",
   );
 
-  const [theme, setTheme] = useState<Theme>(storedTheme);
+  const setTheme = useCallback((next: ColorTheme) => {
+    writeTheme(next);
+  }, []);
 
-  useEffect(() => {
-    document.documentElement.setAttribute("data-theme", theme);
-    localStorage.setItem("theme", theme);
-  }, [theme]);
-
-  const toggle = () => setTheme((prev) => (prev === "ibm" ? "apple" : "ibm"));
+  const toggle = useCallback(() => {
+    writeTheme(readTheme() === "light" ? "dark" : "light");
+  }, []);
 
   return (
-    <ThemeContext.Provider value={{ theme, toggle }}>
+    <ThemeContext.Provider value={{ theme, toggle, setTheme }}>
       {children}
     </ThemeContext.Provider>
   );

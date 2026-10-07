@@ -1,8 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { useEffect, useId, useRef, useState, type JSX } from "react";
+import { useId, useRef, useState, type JSX } from "react";
 
 import { localePath, type Locale } from "@/lib/i18n/config";
 import type { Dictionary } from "@/lib/i18n/get-dictionary";
@@ -15,44 +14,28 @@ export function SiteMenu({
   nav: Dictionary["nav"];
 }): JSX.Element {
   const [open, setOpen] = useState(false);
-  const pathname = usePathname();
   const menuId = useId();
   const rootRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    setOpen(false);
-  }, [pathname]);
-
-  useEffect(() => {
-    if (!open) return;
-
-    function onPointerDown(event: PointerEvent) {
-      if (!rootRef.current?.contains(event.target as Node)) {
-        setOpen(false);
-      }
-    }
-
-    function onKeyDown(event: KeyboardEvent) {
-      if (event.key === "Escape") setOpen(false);
-    }
-
-    document.addEventListener("pointerdown", onPointerDown);
-    document.addEventListener("keydown", onKeyDown);
-    return () => {
-      document.removeEventListener("pointerdown", onPointerDown);
-      document.removeEventListener("keydown", onKeyDown);
-    };
-  }, [open]);
+  const close = () => setOpen(false);
 
   const itemClass =
-    "px-4 py-2.5 text-caption text-text-default transition-colors hover:text-text-strong";
+    "inline-flex min-h-11 items-center px-4 text-caption text-text-default transition-[color] duration-[120ms] ease hover:text-accent";
 
   return (
-    <div className="relative" ref={rootRef}>
+    <div
+      className="relative"
+      ref={rootRef}
+      onBlur={(event) => {
+        if (!rootRef.current?.contains(event.relatedTarget as Node)) {
+          close();
+        }
+      }}
+    >
       <button
         aria-controls={menuId}
         aria-expanded={open}
-        className="text-caption text-text-weak transition-colors hover:text-text-strong"
+        className="inline-flex h-11 items-center px-2 text-caption text-text-weak transition-[color,transform] duration-150 ease-[var(--ease-out)] hover:text-accent active:scale-[0.97]"
         onClick={() => setOpen((value) => !value)}
         type="button"
       >
@@ -60,13 +43,17 @@ export function SiteMenu({
       </button>
       {open ? (
         <div
-          className="absolute right-0 top-full z-20 mt-3 flex min-w-40 flex-col border border-border-general bg-surface-root py-1"
+          className="absolute right-0 top-full z-20 mt-2 flex min-w-40 flex-col border border-border-general bg-surface-root py-1"
           id={menuId}
         >
-          <Link className={itemClass} href={localePath(locale)}>
+          <Link className={itemClass} href={localePath(locale)} onClick={close}>
             {nav.work}
           </Link>
-          <Link className={itemClass} href={localePath(locale, "/about")}>
+          <Link
+            className={itemClass}
+            href={localePath(locale, "/about")}
+            onClick={close}
+          >
             {nav.about}
           </Link>
         </div>

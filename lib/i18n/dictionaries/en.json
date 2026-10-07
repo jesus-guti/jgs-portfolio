@@ -1,6 +1,6 @@
 {
   "meta": {
-    "title": "Jesús Gutiérrez Siliceo — Frontend & Product Engineering",
+    "title": "Jesús Gutiérrez Siliceo — Senior Product Engineer",
     "titleTemplate": "%s — Jesús Gutiérrez Siliceo",
     "description": "Interfaces and product systems shipped under real constraints — factory floors, production teams.",
     "ogLocale": "en_US"
@@ -11,18 +11,17 @@
     "menu": "Menu"
   },
   "home": {
-    "role": "Frontend & Product Engineering",
+    "role": "Senior Product Engineer",
     "thesis": "Interfaces and product systems shipped under real constraints — factory floors, production teams.",
     "employmentWork": "Employment work",
     "personalProduct": "Personal product",
-    "oneWeek": "1-Week Projects",
-    "loadzoneThesis": "One club, two products — an operational staff scan of wellness and load, and a player check-in that is one question at a time. The Streak Cromo is the identity that grows with that habit.",
+    "loadzoneThesis": "One club, two products: a staff scan of wellness and load, and a player check-in that is one question at a time.",
     "projects": [
       {
         "name": "rely v2",
         "year": "2025",
         "stack": ["Next.js", "Go", "WebSockets", "Tailwind v4"],
-        "description": "Industrial quality inspection on the line. Multi-tenant Hub of Stations, no-code Recipe graph, live OK/KO for operators.",
+        "description": "Industrial quality on the line. Multi-tenant Hub of Stations, Recipe graph you deploy, live OK/KO for operators.",
         "status": "production",
         "href": "/projects/rely-v2"
       },
@@ -30,7 +29,7 @@
         "name": "Safe",
         "year": "2023",
         "stack": ["React", "WebRTC", "Multi-tenant", "Tailwind"],
-        "description": "Workplace safety on existing CCTV. Real-time risk events, audits and reporting, private network access.",
+        "description": "Workplace safety on existing CCTV. Real-time risk events, audits, private network access.",
         "status": "production",
         "href": "https://www.safehs.ai/"
       },
@@ -38,52 +37,26 @@
         "name": "Sorolla",
         "year": "2023",
         "stack": ["React", "TypeScript", "npm", "TurboRepo"],
-        "description": "Open-source React component library for image and video annotation. Bounding box, segmentation, and oriented bounding box support.",
+        "description": "Open-source React library for image and video annotation — bbox, segmentation, OBB.",
         "status": "open source"
-      }
-    ],
-    "oneWeekProjects": [
-      {
-        "year": "2025",
-        "name": "Storyblok blocks",
-        "description": "Reusable CMS blocks behind the live rely and Safe marketing sites.",
-        "stack": "Storyblok, Tailwind",
-        "hrefs": [
-          { "label": "relyqa.com", "href": "https://relyqa.com/" },
-          { "label": "safehs.ai", "href": "https://www.safehs.ai/" }
-        ]
-      },
-      {
-        "year": "2024",
-        "name": "Egg grading vision system",
-        "description": "Automated quality inspection for an egg production line using computer vision.",
-        "stack": "Python, OpenCV",
-        "duration": "7 days"
-      },
-      {
-        "year": "2024",
-        "name": "Racing exercise tracker",
-        "description": "Pose estimation model to track and analyze squat form for a racing team.",
-        "stack": "Python, MediaPipe",
-        "duration": "6 days"
-      },
-      {
-        "year": "2023",
-        "name": "Internal dashboard",
-        "description": "Data visualization tool for operations team to monitor model performance metrics.",
-        "stack": "Next.js, Recharts",
-        "duration": "5 days"
       }
     ]
   },
   "about": {
     "title": "About",
     "location": "Cantabria, Suances",
+    "howIWork": "How I work",
     "paragraphs": [
-      "I build software for people who are already in the middle of something else. At Siali that something is a factory floor. I decide what the product is for, and I build it: the interface, the system behind it, and what keeps it running. If those parts do not agree, the person on the floor makes the wrong call. I live in Cantabria and work from here.",
-      "How a thing looks and what it is for are easy to split and hard to keep together. A screen can be finished and still be useless. I would rather take a part away than explain it. The shape of the data usually decides the shape of the screen, so I treat them as the same decision.",
+      "I build software for people who are already in the middle of something else. At Siali that something is a factory floor. I decide what the product is for, and I build it: the interface, the system behind it, and what keeps it running.",
+      "How a thing looks and what it is for are easy to split and hard to keep together. A screen can be finished and still be useless. I would rather take a part away than explain it. The shape of the data usually decides the shape of the screen.",
       "I also keep a small product for one football academy. Staff and players use it. It has to be obvious on a tired evening. That is the brief I trust."
-    ]
+    ],
+    "work": "Work",
+    "bio": "Bio",
+    "iLove": "I ♥",
+    "iLoveItems": ["Studio Ghibli", "Porco Rosso", "Football", "Cantabria"],
+    "onTheWeb": "On the web",
+    "planeCredit": "Porco Rosso plane — a quiet signature, not the work."
   },
   "case": {
     "decisions": "Decisions",
@@ -96,17 +69,17 @@
     "role": "Frontend Lead & Product Designer",
     "stack": "Next.js, Go, WebSockets, Tailwind v4",
     "thesis": "A Hub of Stations: live Preview with an OK/KO on the piece, and a Recipe graph engineers deploy to the floor.",
-    "result": "In production on factory floors, multi-tenant / multi-site. Hub in the cloud, an agent per Station on the line.",
+    "result": "In production on factory floors, multi-tenant / multi-site. Hub in the cloud, an agent per Station on the line, live over websockets.",
     "previewAlt": "Station Preview with a live PCB camera feed, piece identity, defect count, and OK/KO totals",
     "previewCaption": "Preview is the floor: the piece, a verdict, OK/KO/Rework. The red card is the status, not a chart.",
     "decisions": [
       {
         "title": "The Station is the product",
-        "content": "The Hub is a list of Stations, not a model zoo. Opening one is the floor: live camera, piece identity, OK/KO. The operator reads a verdict. Recipes, overlays, and analytics sit beside that surface — they do not replace it."
+        "content": "The Hub is a list of Stations, not a model zoo. Opening one is the floor: live camera, piece identity, OK/KO. Recipes, overlays, and analytics sit beside that surface — they do not replace it. The Hub talks to a per-Station agent over websockets so the Preview stays honest under plant latency."
       },
       {
         "title": "A Recipe is a graph you deploy",
-        "content": "Inspection is not a script per line. Trigger → images → detect → Evaluación is a visual flow with a contextual inspector. Evaluación is a rule on detections (count, confidence) that writes a station status: OK if it holds, KO if it does not. Deploy publishes the Recipe; the canvas draft is not what the floor is running."
+        "content": "Inspection is not a script per line. Trigger → images → detect → Evaluación is a visual flow with a contextual inspector. Evaluación writes a station status: OK if it holds, KO if it does not. Deploy publishes the Recipe; the canvas draft is not what the floor is running."
       },
       {
         "title": "Overlays are the operator language",
@@ -140,21 +113,21 @@
     "decisions": [
       {
         "title": "Wellness and load at a glance",
-        "content": "Coordinators need the squad in one operational scan before and after the Session: recovery, energy, soreness, sleep hours, sleep quality, then POST RPE. Missing DailyEntry stays a dash — the table does not invent completeness. Color is a triage signal, not a FIFA dump. This surface is not the Streak Cromo."
+        "content": "Coordinators need the squad in one operational scan before and after the Session: recovery, energy, soreness, sleep hours, sleep quality, then POST RPE. Missing DailyEntry stays a dash — the table does not invent completeness. Color is a triage signal, not a FIFA dump."
       },
       {
         "title": "One question at a time",
-        "content": "Check-in is not a clipboard. PRE and POST are separate moments on the Session, but each form is one WellnessMetric at a time: large type, a thumb-sized slider, labels at the ends, a count of what is still missing. Identity (the Cromo) sits after the fill, not as a second questionnaire."
+        "content": "Check-in is not a clipboard. PRE and POST are separate moments on the Session, but each form is one WellnessMetric at a time: large type, a thumb-sized slider, labels at the ends. Identity (the Cromo) sits after the fill, not as a second questionnaire."
       },
       {
         "title": "Exercises that actually build Sessions",
-        "content": "Staff do not author a Session from a blank page. An Exercise is a drill with duration, pitch size, player count, then a short tactical classification. Creating one is a form with defaults and dropdowns. Placing Exercises on a Session is how the week becomes real."
+        "content": "Staff do not author a Session from a blank page. An Exercise is a drill with duration, pitch size, player count, then a short tactical classification. Placing Exercises on a Session is how the week becomes real."
       }
     ],
     "figures": [
       {
         "alt": "Loadzone staff Wellness cards with pending check-ins, squad averages, and player recovery, energy, and soreness",
-        "caption": "Staff Wellness scan: pending forms, squad averages, then player cards — recovery, energy, soreness, RPE. A laptop scan, not a phone."
+        "caption": "Staff Wellness scan: pending forms, squad averages, then player cards — recovery, energy, soreness, RPE."
       },
       {
         "alt": "Close-up of the staff Wellness table showing recovery, energy, soreness, sleep, quality, and RPE",
@@ -162,11 +135,11 @@
       },
       {
         "alt": "Player check-in screen with a recovery slider question and pre/post session status",
-        "caption": "Player form: one question (recovery), press or slide, ends labelled. Missing answers stay honest on the button."
+        "caption": "Player form: one question (recovery), press or slide, ends labelled."
       },
       {
         "alt": "Staff form to create an exercise with space, duration, players, and tactical classification dropdowns",
-        "caption": "Create Exercise: configuration then classification. Dropdowns over free text so a Session can be built without a manual."
+        "caption": "Create Exercise: configuration then classification. Dropdowns over free text."
       },
       {
         "alt": "Staff injuries view with a player figure, numbered body markers, and open closed history lists",
@@ -174,7 +147,7 @@
       },
       {
         "alt": "Staff settings sidebar with Primeros pasos checklist at four of five steps",
-        "caption": "Primeros pasos (proof): five Club facts, progress 4/5, minimize and dismiss. Not a blocker on Wellness."
+        "caption": "Primeros pasos (proof): five Club facts, progress 4/5. Not a blocker on Wellness."
       }
     ]
   }

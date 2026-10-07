@@ -23,7 +23,7 @@ export default async function LoadzoneCaseStudyPage({
       <SiteHeader locale={locale} nav={nav} />
       <article className="mx-auto max-w-[720px] px-6 py-10 md:px-container-px">
         <Link
-          className="mb-8 inline-flex items-center gap-2 text-caption text-text-weak transition-colors hover:text-text-strong"
+          className="mb-8 inline-flex min-h-11 items-center gap-2 text-caption text-text-weak transition-[color] duration-[120ms] ease hover:text-accent"
           href={localePath(locale)}
         >
           <ArrowLeft size={14} weight="regular" />
@@ -42,7 +42,7 @@ export default async function LoadzoneCaseStudyPage({
             <span className="text-text-weaker">·</span>
             <span className="font-mono">2025</span>
             <span className="text-text-weaker">·</span>
-            <span className="rounded border border-green-800/50 px-2 py-0.5 font-mono text-[11px] text-green-400">
+            <span className="font-mono text-caption text-accent">
               {caseCopy.production}
             </span>
           </div>

@@ -1,10 +1,5 @@
 import type { Metadata } from "next";
-import {
-  Geist,
-  Geist_Mono,
-  IBM_Plex_Mono,
-  M_PLUS_Rounded_1c,
-} from "next/font/google";
+import { Geist, Geist_Mono } from "next/font/google";
 import { notFound } from "next/navigation";
 
 import "../globals.css";
@@ -20,18 +15,6 @@ const geistSans = Geist({
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
-});
-
-const ibmPlexMono = IBM_Plex_Mono({
-  variable: "--font-ibm-plex-mono",
-  subsets: ["latin"],
-  weight: ["400", "500", "700"],
-});
-
-const mPlusRounded1c = M_PLUS_Rounded_1c({
-  variable: "--font-m-plus-rounded-1c",
-  subsets: ["latin"],
-  weight: ["700"],
 });
 
 export async function generateStaticParams() {
@@ -76,6 +59,8 @@ export async function generateMetadata({
   };
 }
 
+const themeBootScript = `(function(){try{var t=localStorage.getItem("color-theme");if(t!=="light"&&t!=="dark"){t=window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"}document.documentElement.setAttribute("data-theme",t)}catch(e){}})();`;
+
 export default async function RootLayout({
   children,
   params,
@@ -88,9 +73,13 @@ export default async function RootLayout({
   return (
     <html
       lang={lang}
-      className={`${geistSans.variable} ${geistMono.variable} ${ibmPlexMono.variable} ${mPlusRounded1c.variable} antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      suppressHydrationWarning
     >
-      <body className="bg-surface-root text-text-default font-sans">
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeBootScript }} />
+      </head>
+      <body className="bg-surface-root font-sans text-text-default">
         <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>

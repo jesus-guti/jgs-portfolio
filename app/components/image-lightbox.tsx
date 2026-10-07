@@ -37,7 +37,7 @@ export function ImageLightbox({
       <Dialog.Trigger
         aria-label={alt}
         className={cn(
-          "cursor-zoom-in appearance-none border-0 bg-transparent p-0 text-left outline-none focus-visible:ring-2 focus-visible:ring-border-general",
+          "cursor-zoom-in appearance-none border-0 bg-transparent p-0 text-left focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent",
           triggerClassName,
         )}
       >
