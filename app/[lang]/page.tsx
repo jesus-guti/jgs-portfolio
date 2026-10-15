@@ -181,9 +181,11 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
               key={project.name}
               className="flex flex-col gap-0.5 border-b border-border-special pb-3 last:border-b-0 last:pb-0 md:flex-row md:items-baseline md:gap-4"
             >
-              <span className="shrink-0 font-mono text-caption text-text-weak">
-                {project.year}
-              </span>
+              {"year" in project && project.year ? (
+                <span className="shrink-0 font-mono text-caption text-text-weak">
+                  {project.year}
+                </span>
+              ) : null}
               <div className="flex-1">
                 <span className="text-body font-medium text-text-strong">
                   {project.name}

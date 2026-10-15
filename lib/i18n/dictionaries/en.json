@@ -12,17 +12,17 @@
   },
   "home": {
     "role": "Frontend & Product Engineering",
-    "thesis": "Interfaces and product systems shipped under real constraints — factory floors, production teams.",
+    "thesis": "I design and build interfaces for factories, used by operators wearing gloves. I've led the frontend at Siali since 2022, at one point a team of 12.",
     "employmentWork": "Employment work",
     "personalProduct": "Personal product",
     "oneWeek": "1-Week Projects",
-    "loadzoneThesis": "One club, two products — an operational staff scan of wellness and load, and a player check-in that is one question at a time. The Streak Cromo is the identity that grows with that habit.",
+    "loadzoneThesis": "A tool for sports clubs. Staff see how the squad has recovered before each session. Players answer one question at a time on their phone, and the more often they answer, the more their Streak Cromo card grows.",
     "projects": [
       {
         "name": "rely v2",
         "year": "2025",
         "stack": ["Next.js", "Go", "WebSockets", "Tailwind v4"],
-        "description": "Industrial quality inspection on the line. Multi-tenant Hub of Stations, no-code Recipe graph, live OK/KO for operators.",
+        "description": "Rely checks parts on production lines in factories across Europe and around the world. If it fails, the line stops and the client loses hundreds of thousands of euros. In 2025 I rebuilt its frontend in Next.js with one backend colleague.",
         "status": "production",
         "href": "/projects/rely-v2"
       },
@@ -30,7 +30,7 @@
         "name": "Safe",
         "year": "2023",
         "stack": ["React", "WebRTC", "Multi-tenant", "Tailwind"],
-        "description": "Workplace safety on existing CCTV. Real-time risk events, audits and reporting, private network access.",
+        "description": "Safety monitoring on the cameras a factory already has. I built it from scratch. It spots forklifts and their speed, and streams live events from cameras on a private network to the cloud.",
         "status": "production",
         "href": "https://www.safehs.ai/"
       },
@@ -38,7 +38,7 @@
         "name": "Sorolla",
         "year": "2023",
         "stack": ["React", "TypeScript", "npm", "TurboRepo"],
-        "description": "Open-source React component library for image and video annotation. Bounding box, segmentation, and oriented bounding box support.",
+        "description": "My idea, built alone: an open-source React library for labelling images and video with boxes, masks and rotated boxes. We use it across our products, and Zolara was built on it.",
         "status": "open source"
       }
     ],
@@ -46,7 +46,7 @@
       {
         "year": "2025",
         "name": "Storyblok blocks",
-        "description": "Reusable CMS blocks behind the live rely and Safe marketing sites.",
+        "description": "Reusable CMS blocks that the live Rely and Safe marketing sites are built from.",
         "stack": "Storyblok, Tailwind",
         "hrefs": [
           { "label": "relyqa.com", "href": "https://relyqa.com/" },
@@ -54,23 +54,29 @@
         ]
       },
       {
+        "name": "Zolara",
+        "description": "Detects bacteria in water. I built it on Sorolla in about a week so it could launch. It sold several projects, around €300,000, then faded because the idea didn't catch on.",
+        "stack": "React, Sorolla",
+        "duration": "1 week"
+      },
+      {
         "year": "2024",
         "name": "Egg grading vision system",
-        "description": "Automated quality inspection for an egg production line using computer vision.",
+        "description": "Grades eggs on a production line with computer vision.",
         "stack": "Python, OpenCV",
         "duration": "7 days"
       },
       {
         "year": "2024",
         "name": "Racing exercise tracker",
-        "description": "Pose estimation model to track and analyze squat form for a racing team.",
+        "description": "A pose-estimation model that tracks squat form for a racing team.",
         "stack": "Python, MediaPipe",
         "duration": "6 days"
       },
       {
         "year": "2023",
         "name": "Internal dashboard",
-        "description": "Data visualization tool for operations team to monitor model performance metrics.",
+        "description": "A dashboard where the operations team watches how our models perform.",
         "stack": "Next.js, Recharts",
         "duration": "5 days"
       }
@@ -95,86 +101,86 @@
     "origin": "Employment work",
     "role": "Frontend Lead & Product Designer",
     "stack": "Next.js, Go, WebSockets, Tailwind v4",
-    "thesis": "A Hub of Stations: live Preview with an OK/KO on the piece, and a Recipe graph engineers deploy to the floor.",
-    "result": "In production on factory floors, multi-tenant / multi-site. Hub in the cloud, an agent per Station on the line.",
-    "previewAlt": "Station Preview with a live PCB camera feed, piece identity, defect count, and OK/KO totals",
-    "previewCaption": "Preview is the floor: the piece, a verdict, OK/KO/Rework. The red card is the status, not a chart.",
+    "thesis": "Factories use Rely to check every part on the line. Operators need a verdict they can read at a glance. Engineers need to set up what gets checked and train the models behind it. I designed and built the frontend for both.",
+    "result": "Rely runs in factories across Europe and around the world. If it fails, the line stops and the client loses hundreds of thousands of euros, so it has to be more reliable than most software ever needs to be. Siali took on the hard projects other companies turned down.",
+    "previewAlt": "Live station view with a PCB camera feed, the part's ID, defect count and OK/KO totals",
+    "previewCaption": "The live view. The operator sees the part and a big OK or KO card, sized for touch screens and gloved hands.",
     "decisions": [
       {
-        "title": "The Station is the product",
-        "content": "The Hub is a list of Stations, not a model zoo. Opening one is the floor: live camera, piece identity, OK/KO. The operator reads a verdict. Recipes, overlays, and analytics sit beside that surface — they do not replace it."
+        "title": "Rely first: production and training stay in sync",
+        "content": "Rely runs on the line. Rely Cloud is where we label images and train the models. Some clients have no Rely Cloud, some run it on their own servers, some use it in the cloud, and some are custom projects with their own interfaces. I had to design one link that worked for all of them.\n\nI decided production leads: you don't think about the cloud until you use the line. A station is one inspection point on the line. When you create one in Rely, its project in Rely Cloud is created too. A station has recipes, and a recipe is usually one part reference, with its own cameras, models and decisions for the PLC, camera or robot arm. Each recipe has views, one per side of the part, seen by one or more cameras while a robot arm turns it. Each view gets its own dataset and is trained on its own, because defects differ from one side to another.\n\nAll of this is created and linked automatically. Parts that pass the line land in the right dataset. In Rely Cloud people label them, by hand or with a model's predictions, train, and the new models show up already linked to their recipes. The user just sees things appear.\n\nTo get there I designed for the edge cases: users without the link key, and users who don't want Rely to lead. Rely first can be switched off, and a settings screen maps views to datasets by hand.\n\nThe loop closes in production. While reviewing parts the model has already judged, the user picks images to relabel and sends them to that view's dataset, another one or a new one. The labelling happens in Rely Cloud, and they choose whether it syncs back."
       },
       {
-        "title": "A Recipe is a graph you deploy",
-        "content": "Inspection is not a script per line. Trigger → images → detect → Evaluación is a visual flow with a contextual inspector. Evaluación is a rule on detections (count, confidence) that writes a station status: OK if it holds, KO if it does not. Deploy publishes the Recipe; the canvas draft is not what the floor is running."
+        "title": "Engineers build the inspection themselves",
+        "content": "We used to write a Python script for each line. I replaced it with a visual editor. The engineer connects blocks for the trigger, the cameras, the detection model and the rule that decides OK or KO, then publishes it to the station. Blocks are named after things they already know, like a camera or a PLC."
       },
       {
-        "title": "Overlays are the operator language",
-        "content": "Detections have to be readable on the image: label corner, dashed ROI, human vs model. That overlay is configured per Station so Preview and review share the same picture language — status is the color, not the class name."
+        "title": "Showing which recipe is running",
+        "content": "As stations and recipes multiplied, people lost track of which recipe was running on each line. A small \"live\" badge wasn't enough. I replaced it with a production slot: the active recipe plugs into it like a cartridge into a game console."
       }
     ],
     "figures": [
       {
-        "alt": "Hub Stations list showing Linea 1 with a live thumbnail and an empty Linea 2 card",
-        "caption": "Hub: Stations in the org. Enter one to work the line."
+        "alt": "Stations list with Line 1 showing a live thumbnail and an empty Line 2 card",
+        "caption": "The home screen: every station in the organisation. Pick one to work that line."
       },
       {
-        "alt": "Recipe flow canvas with trigger, images, detector, live view, and Evaluación inspector",
-        "caption": "Recipe as a graph: trigger → images → detect → Evaluación. Inspector on the right; Deploy publishes to the Station."
+        "alt": "Recipe editor with trigger, images, detector, live view and the evaluation panel",
+        "caption": "The recipe editor. Blocks run left to right, and the panel on the right edits the selected one."
       },
       {
-        "alt": "Overlays settings with label corner, dashed ROI, human vs model, and a preview of detection boxes",
-        "caption": "Overlay language: label corner, dashed ROI, human vs model. Same picture on the floor and in config."
+        "alt": "Overlay settings: label corner, dashed region of interest, human vs model, with a preview of detection boxes",
+        "caption": "Detection boxes drawn on the image. They look the same on the line and in settings, and the colour shows the verdict."
       },
       {
-        "alt": "Station analytics layout editor with KPI widgets and a catalog to add first-pass, reject, and volume panels",
-        "caption": "Analytics (proof): station layout of widgets — first-pass, reject, volume — added from a catalog, not a fixed dashboard."
+        "alt": "Station charts editor with widgets for first-pass rate, rejects and volume",
+        "caption": "Charts for each station. The engineer adds the ones they need, like first-pass rate, rejects or volume."
       }
     ]
   },
   "loadzone": {
     "origin": "Personal product",
     "role": "Solo Developer & Product Designer",
-    "thesis": "One club, two products — an operational staff scan of wellness and load, and a player check-in that is one question at a time. The Streak Cromo is the identity that grows with that habit.",
-    "cromoCaption": "Streak Cromo in the player phone. Tilt it. Material names stay off the card; the foil is the reward.",
+    "thesis": "Coaching staff need to know who is ready to train before the session starts, and players have to answer quickly for that to work. I design and build Loadzone alone.",
+    "cromoCaption": "The Streak Cromo on the player's phone. Tilt it to see the foil. It's the reward for answering.",
     "decisions": [
       {
-        "title": "Wellness and load at a glance",
-        "content": "Coordinators need the squad in one operational scan before and after the Session: recovery, energy, soreness, sleep hours, sleep quality, then POST RPE. Missing DailyEntry stays a dash — the table does not invent completeness. Color is a triage signal, not a FIFA dump. This surface is not the Streak Cromo."
+        "title": "The whole squad on one screen",
+        "content": "Before and after each session, staff check every player's recovery, energy, soreness, sleep and post-session effort (RPE). If a player hasn't answered, the cell shows a dash, so nobody mistakes a gap for a good score. Colour marks who needs attention first."
       },
       {
         "title": "One question at a time",
-        "content": "Check-in is not a clipboard. PRE and POST are separate moments on the Session, but each form is one WellnessMetric at a time: large type, a thumb-sized slider, labels at the ends, a count of what is still missing. Identity (the Cromo) sits after the fill, not as a second questionnaire."
+        "content": "Players answer before and after the session. Each screen asks one thing, with large text and a slider big enough for a thumb. A counter shows how many are left. The card appears only once they finish."
       },
       {
-        "title": "Exercises that actually build Sessions",
-        "content": "Staff do not author a Session from a blank page. An Exercise is a drill with duration, pitch size, player count, then a short tactical classification. Creating one is a form with defaults and dropdowns. Placing Exercises on a Session is how the week becomes real."
+        "title": "Sessions built from drills",
+        "content": "Staff build a session by placing drills on it. Each drill has a duration, pitch size and number of players, plus a tactical type picked from a list. Dropdowns keep it quick and consistent."
       }
     ],
     "figures": [
       {
         "alt": "Loadzone staff Wellness cards with pending check-ins, squad averages, and player recovery, energy, and soreness",
-        "caption": "Staff Wellness scan: pending forms, squad averages, then player cards — recovery, energy, soreness, RPE. A laptop scan, not a phone."
+        "caption": "Staff view on a laptop: pending check-ins, squad averages, then one card per player."
       },
       {
         "alt": "Close-up of the staff Wellness table showing recovery, energy, soreness, sleep, quality, and RPE",
-        "caption": "PRE (recovery, energy, soreness, sleep, quality) and POST RPE. Empty cells stay empty. Color is triage."
+        "caption": "The table up close. Empty cells stay empty, and colour shows who to look at first."
       },
       {
         "alt": "Player check-in screen with a recovery slider question and pre/post session status",
-        "caption": "Player form: one question (recovery), press or slide, ends labelled. Missing answers stay honest on the button."
+        "caption": "Player check-in: one question, a slider, labels at both ends."
       },
       {
         "alt": "Staff form to create an exercise with space, duration, players, and tactical classification dropdowns",
-        "caption": "Create Exercise: configuration then classification. Dropdowns over free text so a Session can be built without a manual."
+        "caption": "Creating a drill: settings first, then the tactical type."
       },
       {
         "alt": "Staff injuries view with a player figure, numbered body markers, and open closed history lists",
-        "caption": "Injuries (proof): front/back body map, then open, closed, and history."
+        "caption": "Injuries: a front and back body map, with open, closed and past injuries."
       },
       {
         "alt": "Staff settings sidebar with Primeros pasos checklist at four of five steps",
-        "caption": "Primeros pasos (proof): five Club facts, progress 4/5, minimize and dismiss. Not a blocker on Wellness."
+        "caption": "Setup checklist: five club details, here at 4 of 5. Staff can hide it and keep working."
       }
     ]
   }
