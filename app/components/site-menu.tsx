@@ -45,14 +45,14 @@ export function SiteMenu({
   }, [open]);
 
   const itemClass =
-    "px-4 py-2.5 text-caption text-text-default transition-colors hover:text-text-strong";
+    "px-4 py-2.5 text-caption text-text-default transition-colors hover:text-text-strong focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-text-strong";
 
   return (
     <div className="relative" ref={rootRef}>
       <button
         aria-controls={menuId}
         aria-expanded={open}
-        className="text-caption text-text-weak transition-colors hover:text-text-strong"
+        className="inline-flex min-h-11 items-center text-caption text-text-weak transition-colors hover:text-text-strong focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-text-strong"
         onClick={() => setOpen((value) => !value)}
         type="button"
       >
