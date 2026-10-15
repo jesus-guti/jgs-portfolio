@@ -52,3 +52,12 @@ html[data-theme="apple"] .font-mono {
 html[data-theme="apple"] {
   --font-rounded: var(--font-m-plus-rounded-1c);
 }
+
+html {
+  scrollbar-color: var(--color-border-general) var(--color-surface-root);
+}
+
+::selection {
+  background: color-mix(in hsl, var(--color-text-strong) 18%, transparent);
+  color: var(--color-text-strong);
+}
