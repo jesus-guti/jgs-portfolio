@@ -1,7 +1,8 @@
-import Link from "next/link";
-import { ArrowLeft, ArrowSquareOut } from "@phosphor-icons/react/dist/ssr";
-
 import { CaseStudyFigure } from "../../../components/case-study-figure";
+import {
+  CaseStudyBackLink,
+  CaseStudyHeader,
+} from "../../../components/case-study-header";
 import { SiteHeader } from "../../../components/site-header";
 import { localePath } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/get-dictionary";
@@ -25,46 +26,18 @@ export default async function RelyCaseStudyPage({
     <div className="mx-auto max-w-[1080px] border-x border-b border-border-general">
       <SiteHeader locale={locale} nav={nav} />
       <article className="mx-auto max-w-[720px] px-6 py-10 md:px-container-px">
-        <Link
-          className="mb-8 inline-flex items-center gap-2 text-caption text-text-weak transition-colors hover:text-text-strong"
-          href={localePath(locale)}
-        >
-          <ArrowLeft size={14} weight="regular" />
-          {nav.work}
-        </Link>
-
-        <header className="mb-8">
-          <p className="font-mono text-caption uppercase tracking-wide text-text-weak">
-            {rely.origin}
-          </p>
-          <h1 className="mt-1 text-heading-display font-bold text-text-strong">
-            Rely
-          </h1>
-          <div className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-1 text-caption text-text-weak">
-            <span>{rely.role}</span>
-            <span className="text-text-weaker">·</span>
-            <span className="font-mono">2025</span>
-            <span className="text-text-weaker">·</span>
-            <span className="rounded border border-green-800/50 px-2 py-0.5 font-mono text-[11px] text-green-400">
-              {caseCopy.production}
-            </span>
-          </div>
-          <p className="mt-2 font-mono text-caption text-text-weak">
-            {rely.stack}
-          </p>
-          <p className="mt-3">
-            <a
-              className="inline-flex items-center gap-1 font-mono text-caption text-text-weak transition-colors hover:text-text-strong"
-              href="https://relyqa.com/"
-              rel="noreferrer"
-              target="_blank"
-            >
-              relyqa.com
-              <ArrowSquareOut size={12} weight="regular" />
-            </a>
-          </p>
-          <p className="mt-5 text-body text-text-default">{rely.thesis}</p>
-        </header>
+        <CaseStudyBackLink href={localePath(locale)} label={nav.work} />
+        <CaseStudyHeader
+          externalHref="https://relyqa.com/"
+          externalLabel="relyqa.com"
+          origin={rely.origin}
+          role={rely.role}
+          stack={rely.stack}
+          status={caseCopy.production}
+          thesis={rely.thesis}
+          title="Rely"
+          year="2025"
+        />
 
         <CaseStudyFigure
           alt={rely.previewAlt}

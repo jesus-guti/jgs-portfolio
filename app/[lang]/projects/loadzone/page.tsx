@@ -1,6 +1,7 @@
-import Link from "next/link";
-import { ArrowLeft } from "@phosphor-icons/react/dist/ssr";
-
+import {
+  CaseStudyBackLink,
+  CaseStudyHeader,
+} from "../../../components/case-study-header";
 import { SiteHeader } from "../../../components/site-header";
 import {
   CaseStudyFigure,
@@ -22,32 +23,15 @@ export default async function LoadzoneCaseStudyPage({
     <div className="mx-auto max-w-[1080px] border-x border-b border-border-general">
       <SiteHeader locale={locale} nav={nav} />
       <article className="mx-auto max-w-[720px] px-6 py-10 md:px-container-px">
-        <Link
-          className="mb-8 inline-flex items-center gap-2 text-caption text-text-weak transition-colors hover:text-text-strong"
-          href={localePath(locale)}
-        >
-          <ArrowLeft size={14} weight="regular" />
-          {nav.work}
-        </Link>
-
-        <header className="mb-8">
-          <p className="font-mono text-caption uppercase tracking-wide text-text-weak">
-            {loadzone.origin}
-          </p>
-          <h1 className="mt-1 text-heading-display font-bold text-text-strong">
-            Loadzone
-          </h1>
-          <div className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-1 text-caption text-text-weak">
-            <span>{loadzone.role}</span>
-            <span className="text-text-weaker">·</span>
-            <span className="font-mono">2025</span>
-            <span className="text-text-weaker">·</span>
-            <span className="rounded border border-green-800/50 px-2 py-0.5 font-mono text-[11px] text-green-400">
-              {caseCopy.production}
-            </span>
-          </div>
-          <p className="mt-5 text-body text-text-default">{loadzone.thesis}</p>
-        </header>
+        <CaseStudyBackLink href={localePath(locale)} label={nav.work} />
+        <CaseStudyHeader
+          origin={loadzone.origin}
+          role={loadzone.role}
+          status={caseCopy.production}
+          thesis={loadzone.thesis}
+          title="Loadzone"
+          year="2025"
+        />
 
         <StreakCromoPhone />
         <p className="mb-12 mt-3 text-center text-caption text-text-weak">

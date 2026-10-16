@@ -29,8 +29,8 @@ export function LanguageToggle({ locale }: { locale: Locale }): JSX.Element {
             aria-label={labels[option]}
             className={
               active
-                ? "font-mono text-caption text-text-strong"
-                : "font-mono text-caption text-text-weaker transition-colors hover:text-text-strong"
+                ? "inline-flex min-h-11 items-center px-1 font-mono text-caption text-text-strong focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-text-strong"
+                : "inline-flex min-h-11 items-center px-1 font-mono text-caption text-text-weaker transition-colors hover:text-text-strong focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-text-strong"
             }
             href={localePath(option, pathWithoutLocale)}
             hrefLang={option}

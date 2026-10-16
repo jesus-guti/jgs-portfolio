@@ -74,12 +74,12 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
           <p className="mt-2 text-caption text-text-default">
             {home.leadership}
           </p>
-          <p className="mt-4 max-w-[28rem] text-[15px] leading-[1.65] text-text-strong">
+          <p className="mt-4 max-w-[28rem] text-body leading-relaxed text-text-strong">
             {home.thesis}
           </p>
-          <div className="mt-6 flex flex-wrap items-center justify-center gap-x-4 gap-y-2">
+          <div className="mt-4 flex flex-wrap items-center justify-center gap-x-4 gap-y-2">
             <a
-              className="font-mono text-caption text-text-weak transition-colors hover:text-text-strong"
+              className="inline-flex min-h-11 items-center font-mono text-caption text-text-default transition-colors hover:text-text-strong focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-text-strong"
               href="https://www.linkedin.com/in/jesús-gutiérrez-siliceo-52108524a"
               rel="noreferrer"
               target="_blank"
@@ -87,7 +87,7 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
               {home.contacts.linkedin}
             </a>
             <a
-              className="font-mono text-caption text-text-weak transition-colors hover:text-text-strong"
+              className="inline-flex min-h-11 items-center font-mono text-caption text-text-default transition-colors hover:text-text-strong focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-text-strong"
               href="mailto:jesusgutierrezsiliceo@gmail.com"
             >
               {home.contacts.email}
@@ -124,11 +124,11 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
       <section className="relative border-b border-border-general px-6 py-10 md:px-container-px">
         <SectionIntersection className="hidden md:block" position="top-left" />
         <SectionIntersection className="hidden md:block" position="top-right" />
-        <p className="relative z-10 mb-2 font-mono text-caption text-text-weak">
+        <h2 className="relative z-10 mb-2 text-heading-section font-semibold text-text-strong">
           {home.personalProduct}
-        </p>
+        </h2>
         <Link
-          className="group relative z-10 flex flex-col gap-6 py-6 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-text-strong md:flex-row md:items-center"
+          className="group relative z-10 flex flex-col gap-6 py-7 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-text-strong md:flex-row md:items-center"
           href={localePath(locale, "/projects/loadzone")}
         >
           <div className="min-w-0 flex-1">
@@ -136,9 +136,9 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
               production
             </p>
             <div className="mt-2 flex items-baseline justify-between gap-4">
-              <h2 className="text-heading-section font-semibold text-text-strong group-hover:underline group-hover:decoration-border-general group-hover:underline-offset-4">
+              <h3 className="text-heading-section font-semibold text-text-strong underline decoration-transparent underline-offset-4 transition-colors group-hover:decoration-border-general">
                 Loadzone
-              </h2>
+              </h3>
               <span className="font-mono text-caption text-text-weak">
                 2025
               </span>
@@ -184,7 +184,7 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
                   <span className="mt-1 flex flex-wrap gap-x-3">
                     {project.hrefs.map((link) => (
                       <a
-                        className="font-mono text-caption text-text-weak transition-colors hover:text-text-strong"
+                        className="font-mono text-caption text-text-default underline decoration-border-special underline-offset-4 transition-colors hover:text-text-strong hover:decoration-text-weak focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-text-strong"
                         href={link.href}
                         key={link.href}
                         rel="noreferrer"

@@ -14,7 +14,7 @@ interface ProjectCardProps {
 }
 
 const rowClassName =
-  "group block py-8 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-text-strong";
+  "group block py-7 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-text-strong";
 
 function isExternalHref(href: string): boolean {
   return /^https?:\/\//.test(href);
@@ -34,12 +34,12 @@ function ProjectBody({
     <>
       <p className="font-mono text-caption capitalize text-text-weak">{status}</p>
       <div className="mt-2 flex items-baseline justify-between gap-4">
-        <h3 className="flex items-center gap-1.5 text-heading-section font-semibold text-text-strong group-hover:underline group-hover:decoration-border-general group-hover:underline-offset-4">
+        <h3 className="flex items-center gap-1.5 text-heading-section font-semibold text-text-strong underline decoration-transparent underline-offset-4 transition-colors group-hover:decoration-border-general">
           {name}
           {external ? (
             <ArrowSquareOut
               aria-hidden="true"
-              className="text-text-weak"
+              className="relative -top-px text-text-weak"
               size={14}
               weight="regular"
             />
