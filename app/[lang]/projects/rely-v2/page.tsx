@@ -58,10 +58,23 @@ export default async function RelyCaseStudyPage({
                 <h3 className="mb-2 text-body font-semibold text-text-strong">
                   {index + 1}. {decision.title}
                 </h3>
-                <p className="text-body text-text-default">{decision.content}</p>
+                <div className="flex flex-col gap-4 text-body text-text-default">
+                  {decision.content.split("\n\n").map((paragraph) => (
+                    <p key={paragraph}>{paragraph}</p>
+                  ))}
+                </div>
               </div>
             ))}
           </div>
+        </section>
+
+        <section className="mb-12">
+          <h2 className="mb-3 text-heading-section font-semibold text-text-strong">
+            {rely.leadership.title}
+          </h2>
+          <p className="text-body text-text-default">
+            {rely.leadership.content}
+          </p>
         </section>
 
         <section className="mb-12">

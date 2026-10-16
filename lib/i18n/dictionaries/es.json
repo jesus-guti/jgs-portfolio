@@ -13,16 +13,21 @@
   "home": {
     "role": "Frontend e ingeniería de producto",
     "thesis": "Interfaces y sistemas de producto entregados bajo restricciones reales — plantas de fábrica, equipos de producción.",
+    "leadership": "Responsable de Frontend y Diseño en Siali desde 2022 · lideré hasta 12 personas",
+    "contacts": {
+      "email": "jesusgutierrezsiliceo@gmail.com",
+      "linkedin": "LinkedIn"
+    },
     "employmentWork": "Trabajo en empresa",
     "personalProduct": "Producto propio",
     "oneWeek": "Proyectos de 1 semana",
-    "loadzoneThesis": "Un club, dos productos: una lectura operativa de wellness y carga para el staff, y un check-in del jugador de una pregunta cada vez. El Cromo de racha es la identidad que crece con ese hábito.",
+    "loadzoneThesis": "Una herramienta para clubes deportivos. El staff ve cómo se ha recuperado la plantilla antes de cada sesión. Los jugadores responden una pregunta cada vez desde el móvil, y cuanto más responden, más crece su Cromo de racha.",
     "projects": [
       {
         "name": "rely v2",
         "year": "2025",
         "stack": ["Next.js", "Go", "WebSockets", "Tailwind v4"],
-        "description": "Inspección de calidad industrial en línea. Hub multi-tenant de Stations, grafo de Recipe sin código, OK/KO en vivo para operadores.",
+        "description": "Rely revisa piezas en líneas de producción de fábricas en Europa y el resto del mundo. Si falla, la línea se para y el cliente pierde cientos de miles de euros. En 2025 rehice su frontend en Next.js junto a una compañera de backend.",
         "status": "production",
         "href": "/projects/rely-v2"
       },
@@ -30,7 +35,7 @@
         "name": "Safe",
         "year": "2023",
         "stack": ["React", "WebRTC", "Multi-tenant", "Tailwind"],
-        "description": "Seguridad laboral sobre CCTV existente. Eventos de riesgo en tiempo real, auditorías e informes, acceso por red privada.",
+        "description": "Prevención de riesgos con las cámaras que la fábrica ya tiene. Lo hice desde cero. Detecta carretillas y su velocidad, y lleva los eventos en directo desde cámaras en red privada hasta la nube.",
         "status": "production",
         "href": "https://www.safehs.ai/"
       },
@@ -38,7 +43,7 @@
         "name": "Sorolla",
         "year": "2023",
         "stack": ["React", "TypeScript", "npm", "TurboRepo"],
-        "description": "Librería React open source para anotación de imagen y vídeo. Bounding box, segmentación y bounding box orientado.",
+        "description": "Hecha por mí solo: una librería React open source para etiquetar imágenes y vídeo con cajas, máscaras y cajas rotadas. La usamos en nuestros productos y Zolara se construyó sobre ella.",
         "status": "open source"
       }
     ],
@@ -46,7 +51,7 @@
       {
         "year": "2025",
         "name": "Bloques Storyblok",
-        "description": "Bloques CMS reutilizables detrás de las webs de marketing de rely y Safe.",
+        "description": "Bloques reutilizables de CMS con los que están hechas las webs de Rely y Safe.",
         "stack": "Storyblok, Tailwind",
         "hrefs": [
           { "label": "relyqa.com", "href": "https://relyqa.com/" },
@@ -54,23 +59,29 @@
         ]
       },
       {
+        "name": "Zolara",
+        "description": "La construí en una semana sobre Sorolla para detectar bacterias en agua. Vendió unos 300.000 € en proyectos.",
+        "stack": "React, Sorolla",
+        "duration": "1 semana"
+      },
+      {
         "year": "2024",
         "name": "Sistema de visión para clasificación de huevos",
-        "description": "Inspección automática de calidad en una línea de producción de huevos con visión por computador.",
+        "description": "Clasifica huevos en una línea de producción con visión artificial.",
         "stack": "Python, OpenCV",
         "duration": "7 días"
       },
       {
         "year": "2024",
         "name": "Tracker de ejercicio para racing",
-        "description": "Modelo de estimación de pose para seguir y analizar la sentadilla de un equipo de racing.",
+        "description": "Un modelo de estimación de pose que analiza la sentadilla de un equipo de carreras.",
         "stack": "Python, MediaPipe",
         "duration": "6 días"
       },
       {
         "year": "2023",
         "name": "Dashboard interno",
-        "description": "Visualización de datos para que operaciones monitoree métricas de rendimiento de modelos.",
+        "description": "Un panel donde el equipo de operaciones sigue el rendimiento de nuestros modelos.",
         "stack": "Next.js, Recharts",
         "duration": "5 días"
       }
@@ -89,92 +100,96 @@
     "decisions": "Decisiones",
     "result": "Resultado",
     "proof": "Prueba",
-    "production": "production"
+    "production": "en producción"
   },
   "rely": {
     "origin": "Trabajo en empresa",
     "role": "Frontend Lead y Product Designer",
     "stack": "Next.js, Go, WebSockets, Tailwind v4",
-    "thesis": "Un Hub de Stations: Preview en vivo con OK/KO sobre la pieza, y un grafo de Recipe que ingeniería despliega a planta.",
-    "result": "En producción en plantas, multi-tenant / multi-sede. Hub en la nube, un agent por Station en la línea.",
-    "previewAlt": "Preview de Station con cámara en vivo de una PCB, identidad de pieza, recuento de defectos y totales OK/KO",
-    "previewCaption": "Preview es la planta: la pieza, un veredicto, OK/KO/Rework. La tarjeta roja es el estado, no un gráfico.",
+    "thesis": "Las fábricas usan Rely para revisar cada pieza de la línea. El operario necesita un veredicto que se lea de un vistazo. El ingeniero necesita configurar qué se revisa y entrenar los modelos que hay detrás. Diseñé y construí el frontend para los dos.",
+    "result": "Rely monitoriza fábricas de todo el mundo. Si falla, la línea se para y el cliente pierde cientos de miles de euros. En Siali asumimos los proyectos complejos que otras empresas rechazaban.",
+    "leadership": {
+      "title": "Cómo lidero",
+      "content": "Asignaba y seguía el trabajo de unos 10 becarios y dos desarrolladores frontend. Diseñé sus pruebas y formación, y decidía quién se quedaba."
+    },
+    "previewAlt": "Vista en directo de una estación con la cámara sobre una PCB, la identificación de la pieza, los defectos y los totales OK/KO",
+    "previewCaption": "La vista en directo. El operario ve la pieza y una tarjeta grande de OK o KO, pensada para pantallas táctiles y manos con guantes.",
     "decisions": [
       {
-        "title": "La Station es el producto",
-        "content": "El Hub es una lista de Stations, no un zoo de modelos. Abrir una es la planta: cámara en vivo, identidad de la pieza, OK/KO. El operador lee un veredicto. Recipes, overlays y analytics viven al lado de esa superficie — no la sustituyen."
+        "title": "Rely primero: producción y entrenamiento sincronizados",
+        "content": "Rely funciona en la línea. Rely Cloud es donde etiquetamos imágenes y entrenamos los modelos. Hay clientes sin Rely Cloud, otros lo tienen en sus propios servidores, otros en la nube, y otros son proyectos a medida con sus propias interfaces. Tenía que diseñar un único enlace que sirviera a todos.\n\nDecidí que manda producción: no piensas en la nube hasta que usas la línea. Una estación es un punto de inspección de la línea. Cuando creas una en Rely, se crea también su proyecto en Rely Cloud. Una estación tiene recetas, y una receta suele ser una referencia de pieza, con sus cámaras, sus modelos y sus decisiones para el PLC, la cámara o el brazo robot. Cada receta tiene vistas, una por cara de la pieza, vista por una o varias cámaras mientras un brazo robot la gira. Cada vista tiene su propio dataset y se entrena por separado, porque los defectos cambian de una cara a otra.\n\nTodo esto se crea y se enlaza solo. Las piezas que pasan por la línea caen en el dataset correcto. En Rely Cloud se etiquetan, a mano o con predicciones de un modelo, se entrena, y los modelos nuevos aparecen ya enlazados a sus recetas. El usuario solo ve que las cosas aparecen.\n\nPara llegar ahí diseñé los casos límite: usuarios sin la clave del enlace y usuarios que no quieren que Rely mande. Rely primero se puede desactivar, y una pantalla de ajustes enlaza vistas y datasets a mano.\n\nEl ciclo se cierra en producción. Al revisar piezas que el modelo ya ha juzgado, el usuario elige imágenes para reetiquetar y las manda al dataset de esa vista, a otro o a uno nuevo. El etiquetado se hace en Rely Cloud, y decide si se sincroniza de vuelta."
       },
       {
-        "title": "Una Recipe es un grafo que se despliega",
-        "content": "La inspección no es un script por línea. Trigger → imágenes → detect → Evaluación es un flujo visual con inspector contextual. Evaluación es una regla sobre detecciones (conteo, confianza) que escribe el estado de la Station: OK si se cumple, KO si no. Deploy publica la Recipe; el borrador del canvas no es lo que corre en planta."
+        "title": "El ingeniero monta la inspección él mismo",
+        "content": "Antes escribíamos un script de Python por línea. Lo sustituí por un editor visual. El ingeniero conecta bloques para el disparador, las cámaras, el modelo de detección y la regla que decide OK o KO, y lo publica en la estación. Los bloques se llaman como cosas que ya conoce, como una cámara o un PLC."
       },
       {
-        "title": "Los overlays son el lenguaje del operador",
-        "content": "Las detecciones tienen que leerse sobre la imagen: esquina de etiqueta, ROI discontinuo, humano vs modelo. Ese overlay se configura por Station para que Preview y revisión compartan el mismo lenguaje visual — el estado es el color, no el nombre de clase."
+        "title": "Ver qué receta está corriendo",
+        "content": "Al crecer las estaciones y las recetas, la gente perdía de vista qué receta corría en cada línea. Una etiqueta pequeña de \"en directo\" no bastaba. La cambié por una ranura de producción donde la receta activa se encaja como un cartucho en una consola."
       }
     ],
     "figures": [
       {
-        "alt": "Lista de Stations del Hub con Línea 1 y miniatura en vivo y una tarjeta vacía de Línea 2",
-        "caption": "Hub: Stations de la organización. Entra en una para trabajar la línea."
+        "alt": "Lista de estaciones con la Línea 1 en directo y la Línea 2 vacía",
+        "caption": "La pantalla de inicio: todas las estaciones de la organización. Eliges una para trabajar esa línea."
       },
       {
-        "alt": "Canvas de Recipe con trigger, imágenes, detector, vista en vivo e inspector de Evaluación",
-        "caption": "Recipe como grafo: trigger → imágenes → detect → Evaluación. Inspector a la derecha; Deploy publica a la Station."
+        "alt": "Editor de recetas con disparador, imágenes, detector, vista en directo y panel de evaluación",
+        "caption": "El editor de recetas. Los bloques van de izquierda a derecha y el panel de la derecha edita el seleccionado."
       },
       {
-        "alt": "Ajustes de overlays con esquina de etiqueta, ROI discontinuo, humano vs modelo y vista previa de cajas",
-        "caption": "Lenguaje de overlay: esquina de etiqueta, ROI discontinuo, humano vs modelo. La misma imagen en planta y en configuración."
+        "alt": "Ajustes de overlays: esquina de etiqueta, zona de interés discontinua, humano frente a modelo, con vista previa de cajas",
+        "caption": "Las cajas de detección sobre la imagen. Se ven igual en la línea y en los ajustes, y el color indica el veredicto."
       },
       {
-        "alt": "Editor de layout de analytics de Station con widgets KPI y un catálogo para añadir first-pass, reject y volume",
-        "caption": "Analytics (prueba): layout de widgets de la Station — first-pass, reject, volume — desde un catálogo, no un dashboard fijo."
+        "alt": "Editor de gráficas de estación con widgets de primera pasada, rechazos y volumen",
+        "caption": "Gráficas por estación. El ingeniero añade las que necesita, como primera pasada, rechazos o volumen."
       }
     ]
   },
   "loadzone": {
     "origin": "Producto propio",
     "role": "Desarrollador y Product Designer",
-    "thesis": "Un club, dos productos: una lectura operativa de wellness y carga para el staff, y un check-in del jugador de una pregunta cada vez. El Cromo de racha es la identidad que crece con ese hábito.",
-    "cromoCaption": "Cromo de racha en el teléfono del jugador. Inclínalo. Los nombres de material no van en la carta; el foil es la recompensa.",
+    "thesis": "El staff necesita saber quién está listo para entrenar antes de la sesión, y para eso los jugadores tienen que responder rápido. Diseño y construyo Loadzone yo solo.",
+    "cromoCaption": "El Cromo de racha en el móvil del jugador. Inclínalo para ver el brillo. Es la recompensa por responder.",
     "decisions": [
       {
-        "title": "Wellness y carga de un vistazo",
-        "content": "Los coordinadores necesitan al equipo en un barrido operativo antes y después de la Session: recuperación, energía, dolor, horas de sueño, calidad de sueño y luego RPE POST. Un DailyEntry que falta sigue siendo un guion — la tabla no inventa completitud. El color es señal de triaje, no un dump tipo FIFA. Esta superficie no es el Cromo de racha."
+        "title": "Toda la plantilla en una pantalla",
+        "content": "Antes y después de cada sesión, el staff revisa la recuperación, energía, molestias, sueño y esfuerzo post-sesión (RPE) de cada jugador. Si alguien no ha respondido, la celda muestra un guion, para que nadie confunda un hueco con un buen dato. El color marca a quién mirar primero."
       },
       {
         "title": "Una pregunta cada vez",
-        "content": "El check-in no es un portapapeles. PRE y POST son momentos distintos en la Session, pero cada formulario es un WellnessMetric cada vez: tipografía grande, slider al tamaño del pulgar, etiquetas en los extremos, un recuento de lo que falta. La identidad (el Cromo) va después de rellenar, no como un segundo cuestionario."
+        "content": "Los jugadores responden antes y después de la sesión. Cada pantalla pregunta una cosa, con letra grande y un deslizador del tamaño de un pulgar. Un contador indica cuántas faltan. El cromo aparece solo al terminar."
       },
       {
-        "title": "Ejercicios que construyen Sessions de verdad",
-        "content": "El staff no escribe una Session desde una página en blanco. Un Exercise es un drill con duración, tamaño de campo, número de jugadores y una clasificación táctica breve. Crearlo es un formulario con defaults y desplegables. Colocar Exercises en una Session es cómo la semana se vuelve real."
+        "title": "Sesiones hechas con ejercicios",
+        "content": "El staff monta una sesión colocando ejercicios. Cada ejercicio tiene duración, tamaño de campo y número de jugadores, y un tipo táctico elegido de una lista. Los desplegables lo hacen rápido y coherente."
       }
     ],
     "figures": [
       {
         "alt": "Tarjetas de Wellness del staff de Loadzone con check-ins pendientes, medias del equipo y recuperación, energía y dolor",
-        "caption": "Barrido de Wellness del staff: formularios pendientes, medias del equipo, luego tarjetas de jugador — recuperación, energía, dolor, RPE. Lectura de portátil, no de teléfono."
+        "caption": "Vista del staff en portátil: check-ins pendientes, medias de la plantilla y una tarjeta por jugador."
       },
       {
         "alt": "Detalle de la tabla de Wellness del staff con recuperación, energía, dolor, sueño, calidad y RPE",
-        "caption": "PRE (recuperación, energía, dolor, sueño, calidad) y RPE POST. Las celdas vacías se quedan vacías. El color es triaje."
+        "caption": "La tabla de cerca. Las celdas vacías se quedan vacías y el color indica a quién mirar primero."
       },
       {
         "alt": "Pantalla de check-in del jugador con pregunta de recuperación tipo slider y estado pre/post sesión",
-        "caption": "Formulario del jugador: una pregunta (recuperación), pulsa o desliza, extremos etiquetados. Lo que falta se nota en el botón."
+        "caption": "Check-in del jugador: una pregunta, un deslizador y etiquetas en los extremos."
       },
       {
         "alt": "Formulario del staff para crear un ejercicio con espacio, duración, jugadores y desplegables de clasificación táctica",
-        "caption": "Crear Exercise: configuración y luego clasificación. Desplegables antes que texto libre para armar una Session sin manual."
+        "caption": "Crear un ejercicio: primero los ajustes, luego el tipo táctico."
       },
       {
         "alt": "Vista de lesiones del staff con figura del jugador, marcadores numerados y listas de abiertas, cerradas e historial",
-        "caption": "Lesiones (prueba): mapa corporal frente/espalda, luego abiertas, cerradas e historial."
+        "caption": "Lesiones: mapa del cuerpo por delante y por detrás, con lesiones abiertas, cerradas e historial."
       },
       {
         "alt": "Sidebar de ajustes del staff con checklist de Primeros pasos en cuatro de cinco pasos",
-        "caption": "Primeros pasos (prueba): cinco datos del Club, progreso 4/5, minimizar y descartar. No bloquea Wellness."
+        "caption": "Lista de primeros pasos: cinco datos del club, aquí 4 de 5. El staff puede ocultarla y seguir trabajando."
       }
     ]
   }

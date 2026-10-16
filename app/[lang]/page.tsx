@@ -1,12 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
-import {
-  EnvelopeSimple,
-  GithubLogo,
-  LinkedinLogo,
-} from "@phosphor-icons/react/dist/ssr";
-
 import { ProjectCard } from "../components/project-card";
 import { SiteHeader } from "../components/site-header";
 import { SectionIntersection } from "../components/section-intersection";
@@ -66,9 +60,9 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
             <Image
               alt="Jesús Gutiérrez"
               className="block rounded-full object-cover"
-              height={48}
+              height={112}
               src="/jesus-profile.jpeg"
-              width={48}
+              width={112}
             />
           </ImageLightbox>
           <h1 className="text-heading-display font-bold tracking-[-0.02em] text-text-strong">
@@ -77,34 +71,26 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
           <p className="mt-1.5 font-mono text-caption tracking-[0.04em] text-text-weak">
             {home.role}
           </p>
+          <p className="mt-2 text-caption text-text-default">
+            {home.leadership}
+          </p>
           <p className="mt-4 max-w-[28rem] text-body leading-relaxed text-text-strong">
             {home.thesis}
           </p>
-          <div className="mt-4 flex items-center">
+          <div className="mt-4 flex flex-wrap items-center justify-center gap-x-4 gap-y-2">
             <a
-              aria-label="GitHub"
-              className="inline-flex size-11 items-center justify-center text-text-default transition-colors hover:text-text-strong focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-text-strong"
-              href="https://github.com/jesus-guti"
-              rel="noreferrer"
-              target="_blank"
-            >
-              <GithubLogo size={20} weight="regular" />
-            </a>
-            <a
-              aria-label="LinkedIn"
-              className="inline-flex size-11 items-center justify-center text-text-default transition-colors hover:text-text-strong focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-text-strong"
+              className="inline-flex min-h-11 items-center font-mono text-caption text-text-default transition-colors hover:text-text-strong focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-text-strong"
               href="https://www.linkedin.com/in/jesús-gutiérrez-siliceo-52108524a"
               rel="noreferrer"
               target="_blank"
             >
-              <LinkedinLogo size={20} weight="regular" />
+              {home.contacts.linkedin}
             </a>
             <a
-              aria-label="Email"
-              className="inline-flex size-11 items-center justify-center text-text-default transition-colors hover:text-text-strong focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-text-strong"
+              className="inline-flex min-h-11 items-center font-mono text-caption text-text-default transition-colors hover:text-text-strong focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-text-strong"
               href="mailto:jesusgutierrezsiliceo@gmail.com"
             >
-              <EnvelopeSimple size={20} weight="regular" />
+              {home.contacts.email}
             </a>
           </div>
         </div>
@@ -181,9 +167,11 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
               key={project.name}
               className="flex flex-col gap-0.5 border-b border-border-special pb-3 last:border-b-0 last:pb-0 md:flex-row md:items-baseline md:gap-4"
             >
-              <span className="shrink-0 font-mono text-caption text-text-weak">
-                {project.year}
-              </span>
+              {"year" in project && project.year ? (
+                <span className="shrink-0 font-mono text-caption text-text-weak">
+                  {project.year}
+                </span>
+              ) : null}
               <div className="flex-1">
                 <span className="text-body font-medium text-text-strong">
                   {project.name}
