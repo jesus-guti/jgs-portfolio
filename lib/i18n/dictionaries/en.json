@@ -12,7 +12,12 @@
   },
   "home": {
     "role": "Frontend & Product Engineering",
-    "thesis": "I design and build interfaces for factories, used by operators wearing gloves. I've led the frontend at Siali since 2022, at one point a team of 12.",
+    "thesis": "Interfaces and product systems shipped under real constraints — factory floors, production teams.",
+    "leadership": "Frontend & Design Lead at Siali since 2022 · led up to 12",
+    "contacts": {
+      "email": "jesusgutierrezsiliceo@gmail.com",
+      "linkedin": "LinkedIn"
+    },
     "employmentWork": "Employment work",
     "personalProduct": "Personal product",
     "oneWeek": "1-Week Projects",
@@ -38,7 +43,7 @@
         "name": "Sorolla",
         "year": "2023",
         "stack": ["React", "TypeScript", "npm", "TurboRepo"],
-        "description": "My idea, built alone: an open-source React library for labelling images and video with boxes, masks and rotated boxes. We use it across our products, and Zolara was built on it.",
+        "description": "Built alone: an open-source React library for labelling images and video with boxes, masks and rotated boxes. We use it across our products, and Zolara was built on it.",
         "status": "open source"
       }
     ],
@@ -55,7 +60,7 @@
       },
       {
         "name": "Zolara",
-        "description": "Detects bacteria in water. I built it on Sorolla in about a week so it could launch. It sold several projects, around €300,000, then faded because the idea didn't catch on.",
+        "description": "Built in one week on Sorolla to detect bacteria in water. It sold about €300,000 in projects.",
         "stack": "React, Sorolla",
         "duration": "1 week"
       },
@@ -102,7 +107,11 @@
     "role": "Frontend Lead & Product Designer",
     "stack": "Next.js, Go, WebSockets, Tailwind v4",
     "thesis": "Factories use Rely to check every part on the line. Operators need a verdict they can read at a glance. Engineers need to set up what gets checked and train the models behind it. I designed and built the frontend for both.",
-    "result": "Rely runs in factories across Europe and around the world. If it fails, the line stops and the client loses hundreds of thousands of euros, so it has to be more reliable than most software ever needs to be. Siali took on the hard projects other companies turned down.",
+    "result": "Rely monitors factories worldwide. If it fails, the line stops and the client loses hundreds of thousands of euros. Siali took on the complex projects other companies rejected.",
+    "leadership": {
+      "title": "How I lead",
+      "content": "I assigned and monitored work for around 10 interns and two frontend developers. I designed their tests and training, and decided who stayed."
+    },
     "previewAlt": "Live station view with a PCB camera feed, the part's ID, defect count and OK/KO totals",
     "previewCaption": "The live view. The operator sees the part and a big OK or KO card, sized for touch screens and gloved hands.",
     "decisions": [

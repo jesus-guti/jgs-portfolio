@@ -12,7 +12,12 @@
   },
   "home": {
     "role": "Frontend e ingeniería de producto",
-    "thesis": "Diseño y construyo interfaces para fábricas, que usan operarios con guantes. Lidero el frontend de Siali desde 2022; llegamos a ser un equipo de 12.",
+    "thesis": "Interfaces y sistemas de producto entregados bajo restricciones reales — plantas de fábrica, equipos de producción.",
+    "leadership": "Responsable de Frontend y Diseño en Siali desde 2022 · lideré hasta 12 personas",
+    "contacts": {
+      "email": "jesusgutierrezsiliceo@gmail.com",
+      "linkedin": "LinkedIn"
+    },
     "employmentWork": "Trabajo en empresa",
     "personalProduct": "Producto propio",
     "oneWeek": "Proyectos de 1 semana",
@@ -38,7 +43,7 @@
         "name": "Sorolla",
         "year": "2023",
         "stack": ["React", "TypeScript", "npm", "TurboRepo"],
-        "description": "Idea mía y hecha por mí solo: una librería React open source para etiquetar imágenes y vídeo con cajas, máscaras y cajas rotadas. La usamos en nuestros productos y Zolara se construyó sobre ella.",
+        "description": "Hecha por mí solo: una librería React open source para etiquetar imágenes y vídeo con cajas, máscaras y cajas rotadas. La usamos en nuestros productos y Zolara se construyó sobre ella.",
         "status": "open source"
       }
     ],
@@ -55,7 +60,7 @@
       },
       {
         "name": "Zolara",
-        "description": "Detecta bacterias en agua. La monté sobre Sorolla en una semana para que pudiera salir. Vendió varios proyectos, unos 300.000 €, y después se apagó porque la idea no cuajó.",
+        "description": "La construí en una semana sobre Sorolla para detectar bacterias en agua. Vendió unos 300.000 € en proyectos.",
         "stack": "React, Sorolla",
         "duration": "1 semana"
       },
@@ -95,14 +100,18 @@
     "decisions": "Decisiones",
     "result": "Resultado",
     "proof": "Prueba",
-    "production": "production"
+    "production": "en producción"
   },
   "rely": {
     "origin": "Trabajo en empresa",
     "role": "Frontend Lead y Product Designer",
     "stack": "Next.js, Go, WebSockets, Tailwind v4",
     "thesis": "Las fábricas usan Rely para revisar cada pieza de la línea. El operario necesita un veredicto que se lea de un vistazo. El ingeniero necesita configurar qué se revisa y entrenar los modelos que hay detrás. Diseñé y construí el frontend para los dos.",
-    "result": "Rely funciona en fábricas de Europa y del resto del mundo. Si falla, la línea se para y el cliente pierde cientos de miles de euros, así que tiene que ser más fiable de lo que la mayoría del software necesita. En Siali cogimos los proyectos difíciles que otras empresas rechazaban.",
+    "result": "Rely monitoriza fábricas de todo el mundo. Si falla, la línea se para y el cliente pierde cientos de miles de euros. En Siali asumimos los proyectos complejos que otras empresas rechazaban.",
+    "leadership": {
+      "title": "Cómo lidero",
+      "content": "Asignaba y seguía el trabajo de unos 10 becarios y dos desarrolladores frontend. Diseñé sus pruebas y formación, y decidía quién se quedaba."
+    },
     "previewAlt": "Vista en directo de una estación con la cámara sobre una PCB, la identificación de la pieza, los defectos y los totales OK/KO",
     "previewCaption": "La vista en directo. El operario ve la pieza y una tarjeta grande de OK o KO, pensada para pantallas táctiles y manos con guantes.",
     "decisions": [

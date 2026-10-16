@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { useEffect, useId, useRef, useState, type JSX } from "react";
 
 import { localePath, type Locale } from "@/lib/i18n/config";
@@ -15,13 +14,8 @@ export function SiteMenu({
   nav: Dictionary["nav"];
 }): JSX.Element {
   const [open, setOpen] = useState(false);
-  const pathname = usePathname();
   const menuId = useId();
   const rootRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    setOpen(false);
-  }, [pathname]);
 
   useEffect(() => {
     if (!open) return;
@@ -63,10 +57,18 @@ export function SiteMenu({
           className="absolute right-0 top-full z-20 mt-3 flex min-w-40 flex-col border border-border-general bg-surface-root py-1"
           id={menuId}
         >
-          <Link className={itemClass} href={localePath(locale)}>
+          <Link
+            className={itemClass}
+            href={localePath(locale)}
+            onClick={() => setOpen(false)}
+          >
             {nav.work}
           </Link>
-          <Link className={itemClass} href={localePath(locale, "/about")}>
+          <Link
+            className={itemClass}
+            href={localePath(locale, "/about")}
+            onClick={() => setOpen(false)}
+          >
             {nav.about}
           </Link>
         </div>

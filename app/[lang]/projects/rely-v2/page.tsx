@@ -97,6 +97,15 @@ export default async function RelyCaseStudyPage({
 
         <section className="mb-12">
           <h2 className="mb-3 text-heading-section font-semibold text-text-strong">
+            {rely.leadership.title}
+          </h2>
+          <p className="text-body text-text-default">
+            {rely.leadership.content}
+          </p>
+        </section>
+
+        <section className="mb-12">
+          <h2 className="mb-3 text-heading-section font-semibold text-text-strong">
             {caseCopy.result}
           </h2>
           <p className="text-body text-text-default">{rely.result}</p>
