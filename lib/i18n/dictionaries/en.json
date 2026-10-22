@@ -21,7 +21,19 @@
     "employmentWork": "Employment work",
     "personalProduct": "Personal product",
     "oneWeek": "1-Week Projects",
-    "loadzoneThesis": "A tool for sports clubs. Staff see how the squad has recovered before each session. Players answer one question at a time on their phone, and the more often they answer, the more their Streak Cromo card grows.",
+    "relyCloud": {
+      "name": "Rely Cloud",
+      "year": "2023",
+      "status": "production",
+      "stack": "React · TypeScript · Vite · MobX · FastAPI (Python) · ClearML",
+      "lead": "Designed end to end the platform that 200 organizations use to label images and train computer-vision models, with many users working inside each one at the same time.",
+      "highlights": [
+        "**Built the labeller** in React and JavaScript (bounding boxes, segmentation, oriented boxes). It **later became Sorolla**, my open-source library.",
+        "**Defined the data model**: how datasets, labels and trainings are created and stored. Trainings are queued and orchestrated with ClearML and followed live with real-time charts.",
+        "**Led design and front-end** for the whole product."
+      ],
+      "context": "An in-house, multi-tenant tool born from a real need: the team was labelling and training by hand. We chose plain React with Vite over a framework like Next because the backend was already FastAPI and Next wouldn't have added anything there. I designed the interface and the data model as the product grew, building each piece fast, trying it with real users and adjusting it."
+    },
     "projects": [
       {
         "name": "rely v2",
@@ -93,14 +105,16 @@
     "paragraphs": [
       "I build software for people who are already in the middle of something else. At Siali that something is a factory floor. I decide what the product is for, and I build it: the interface, the system behind it, and what keeps it running. If those parts do not agree, the person on the floor makes the wrong call. I live in Cantabria and work from here.",
       "How a thing looks and what it is for are easy to split and hard to keep together. A screen can be finished and still be useless. I would rather take a part away than explain it. The shape of the data usually decides the shape of the screen, so I treat them as the same decision.",
-      "I also keep a small product for one football academy. Staff and players use it. It has to be obvious on a tired evening. That is the brief I trust."
+      "I also keep Loadzone, an early-stage app for Tercera División clubs in Cantabria. The people using it are not technical. It has to be obvious on a tired evening. That is the brief I trust."
     ]
   },
   "case": {
     "decisions": "Decisions",
     "result": "Result",
     "proof": "Proof",
-    "production": "production"
+    "production": "production",
+    "inProgress": "in progress",
+    "context": "Context"
   },
   "rely": {
     "origin": "Employment work",
@@ -150,22 +164,25 @@
   "loadzone": {
     "origin": "Personal product",
     "role": "Solo Developer & Product Designer",
-    "thesis": "Coaching staff need to know who is ready to train before the session starts, and players have to answer quickly for that to work. I design and build Loadzone alone.",
-    "cromoCaption": "The Streak Cromo on the player's phone. Tilt it to see the foil. It's the reward for answering.",
-    "decisions": [
-      {
-        "title": "The whole squad on one screen",
-        "content": "Before and after each session, staff check every player's recovery, energy, soreness, sleep and post-session effort (RPE). If a player hasn't answered, the cell shows a dash, so nobody mistakes a gap for a good score. Colour marks who needs attention first."
-      },
-      {
-        "title": "One question at a time",
-        "content": "Players answer before and after the session. Each screen asks one thing, with large text and a slider big enough for a thumb. A counter shows how many are left. The card appears only once they finish."
-      },
-      {
-        "title": "Sessions built from drills",
-        "content": "Staff build a session by placing drills on it. Each drill has a duration, pitch size and number of players, plus a tactical type picked from a list. Dropdowns keep it quick and consistent."
-      }
+    "year": "2026",
+    "stack": "Next.js · TypeScript · TurboRepo · Vercel",
+    "thesis": "Early-stage data app for Tercera División football clubs in Cantabria: all 5 clubs approached so far have already committed to it.",
+    "highlights": [
+      "**Turned spreadsheet habits into a simple interface** for non-technical staff who lived in Excel.",
+      "**Designed the data model** for the clubs' real volume (around 1,000×1,000 records).",
+      "**Built it end to end**, from the first idea to the first clubs using it."
     ],
+    "context": "Loadzone is still being built, but every club we approached chose to back it, which says a lot about how underserved this space is and how quickly the product won them over. The users weren't technical, so I built fast and iterated on how they actually worked. It's a small-data project: the hard part wasn't scaling it but making it easy.",
+    "cromoCaption": "The Streak Cromo on the player's phone. Tilt it to see the foil. It's the reward for answering.",
+    "cromo": {
+      "sealTop": "TEAM STREAK",
+      "sealBottom": "OF {count}",
+      "days": "{count} days",
+      "dorsal": "Shirt {number}",
+      "rank": "Rank {rank} of {size} by team streak",
+      "ariaLabel": "Streak Cromo for Martín Vega, Valle Norte, MID, shirt 8",
+      "position": "MID"
+    },
     "figures": [
       {
         "alt": "Loadzone staff Wellness cards with pending check-ins, squad averages, and player recovery, energy, and soreness",
@@ -188,7 +205,7 @@
         "caption": "Injuries: a front and back body map, with open, closed and past injuries."
       },
       {
-        "alt": "Staff settings sidebar with Primeros pasos checklist at four of five steps",
+        "alt": "Staff settings sidebar with a getting-started checklist at four of five steps",
         "caption": "Setup checklist: five club details, here at 4 of 5. Staff can hide it and keep working."
       }
     ]

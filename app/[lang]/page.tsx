@@ -1,7 +1,7 @@
 import Image from "next/image";
-import Link from "next/link";
 import type { Metadata } from "next";
 import { ProjectCard } from "../components/project-card";
+import { ProjectNarrative } from "../components/project-narrative";
 import { SiteHeader } from "../components/site-header";
 import { SectionIntersection } from "../components/section-intersection";
 import { GridBackground } from "../components/grid-background";
@@ -30,7 +30,13 @@ export async function generateMetadata({
 export default async function Home({ params }: PageProps<"/[lang]">) {
   const locale = await requireLocale(params);
   const dict = await getDictionary(locale);
-  const { home } = dict;
+  const { home, loadzone, case: caseCopy } = dict;
+  const relyProject = home.projects.find(
+    (project) => project.href === "/projects/rely-v2",
+  );
+  const otherProjects = home.projects.filter(
+    (project) => project !== relyProject,
+  );
 
   return (
     <div className="mx-auto max-w-[1080px] border-x border-b border-border-general">
@@ -103,7 +109,29 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
           {home.employmentWork}
         </h2>
         <div className="relative z-10 divide-y divide-border-special">
-          {home.projects.map((project) => (
+          {relyProject ? (
+            <ProjectCard
+              description={relyProject.description}
+              href={localePath(locale, relyProject.href)}
+              name={relyProject.name}
+              stack={relyProject.stack}
+              status={relyProject.status as "production" | "open source"}
+              year={relyProject.year}
+            />
+          ) : null}
+          <article className="py-7">
+            <ProjectNarrative
+              context={home.relyCloud.context}
+              contextLabel={caseCopy.context}
+              highlights={home.relyCloud.highlights}
+              lead={home.relyCloud.lead}
+              name={home.relyCloud.name}
+              stack={home.relyCloud.stack}
+              status={home.relyCloud.status}
+              year={home.relyCloud.year}
+            />
+          </article>
+          {otherProjects.map((project) => (
             <ProjectCard
               key={project.name}
               description={project.description}
@@ -127,32 +155,26 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
         <h2 className="relative z-10 mb-2 text-heading-section font-semibold text-text-strong">
           {home.personalProduct}
         </h2>
-        <Link
-          className="group relative z-10 flex flex-col gap-6 py-7 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-text-strong md:flex-row md:items-center"
-          href={localePath(locale, "/projects/loadzone")}
-        >
+        <div className="relative z-10 flex flex-col gap-6 py-7 md:flex-row md:items-start">
           <div className="min-w-0 flex-1">
-            <p className="font-mono text-caption capitalize text-text-weak">
-              production
-            </p>
-            <div className="mt-2 flex items-baseline justify-between gap-4">
-              <h3 className="text-heading-section font-semibold text-text-strong underline decoration-transparent underline-offset-4 transition-colors group-hover:decoration-border-general">
-                Loadzone
-              </h3>
-              <span className="font-mono text-caption text-text-weak">
-                2025
-              </span>
-            </div>
-            <p className="mt-3 max-w-[36rem] text-body text-text-default">
-              {home.loadzoneThesis}
-            </p>
+            <ProjectNarrative
+              context={loadzone.context}
+              contextLabel={caseCopy.context}
+              highlights={loadzone.highlights}
+              lead={loadzone.thesis}
+              name="Loadzone"
+              nameHref={localePath(locale, "/projects/loadzone")}
+              stack={loadzone.stack}
+              status={caseCopy.inProgress}
+              year={loadzone.year}
+            />
           </div>
           <div className="pointer-events-none mx-auto h-[15.5rem] w-[11.5rem] shrink-0 overflow-hidden md:mx-0">
             <div className="origin-top scale-[0.7]">
-              <StreakCromoCard />
+              <StreakCromoCard copy={loadzone.cromo} />
             </div>
           </div>
-        </Link>
+        </div>
       </section>
 
       <section className="relative px-6 py-8 md:px-container-px">

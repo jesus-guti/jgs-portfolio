@@ -10,7 +10,6 @@ import "./streak-cromo.css";
 /** Invented adult seed — not a real academy Player. */
 const SEED = {
   playerName: "Martín Vega",
-  positionLine: "MED",
   teamName: "Valle Norte",
   shirtNumber: 8,
   streakCount: 36,
@@ -21,8 +20,27 @@ const SEED = {
 
 const SEAL_ARC_TOP = "M 10.5,50 A 39.5,39.5 0 1 1 89.5,50";
 const SEAL_ARC_BOTTOM = "M 3.5,50 A 46.5,46.5 0 1 0 96.5,50";
-const CROMO_SEAL_ARC_TOP = "RACHA DEL EQUIPO";
 const CROMO_INK_ROTATION_DEG = 25;
+
+export type StreakCromoCopy = {
+  sealTop: string;
+  sealBottom: string;
+  days: string;
+  dorsal: string;
+  rank: string;
+  ariaLabel: string;
+  position: string;
+};
+
+function fill(
+  template: string,
+  values: Readonly<Record<string, number>>,
+): string {
+  return template.replace(/\{(\w+)\}/g, (match, key: string) => {
+    const value = values[key];
+    return value === undefined ? match : String(value);
+  });
+}
 
 function useReducedMotion(): boolean {
   const [reduced, setReduced] = useState(false);
@@ -40,10 +58,12 @@ function useReducedMotion(): boolean {
 
 function ShirtInkSeal({
   rank,
-  teamSize,
+  sealTop,
+  sealBottom,
 }: {
   readonly rank: number;
-  readonly teamSize: number;
+  readonly sealTop: string;
+  readonly sealBottom: string;
 }): JSX.Element {
   const arcId = useId();
 
@@ -75,12 +95,12 @@ function ShirtInkSeal({
         >
           <text>
             <textPath href={`#${arcId}-top`} startOffset="50%">
-              {CROMO_SEAL_ARC_TOP}
+              {sealTop}
             </textPath>
           </text>
           <text>
             <textPath href={`#${arcId}-bottom`} startOffset="50%">
-              {`DE ${teamSize}`}
+              {sealBottom}
             </textPath>
           </text>
         </g>
@@ -99,12 +119,14 @@ function ShirtInkSeal({
 
 function ShirtOverprint({
   shirtNumber,
+  dorsalLabel,
 }: {
   readonly shirtNumber: number;
+  readonly dorsalLabel: string;
 }): JSX.Element {
   return (
     <div className="pointer-events-none absolute inset-0 z-10 overflow-hidden">
-      <p className="sr-only">{`Dorsal ${shirtNumber}`}</p>
+      <p className="sr-only">{dorsalLabel}</p>
       <div
         aria-hidden
         className="absolute -left-1 bottom-5"
@@ -120,7 +142,11 @@ function ShirtOverprint({
   );
 }
 
-function CromoPortrait(): JSX.Element {
+function CromoPortrait({
+  dorsalLabel,
+}: {
+  readonly dorsalLabel: string;
+}): JSX.Element {
   return (
     <div className="cromo-window w-full">
       <div className="cromo-silhouette">
@@ -135,14 +161,22 @@ function CromoPortrait(): JSX.Element {
         aria-hidden
         className="pointer-events-none absolute inset-x-0 bottom-0 h-16 bg-linear-to-t from-black/45 to-transparent"
       />
-      <ShirtOverprint shirtNumber={SEED.shirtNumber} />
+      <ShirtOverprint dorsalLabel={dorsalLabel} shirtNumber={SEED.shirtNumber} />
     </div>
   );
 }
 
-export function StreakCromoCard(): JSX.Element {
+export function StreakCromoCard({
+  copy,
+}: {
+  readonly copy: StreakCromoCopy;
+}): JSX.Element {
   const reducedMotion = useReducedMotion();
   const tilt = usePointerTilt(reducedMotion);
+  const daysLabel = fill(copy.days, { count: SEED.streakCount });
+  const dorsalLabel = fill(copy.dorsal, { number: SEED.shirtNumber });
+  const rankLabel = fill(copy.rank, { rank: SEED.rank, size: SEED.teamSize });
+  const sealBottom = fill(copy.sealBottom, { count: SEED.teamSize });
 
   return (
     <div className="cromo-root mb-0 mt-0 flex w-full flex-col items-center gap-3">
@@ -154,7 +188,7 @@ export function StreakCromoCard(): JSX.Element {
             onPointerLeave={tilt.onPointerLeave}
             onPointerMove={tilt.onPointerMove}
             role="img"
-            aria-label="Streak Cromo for Martín Vega, Valle Norte, MED, dorsal 8"
+            aria-label={copy.ariaLabel}
           >
             <div className="cromo-flip">
               <article
@@ -164,25 +198,24 @@ export function StreakCromoCard(): JSX.Element {
               >
                 <div className="cromo-mat">
                   <span aria-hidden className="cromo-shine" />
-                  <CromoPortrait />
+                  <CromoPortrait dorsalLabel={dorsalLabel} />
                   <header className="relative z-1 space-y-0.5 px-0.5">
                     <p className="text-2xl font-bold leading-[1.05] tracking-[-0.02em]">
                       {SEED.playerName}
                     </p>
                     <p className="text-xs font-semibold uppercase tracking-[0.18em] opacity-70">
-                      {SEED.positionLine}
+                      {copy.position}
                     </p>
                   </header>
                   <footer className="relative z-1 mt-auto flex flex-col gap-2">
                     <div className="relative flex items-center justify-between gap-3">
                       <div className="absolute top-3.5 left-1 flex items-end">
-                        <p className="sr-only">
-                          {`Puesto ${SEED.rank} de ${SEED.teamSize} por racha en el equipo`}
-                        </p>
+                        <p className="sr-only">{rankLabel}</p>
                         <span aria-hidden>
                           <ShirtInkSeal
                             rank={SEED.rank}
-                            teamSize={SEED.teamSize}
+                            sealBottom={sealBottom}
+                            sealTop={copy.sealTop}
                           />
                         </span>
                       </div>
@@ -206,7 +239,7 @@ export function StreakCromoCard(): JSX.Element {
                           className="relative z-[1] w-3.5 shrink-0 border-x border-current bg-[repeating-linear-gradient(-45deg,transparent,transparent_1px,currentColor_1px,currentColor_2px)]"
                         />
                         <span className="relative z-[1] min-w-0 flex-1 truncate px-1.5 py-1 text-right normal-case tracking-normal">
-                          {`${SEED.streakCount} días`}
+                          {daysLabel}
                         </span>
                       </div>
                       <p className="cromo-team-name">{SEED.teamName}</p>
@@ -223,10 +256,14 @@ export function StreakCromoCard(): JSX.Element {
   );
 }
 
-export function StreakCromoPhone(): JSX.Element {
+export function StreakCromoPhone({
+  copy,
+}: {
+  readonly copy: StreakCromoCopy;
+}): JSX.Element {
   return (
     <PlayerPhoneFrame>
-      <StreakCromoCard />
+      <StreakCromoCard copy={copy} />
     </PlayerPhoneFrame>
   );
 }

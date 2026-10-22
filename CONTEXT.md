@@ -54,7 +54,7 @@ _Avoid_: Recruiter-in-general, “everyone”, freelance/client buyer, founder-l
 
 ## Work origin
 
-- **Employment work**: Products shipped inside a company (rely v2, Safe, Sorolla). Proof of collaboration, constraints, and production systems that are not yours alone. This is the Home hook. Home names the products, not the employer brand.
+- **Employment work**: Products shipped inside a company (rely v2, Rely Cloud, Safe, Sorolla). Proof of collaboration, constraints, and production systems that are not yours alone. This is the Home hook. Home names the products, not the employer brand.
 _Avoid_: Client work, agency work (unless that is actually true), leading Home with the employer logo/name
 
 - **Personal product**: A product you own end to end. Loadzone is the only one on the site today. It is evidence of ownership and craft, not the job being applied for.
@@ -74,21 +74,17 @@ _Avoid_: Side project (implies disposable), hobby, using Loadzone as the ten-sec
 Analytics stays as a proof screenshot, not a chapter. Role on the case: Frontend Lead & Product Designer.
 
 - **Safe** — Employment work. Workplace safety (PRL) on existing CCTV: real-time risk events, audits and reporting, tunnel-based private network access. Live product: `https://www.safehs.ai/`. No case page. Do not cite marketing headcounts (people protected, events detected) as a personal result.
-- **Sorolla** — Employment work. React component library for image/video annotation (b-box, segmentation, OBB). Published to npm as part of the siali-toolkit monorepo.
-- **Loadzone** — Personal product. SaaS for youth football academies. Training load logging and wellness tracking for small clubs and lower-division academies. Own product. Honest live claim: one club, live with academy staff and players — no user or check-in count.
+- **Sorolla** — Employment work. React component library for image/video annotation (b-box, segmentation, OBB). Published to npm as part of the siali-toolkit monorepo. It began as the Rely Cloud labeller.
+- **Rely Cloud** — Employment work, 2023. Sits on Home directly after rely v2. No case page and no Decisions section. In-house multi-tenant platform that 200 organizations use to label images and train computer-vision models. Stack: React, TypeScript, Vite, MobX, FastAPI (Python), ClearML. Home entry is a bold lead, three highlights, and a collapsible context. Plain React with Vite, not Next, because the backend was already FastAPI.
+- **Loadzone** — Personal product, 2026. Early-stage data app for Tercera División football clubs in Cantabria. Honest live claim: all 5 clubs approached so far have committed; the product is still being built. Own product. No Decisions section. Home and case use a bold lead, three highlights, and a collapsible context. Status reads `in progress`.
 
-**Loadzone thesis** (case + Home card): One club, two products — an operational staff scan of wellness and load, and a player check-in that is one question at a time. The Streak Cromo is the identity that grows with that habit.
+**Loadzone thesis** (case + Home): Early-stage data app for those clubs. Spreadsheet habits became a simple interface, the data model matches their real volume (around 1,000×1,000 records), and it was built end to end through the first clubs using it.
 
-**Loadzone Decisions** (written, in order):
-1. Wellness and load at a glance (staff scan — not a FIFA dump, not the Cromo)
-2. One question at a time (player form)
-3. Exercises that actually build Sessions
-
-Injuries and Primeros pasos stay as proof screenshots, not chapters. Status reads live / production, not “in progress”.
+The Streak Cromo stays as a proof visual. Its on-card language follows the page locale. Injuries and the setup checklist stay as proof screenshots, not chapters.
 
 ## Project card
 
-**Employment work** on Home: the hook. rely navigates to its case; the case links out to `https://relyqa.com/`. Safe navigates to the live product (`https://www.safehs.ai/`), not a case. Sorolla is not a link until a real case exists.
+**Employment work** on Home: the hook. Order: rely v2, Rely Cloud, Safe, Sorolla. rely navigates to its case; the case links out to `https://relyqa.com/`. Rely Cloud is an entry on Home, not a case. Safe navigates to the live product (`https://www.safehs.ai/`), not a case. Sorolla is not a link until a real case exists.
 
 **Loadzone** on Home: Personal product card with a Streak Cromo thumbnail, after Employment work. The Cromo is the only Home visual. Loadzone navigates. It is not the ten-second hook.
 
@@ -97,7 +93,7 @@ Injuries and Primeros pasos stay as proof screenshots, not chapters. Status read
 The first viewport is identity, not biography: name in chrome, compact photo, title, one thesis line, compact contact. The three-paragraph bio is not on Home.
 
 1. **Hero** — Who you are in one glance (Frontend & Product Engineering + employment thesis). Loadzone is not in the one-liner.
-2. **Employment work** — rely v2, Safe, Sorolla; the hook
+2. **Employment work** — rely v2, Rely Cloud, Safe, Sorolla; the hook
 3. **Personal product** — Loadzone + Streak Cromo; ownership and craft, not the job pitch
 4. **1-Week Projects** — Dense list after the two origin blocks; does not compete with them. The Storyblok row names the live rely and Safe marketing sites; it does not replace the employment cards.
 
@@ -105,7 +101,7 @@ The first viewport is identity, not biography: name in chrome, compact photo, ti
 
 **rely v2** is the employment case. Honest Result: in production on factory floors, multi-tenant / multi-site. Real captures: Preview, Hub Stations, Recipe flow, Overlays; Analytics is proof, not a chapter. Public site `https://relyqa.com/` is linked from the case. Safe has no case — the Home card goes to `https://www.safehs.ai/`. Sorolla has no detail route until a loop asks.
 
-**Loadzone** leads with a one-sentence thesis and the **Streak Cromo** (in the phone) above the fold. Status: live with real users. At most three Decisions below; remaining screenshots are proof.
+**Loadzone** leads with the bold thesis, three highlights, and a collapsible context. The **Streak Cromo** stays on the page. Status: `in progress`. No Decisions section. Remaining screenshots are proof.
 
 **About** (`/about`): the longer biography. Not on Home. Employer brand may appear here, not on Home.
 

@@ -31,6 +31,7 @@ export function CaseStudyHeader({
   status,
   stack,
   thesis,
+  thesisClassName,
   externalHref,
   externalLabel,
 }: {
@@ -41,6 +42,7 @@ export function CaseStudyHeader({
   status: string;
   stack?: string;
   thesis: string;
+  thesisClassName?: string;
   externalHref?: string;
   externalLabel?: string;
 }): JSX.Element {
@@ -73,7 +75,13 @@ export function CaseStudyHeader({
           </a>
         </p>
       ) : null}
-      <p className="mt-5 max-w-[36rem] text-body text-text-default">{thesis}</p>
+      <p
+        className={
+          thesisClassName ?? "mt-5 max-w-[36rem] text-body text-text-default"
+        }
+      >
+        {thesis}
+      </p>
     </header>
   );
 }

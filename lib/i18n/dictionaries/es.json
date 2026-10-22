@@ -21,7 +21,19 @@
     "employmentWork": "Trabajo en empresa",
     "personalProduct": "Producto propio",
     "oneWeek": "Proyectos de 1 semana",
-    "loadzoneThesis": "Una herramienta para clubes deportivos. El staff ve cómo se ha recuperado la plantilla antes de cada sesión. Los jugadores responden una pregunta cada vez desde el móvil, y cuanto más responden, más crece su Cromo de racha.",
+    "relyCloud": {
+      "name": "Rely Cloud",
+      "year": "2023",
+      "status": "en producción",
+      "stack": "React · TypeScript · Vite · MobX · FastAPI (Python) · ClearML",
+      "lead": "Diseñé de punta a punta la plataforma que usan 200 organizaciones para etiquetar imágenes y entrenar modelos de visión por computador, con muchos usuarios trabajando dentro de cada una al mismo tiempo.",
+      "highlights": [
+        "**Construí el etiquetador** en React y JavaScript (cajas delimitadoras, segmentación, cajas orientadas). **Después se convirtió en Sorolla**, mi librería open source.",
+        "**Definí el modelo de datos**: cómo se crean y se guardan los datasets, las etiquetas y los entrenamientos. Los entrenamientos se encolan y se orquestan con ClearML y se siguen en directo con gráficas en tiempo real.",
+        "**Lideré el diseño y el front-end** de todo el producto."
+      ],
+      "context": "Una herramienta interna y multi-tenant que nació de una necesidad real: el equipo etiquetaba y entrenaba a mano. Elegimos React a secas con Vite, y no un framework como Next, porque el backend ya era FastAPI y Next no habría aportado nada ahí. Diseñé la interfaz y el modelo de datos a medida que el producto crecía, construyendo cada pieza rápido, probándola con usuarios reales y ajustándola."
+    },
     "projects": [
       {
         "name": "rely v2",
@@ -93,14 +105,16 @@
     "paragraphs": [
       "Construyo software para gente que ya está en medio de otra cosa. En Siali esa cosa es una planta. Decido para qué sirve el producto y lo construyo: la interfaz, el sistema que hay detrás y lo que lo mantiene en marcha. Si esas partes no coinciden, la persona en planta toma la decisión equivocada. Vivo en Cantabria y trabajo desde aquí.",
       "Cómo se ve una cosa y para qué sirve son fáciles de separar y difíciles de mantener juntas. Una pantalla puede estar terminada y seguir sin servir. Prefiero quitar una parte que explicarla. La forma de los datos suele decidir la forma de la pantalla, así que las trato como la misma decisión.",
-      "También mantengo un producto pequeño para una academia de fútbol. Lo usan el staff y los jugadores. Tiene que ser obvio en una tarde cansada. Ese es el brief en el que confío."
+      "También mantengo Loadzone, una aplicación en fase inicial para clubes de Tercera División en Cantabria. Quien la usa no es técnico. Tiene que ser obvio en una tarde cansada. Ese es el brief en el que confío."
     ]
   },
   "case": {
     "decisions": "Decisiones",
     "result": "Resultado",
     "proof": "Prueba",
-    "production": "en producción"
+    "production": "en producción",
+    "inProgress": "en curso",
+    "context": "Contexto"
   },
   "rely": {
     "origin": "Trabajo en empresa",
@@ -150,22 +164,25 @@
   "loadzone": {
     "origin": "Producto propio",
     "role": "Desarrollador y Product Designer",
-    "thesis": "El staff necesita saber quién está listo para entrenar antes de la sesión, y para eso los jugadores tienen que responder rápido. Diseño y construyo Loadzone yo solo.",
-    "cromoCaption": "El Cromo de racha en el móvil del jugador. Inclínalo para ver el brillo. Es la recompensa por responder.",
-    "decisions": [
-      {
-        "title": "Toda la plantilla en una pantalla",
-        "content": "Antes y después de cada sesión, el staff revisa la recuperación, energía, molestias, sueño y esfuerzo post-sesión (RPE) de cada jugador. Si alguien no ha respondido, la celda muestra un guion, para que nadie confunda un hueco con un buen dato. El color marca a quién mirar primero."
-      },
-      {
-        "title": "Una pregunta cada vez",
-        "content": "Los jugadores responden antes y después de la sesión. Cada pantalla pregunta una cosa, con letra grande y un deslizador del tamaño de un pulgar. Un contador indica cuántas faltan. El cromo aparece solo al terminar."
-      },
-      {
-        "title": "Sesiones hechas con ejercicios",
-        "content": "El staff monta una sesión colocando ejercicios. Cada ejercicio tiene duración, tamaño de campo y número de jugadores, y un tipo táctico elegido de una lista. Los desplegables lo hacen rápido y coherente."
-      }
+    "year": "2026",
+    "stack": "Next.js · TypeScript · TurboRepo · Vercel",
+    "thesis": "Aplicación de datos en fase inicial para clubes de fútbol de Tercera División en Cantabria: los 5 clubes a los que nos hemos acercado hasta ahora ya se han comprometido con ella.",
+    "highlights": [
+      "**Convertí los hábitos de hoja de cálculo en una interfaz simple** para personal no técnico que vivía en Excel.",
+      "**Diseñé el modelo de datos** para el volumen real de los clubes (alrededor de 1.000×1.000 registros).",
+      "**La construí de punta a punta**, desde la primera idea hasta los primeros clubes usándola."
     ],
+    "context": "Loadzone se sigue construyendo, pero todos los clubes a los que nos acercamos eligieron respaldarla, lo que dice mucho de lo desatendido que está este espacio y de lo rápido que el producto se los ganó. Los usuarios no eran técnicos, así que construí rápido e iteré sobre cómo trabajaban de verdad. Es un proyecto de datos pequeños: lo difícil no fue escalarlo, sino hacerlo fácil.",
+    "cromoCaption": "El Cromo de racha en el móvil del jugador. Inclínalo para ver el brillo. Es la recompensa por responder.",
+    "cromo": {
+      "sealTop": "RACHA DEL EQUIPO",
+      "sealBottom": "DE {count}",
+      "days": "{count} días",
+      "dorsal": "Dorsal {number}",
+      "rank": "Puesto {rank} de {size} por racha en el equipo",
+      "ariaLabel": "Cromo de racha de Martín Vega, Valle Norte, MED, dorsal 8",
+      "position": "MED"
+    },
     "figures": [
       {
         "alt": "Tarjetas de Wellness del staff de Loadzone con check-ins pendientes, medias del equipo y recuperación, energía y dolor",

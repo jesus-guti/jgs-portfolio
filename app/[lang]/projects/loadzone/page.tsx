@@ -2,6 +2,7 @@ import {
   CaseStudyBackLink,
   CaseStudyHeader,
 } from "../../../components/case-study-header";
+import { ProjectNarrative } from "../../../components/project-narrative";
 import { SiteHeader } from "../../../components/site-header";
 import {
   CaseStudyFigure,
@@ -27,32 +28,24 @@ export default async function LoadzoneCaseStudyPage({
         <CaseStudyHeader
           origin={loadzone.origin}
           role={loadzone.role}
-          status={caseCopy.production}
+          stack={loadzone.stack}
+          status={caseCopy.inProgress}
           thesis={loadzone.thesis}
+          thesisClassName="mt-5 max-w-[36rem] text-body font-bold leading-relaxed text-text-strong"
           title="Loadzone"
-          year="2025"
+          year={loadzone.year}
+        />
+        <ProjectNarrative
+          className="mb-12"
+          context={loadzone.context}
+          contextLabel={caseCopy.context}
+          highlights={loadzone.highlights}
         />
 
-        <StreakCromoPhone />
+        <StreakCromoPhone copy={loadzone.cromo} />
         <p className="mb-12 mt-3 text-center text-caption text-text-weak">
           {loadzone.cromoCaption}
         </p>
-
-        <section className="mb-12">
-          <h2 className="mb-6 text-heading-section font-semibold text-text-strong">
-            {caseCopy.decisions}
-          </h2>
-          <div className="flex flex-col gap-6">
-            {loadzone.decisions.map((decision, index) => (
-              <div key={decision.title}>
-                <h3 className="mb-2 text-body font-semibold text-text-strong">
-                  {index + 1}. {decision.title}
-                </h3>
-                <p className="text-body text-text-default">{decision.content}</p>
-              </div>
-            ))}
-          </div>
-        </section>
 
         <section>
           <h2 className="mb-4 text-heading-section font-semibold text-text-strong">
