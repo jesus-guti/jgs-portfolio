@@ -21,8 +21,8 @@ export function GridBackground({
         className="absolute inset-0 opacity-40"
         style={{
           backgroundImage: `
-            linear-gradient(to right, rgb(255 255 255 / 0.06) 1px, transparent 1px),
-            linear-gradient(to bottom, rgb(255 255 255 / 0.06) 1px, transparent 1px)
+            linear-gradient(to right, color-mix(in hsl, var(--color-text-strong) 9%, transparent) 1px, transparent 1px),
+            linear-gradient(to bottom, color-mix(in hsl, var(--color-text-strong) 9%, transparent) 1px, transparent 1px)
           `,
           backgroundSize: `${gridSize}px ${gridSize}px`,
           maskImage:
@@ -35,7 +35,7 @@ export function GridBackground({
         className="absolute inset-0"
         style={{
           background:
-            "radial-gradient(ellipse 78% 80% at 50% 40%, hsl(0 9% 7%) 0%, hsl(0 9% 7% / 0.94) 32%, hsl(0 9% 7% / 0.45) 58%, transparent 78%)",
+            "radial-gradient(ellipse 78% 80% at 50% 40%, var(--color-surface-root) 0%, color-mix(in hsl, var(--color-surface-root) 94%, transparent) 32%, color-mix(in hsl, var(--color-surface-root) 45%, transparent) 58%, transparent 78%)",
         }}
       />
     </div>

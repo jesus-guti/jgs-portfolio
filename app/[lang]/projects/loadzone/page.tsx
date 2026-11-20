@@ -21,7 +21,7 @@ export default async function LoadzoneCaseStudyPage({
   const { loadzone, case: caseCopy, nav } = dict;
 
   return (
-    <div className="mx-auto max-w-[1080px] border-x border-b border-border-general">
+    <div className="mx-auto max-w-[1200px]">
       <SiteHeader locale={locale} nav={nav} />
       <article className="mx-auto max-w-[720px] px-6 py-10 md:px-container-px">
         <CaseStudyBackLink href={localePath(locale)} label={nav.work} />
@@ -29,7 +29,7 @@ export default async function LoadzoneCaseStudyPage({
           origin={loadzone.origin}
           role={loadzone.role}
           stack={loadzone.stack}
-          status={caseCopy.inProgress}
+          status={caseCopy.production}
           thesis={loadzone.thesis}
           thesisClassName="mt-5 max-w-[36rem] text-body font-bold leading-relaxed text-text-strong"
           title="Loadzone"

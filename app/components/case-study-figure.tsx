@@ -43,7 +43,7 @@ export function CaseStudyFigure({
           sizes={
             maxWidthClassName
               ? "(min-width: 720px) 16rem, 70vw"
-              : "(min-width: 720px) 720px, 100vw"
+              : "(min-width: 1200px) 1072px, 100vw"
           }
           src={src}
           width={width}

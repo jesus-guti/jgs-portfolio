@@ -1,6 +1,6 @@
 "use client";
 
-import { UserIcon } from "@phosphor-icons/react/dist/ssr";
+import Image from "next/image";
 import { type JSX, useEffect, useId, useState } from "react";
 
 import { PlayerPhoneFrame } from "./player-phone-frame";
@@ -149,14 +149,14 @@ function CromoPortrait({
 }): JSX.Element {
   return (
     <div className="cromo-window w-full">
-      <div className="cromo-silhouette">
-        <div className="cromo-silhouette-stack">
-          <div className="cromo-silhouette-head">
-            <UserIcon className="h-11 w-11" weight="regular" />
-          </div>
-          <div className="cromo-silhouette-body" />
-        </div>
-      </div>
+      <Image
+        alt=""
+        className="h-full w-full object-cover object-top"
+        height={800}
+        sizes="264px"
+        src="/jesus-profile.jpeg"
+        width={800}
+      />
       <span
         aria-hidden
         className="pointer-events-none absolute inset-x-0 bottom-0 h-16 bg-linear-to-t from-black/45 to-transparent"

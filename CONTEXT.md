@@ -21,23 +21,23 @@
 
 | Token | Value |
 |-------|-------|
-| `surface-root` | `hsl(0, 9%, 7%)` |
+| `surface-root` | `hsl(40, 20%, 98%)` |
 
 ### Text
 
 | Token | Value |
 |-------|-------|
-| `text-strong` | `hsl(0, 15%, 94%)` |
-| `text-default` | `hsl(0, 4%, 71%)` |
-| `text-weak` | `hsl(0, 2%, 49%)` |
-| `text-weaker` | `hsl(0, 3%, 28%)` |
+| `text-strong` | `hsl(30, 8%, 12%)` |
+| `text-default` | `hsl(30, 5%, 27%)` |
+| `text-weak` | `hsl(30, 4%, 38%)` |
+| `text-weaker` | `hsl(30, 4%, 42%)` |
 
 ### Border
 
 | Token | Value |
 |-------|-------|
-| `border-general` | `hsl(0, 3%, 28%)` |
-| `border-special` | `hsl(0, 4%, 23%)` |
+| `border-general` | `hsl(35, 10%, 78%)` |
+| `border-special` | `hsl(35, 10%, 86%)` |
 
 ## Spacing
 

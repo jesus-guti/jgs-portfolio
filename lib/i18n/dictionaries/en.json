@@ -11,9 +11,24 @@
     "menu": "Menu"
   },
   "home": {
-    "role": "Frontend & Product Engineering",
-    "thesis": "Interfaces and product systems shipped under real constraints — factory floors, production teams.",
-    "leadership": "Frontend & Design Lead at Siali since 2022 · led up to 12",
+    "hero": {
+      "eyebrow": "Product engineer · Frontend & Design Lead at Siali",
+      "statement": "**Jesús Gutiérrez Siliceo** designs and builds the interfaces of **Rely**, the vision system that inspects parts on **102 production lines in 4 countries**.",
+      "lead": "Since 2022 I've led design and frontend at Siali, with a team that grew to 10: realtime screens for operators, a no-code editor for inspection engineers, and Rely Cloud, where 683,740 images have been labelled.",
+      "cta": "Read the Rely case",
+      "canvas": {
+        "alt": "Portrait of Jesús Gutiérrez Siliceo",
+        "prediction": "face · 0.97",
+        "box": "box",
+        "idle": "Drag on the photo to draw a box",
+        "drawing": "Drawing",
+        "clear": "Clear",
+        "cleared": "Boxes cleared",
+        "announce": "Box {n} drawn, {w} by {h} pixels",
+        "caption": "A tiny version of the labeller I built for Rely Cloud, now open source as",
+        "sorolla": "Sorolla"
+      }
+    },
     "contacts": {
       "email": "jesusgutierrezsiliceo@gmail.com",
       "linkedin": "LinkedIn"
@@ -26,17 +41,21 @@
       "year": "2023",
       "status": "production",
       "stack": "React · TypeScript · Vite · MobX · FastAPI (Python) · ClearML",
-      "lead": "Designed end to end the platform that 200 organizations use to label images and train computer-vision models, with many users working inside each one at the same time.",
+      "sidebarAlt": "Rely Cloud sidebar: the project, its datasets, and the selected dataset's data, models and quality",
+      "lead": "Designed end to end the platform that 42 organizations use to label images and train computer-vision models, with many users working inside each one at the same time.",
       "highlights": [
         "**Built the labeller** in React and JavaScript (bounding boxes, segmentation, oriented boxes). It **later became Sorolla**, my open-source library.",
         "**Defined the data model**: how datasets, labels and trainings are created and stored. Trainings are queued and orchestrated with ClearML and followed live with real-time charts.",
-        "**Led design and front-end** for the whole product."
+        "**Led design and front-end** for the whole product.",
+        "**Designed the training form** so an AI engineer can launch a fast, balanced or quality training without knowing every parameter; extra parameters are searchable, explained, and added with one click.",
+        "**Designed the sidebar from scratch**: project, then its datasets, then each dataset's data, models and quality, always naming the project you are in. Icons mark the dataset type and a dot flags a new model to review."
       ],
-      "context": "An in-house, multi-tenant tool born from a real need: the team was labelling and training by hand. We chose plain React with Vite over a framework like Next because the backend was already FastAPI and Next wouldn't have added anything there. I designed the interface and the data model as the product grew, building each piece fast, trying it with real users and adjusting it."
+      "context": "An in-house, multi-tenant tool born from a real need: the team was labelling and training by hand. We chose plain React with Vite over a framework like Next because the backend was already FastAPI and Next wouldn't have added anything there. I designed the interface and the data model as the product grew, building each piece fast, trying it with real users and adjusting it.",
+      "dataAlt": "Rely Cloud dataset view: the sidebar with project and dataset, and a grid of labelled images with their boxes and validation tags"
     },
     "projects": [
       {
-        "name": "rely v2",
+        "name": "Rely",
         "year": "2025",
         "stack": ["Next.js", "Go", "WebSockets", "Tailwind v4"],
         "description": "Rely checks parts on production lines in factories across Europe and around the world. If it fails, the line stops and the client loses hundreds of thousands of euros. In 2025 I rebuilt its frontend in Next.js with one backend colleague.",
@@ -46,17 +65,32 @@
       {
         "name": "Safe",
         "year": "2023",
-        "stack": ["React", "WebRTC", "Multi-tenant", "Tailwind"],
-        "description": "Safety monitoring on the cameras a factory already has. I built it from scratch. It spots forklifts and their speed, and streams live events from cameras on a private network to the cloud.",
+        "stack": ["React", "HLS · WebRTC", "Multi-tenant", "Tailwind"],
+        "description": "Safety monitoring on the cameras a factory already has. It spots forklifts and their speed, and streams live events from cameras on a private network to the cloud. I led and designed the renewal of its chart system: the base widget, chart thumbnails, a sortable grid and saved layouts. I also designed its sidebar, worked on the backend and on video with detections, and reviewed the rest of the frontend.",
         "status": "production",
-        "href": "https://www.safehs.ai/"
+        "href": "/projects/safe",
+        "video": {
+          "mp4": "/projects/safe/dashboard.mp4",
+          "webm": "/projects/safe/dashboard.webm",
+          "poster": "/projects/safe/dashboard-poster.jpg",
+          "width": 960,
+          "height": 502,
+          "alt": "Safe's chart system in edit mode: widgets are dragged, resized and added from the widget library"
+        }
       },
       {
         "name": "Sorolla",
-        "year": "2023",
+        "year": "2024",
         "stack": ["React", "TypeScript", "npm", "TurboRepo"],
-        "description": "Built alone: an open-source React library for labelling images and video with boxes, masks and rotated boxes. We use it across our products, and Zolara was built on it.",
-        "status": "open source"
+        "description": "Built alone: an open-source React library for labelling images and video with boxes, masks and rotated boxes. It grew out of the Rely Cloud labeller, and we reuse it across our products and client projects.",
+        "status": "open source",
+        "href": "https://www.npmjs.com/package/@siali/sorolla",
+        "image": {
+          "src": "/projects/rely-cloud/labeller.png",
+          "width": 1920,
+          "height": 941,
+          "alt": "The Rely Cloud labeller, which became Sorolla: boxes labelled on a microscope image, with the class list and annotations panel"
+        }
       }
     ],
     "oneWeekProjects": [
@@ -66,15 +100,15 @@
         "description": "Reusable CMS blocks that the live Rely and Safe marketing sites are built from.",
         "stack": "Storyblok, Tailwind",
         "hrefs": [
-          { "label": "relyqa.com", "href": "https://relyqa.com/" },
-          { "label": "safehs.ai", "href": "https://www.safehs.ai/" }
+          {
+            "label": "relyqa.com",
+            "href": "https://relyqa.com/"
+          },
+          {
+            "label": "safehs.ai",
+            "href": "https://www.safehs.ai/"
+          }
         ]
-      },
-      {
-        "name": "Zolara",
-        "description": "Built in one week on Sorolla to detect bacteria in water. It sold about €300,000 in projects.",
-        "stack": "React, Sorolla",
-        "duration": "1 week"
       },
       {
         "year": "2024",
@@ -105,7 +139,7 @@
     "paragraphs": [
       "I build software for people who are already in the middle of something else. At Siali that something is a factory floor. I decide what the product is for, and I build it: the interface, the system behind it, and what keeps it running. If those parts do not agree, the person on the floor makes the wrong call. I live in Cantabria and work from here.",
       "How a thing looks and what it is for are easy to split and hard to keep together. A screen can be finished and still be useless. I would rather take a part away than explain it. The shape of the data usually decides the shape of the screen, so I treat them as the same decision.",
-      "I also keep Loadzone, an early-stage app for Tercera División clubs in Cantabria. The people using it are not technical. It has to be obvious on a tired evening. That is the brief I trust."
+      "I also keep Loadzone, an app in production for Tercera División clubs in Cantabria. The people using it are not technical. It has to be obvious on a tired evening. That is the brief I trust."
     ]
   },
   "case": {
@@ -116,30 +150,145 @@
     "inProgress": "in progress",
     "context": "Context"
   },
+  "relyCloudCase": {
+    "origin": "Employment work",
+    "role": "Frontend Lead & Product Designer",
+    "stack": "React, TypeScript, Vite, MobX, Konva.js, TanStack, FastAPI, ClearML",
+    "thesis": "Rely Cloud is where we label factory images and train the vision models that run on the line. I designed it end to end and led its frontend.",
+    "previewAlt": "Rely Cloud dataset view: the sidebar with project and dataset, and a grid of labelled images with their boxes and validation tags",
+    "previewCaption": "A dataset's data. Each image shows its labels, and the sidebar always says which project and dataset you are in.",
+    "decisions": [
+      {
+        "title": "A sidebar that always says where you are",
+        "content": "A project holds many datasets, and each dataset has its data, its models and its quality. I designed the sidebar from scratch around that order: project, then datasets, then the three views of the selected dataset, with the project name always visible.\n\nEach dataset carries an icon for its type. The icon changes colour while that dataset is training, and a dot on the right says a new model has finished and is waiting to be reviewed. It proved very useful day to day. The layout has changed since, but this structure is still its base."
+      },
+      {
+        "title": "Training without knowing every parameter",
+        "content": "An AI engineer launching a training should not have to understand every parameter to get a sensible result. I designed the training form around three profiles, Fast, Balanced and Quality, so the usual choice is one click plus a name and a base model.\n\nThe rest of the parameters are still there for those who need them: a searchable list where each one is explained in a sentence and added to the form with one click. The form stays short unless you ask for more."
+      },
+      {
+        "title": "Following a training live",
+        "content": "Trainings are queued and orchestrated with ClearML behind a FastAPI layer. I defined the data model for how datasets, labels and trainings are created and stored.\n\nWhile a model trains, the panel shows each step as it completes, the validation error as a live chart and the current epoch against the total."
+      },
+      {
+        "title": "The labeller became Sorolla",
+        "content": "I built the labeller in React: bounding boxes, segmentation and oriented boxes. In 2024 I extracted it into Sorolla, an open-source library, so other Siali products and client projects could reuse it.\n\nEditing uses Konva.js. For screens that only show annotations I use native HTML Canvas in a separate Canvas Viewer, because it is faster when nothing has to be edited."
+      }
+    ],
+    "result": "In production. 42 organizations have annotated 683,740 images and trained 1,566 vision models with it, and Siali's own machine-learning team works in it every day.",
+    "figures": [
+      {
+        "src": "/projects/rely-cloud/layout-models.png",
+        "width": 1920,
+        "height": 938,
+        "alt": "Rely Cloud layout: the sidebar with project and dataset, and the dataset's models table with status, base model and epochs",
+        "caption": "The same layout on the models page: status, base model and epochs of each training."
+      },
+      {
+        "src": "/projects/rely-cloud/training-form.png",
+        "width": 980,
+        "height": 894,
+        "alt": "Training form with Fast, Balanced and Quality profiles and a searchable list of extra parameters, each explained",
+        "caption": "The training form. Three profiles cover the usual cases; extra parameters are searched, explained and added one by one."
+      },
+      {
+        "src": "/projects/rely-cloud/training-progress.png",
+        "width": 457,
+        "height": 938,
+        "alt": "A model training: completed steps, a live validation-error chart and epoch 128 of 1000",
+        "caption": "A model training. Steps, live validation error and epochs, in one panel."
+      },
+      {
+        "src": "/projects/rely-cloud/sidebar-expanded.png",
+        "width": 314,
+        "height": 861,
+        "alt": "Sidebar with the project, its datasets with type icons and orange dots, and the selected dataset's data, models and quality",
+        "caption": "The sidebar. Icons mark the dataset type; an orange dot means a new model is ready to review."
+      },
+      {
+        "src": "/projects/rely-cloud/labeller.png",
+        "width": 1920,
+        "height": 941,
+        "alt": "The labeller: boxes labelled on a microscope image, with the class list and annotations panel",
+        "caption": "The labeller, before it became Sorolla."
+      }
+    ]
+  },
+  "safeCase": {
+    "origin": "Employment work",
+    "role": "Software Engineer · chart system lead and designer",
+    "stack": "React, Tailwind, MediaMTX (HLS · WebRTC), multi-tenant",
+    "externalLabel": "safehs.ai",
+    "thesis": "Safe watches for risks with the cameras a factory already has: forklifts, their speed, people in the wrong zone. I led and designed the renewal of its chart system, and worked on the rest of the product at different levels, which this page separates.",
+    "preview": {
+      "mp4": "/projects/safe/dashboard.mp4",
+      "webm": "/projects/safe/dashboard.webm",
+      "poster": "/projects/safe/dashboard-poster.jpg",
+      "width": 960,
+      "height": 502,
+      "alt": "Safe's chart system in edit mode: widgets are dragged, resized and added from the widget library",
+      "caption": "The chart system in edit mode, in the demo environment with fake data."
+    },
+    "decisions": [
+      {
+        "title": "A chart system each user arranges",
+        "content": "I led and designed the renewal of the chart system end to end: the base widget every chart is built on, the chart thumbnails, a grid where widgets are sorted and resized, and saved layouts.\n\nIn edit mode a user drags a widget, resizes it or adds a new one from the library, and keeps that arrangement as a layout."
+      },
+      {
+        "title": "From the panel to a PDF report",
+        "content": "The same panel can be exported as a PDF. A preview shows each block of the report, with a switch to include it or leave it out, before the file is downloaded.\n\nHere my role was guide and product manager; I did not design or build it."
+      },
+      {
+        "title": "The live view",
+        "content": "I designed the sidebar, worked on the backend and on showing the video with its detections drawn on top. Video goes through MediaMTX: HLS by default, WebRTC as an option.\n\nThe camera grid and the rest of the live view were built by others; I reviewed that code."
+      }
+    ],
+    "result": "In production. Up to 13 cameras are processed on one PC, and one deployment runs 30 cameras across 3 PCs.",
+    "figures": [
+      {
+        "mp4": "/projects/safe/pdf.mp4",
+        "webm": "/projects/safe/pdf.webm",
+        "poster": "/projects/safe/pdf-poster.jpg",
+        "width": 960,
+        "height": 502,
+        "alt": "The PDF report preview: blocks with an include switch, then the downloaded PDF",
+        "caption": "From the panel to the PDF: preview, choose blocks, download. I guided this part as product manager."
+      },
+      {
+        "mp4": "/projects/safe/live.mp4",
+        "webm": "/projects/safe/live.webm",
+        "poster": "/projects/safe/live-poster.jpg",
+        "width": 960,
+        "height": 502,
+        "alt": "Safe's live view with camera video and detections, and the sidebar",
+        "caption": "The live view. Mine: the sidebar, the backend and the video with detections. Not mine: the grid, which I reviewed."
+      }
+    ]
+  },
   "rely": {
     "origin": "Employment work",
     "role": "Frontend Lead & Product Designer",
     "stack": "Next.js, Go, WebSockets, Tailwind v4",
-    "thesis": "Factories use Rely to check every part on the line. Operators need a verdict they can read at a glance. Engineers need to set up what gets checked and train the models behind it. I designed and built the frontend for both.",
-    "result": "Rely monitors factories worldwide. If it fails, the line stops and the client loses hundreds of thousands of euros. Siali took on the complex projects other companies rejected.",
+    "thesis": "Factories use Rely to check every part on the line. The operator needs a verdict they can read at a glance; the engineer needs to configure what gets checked and train the models. **I designed and built the frontend for both.**",
+    "result": "Rely monitors factories worldwide. **If it fails, the line stops** and the client loses hundreds of thousands of euros. Siali took on the complex projects other companies rejected.",
     "leadership": {
       "title": "How I lead",
       "content": "I assigned and monitored work for around 10 interns and two frontend developers. I designed their tests and training, and decided who stayed."
     },
-    "previewAlt": "Live station view with a PCB camera feed, the part's ID, defect count and OK/KO totals",
+    "previewAlt": "Live station view of a welded nut: the part's ID, zero defects and a big green OK card",
     "previewCaption": "The live view. The operator sees the part and a big OK or KO card, sized for touch screens and gloved hands.",
     "decisions": [
       {
         "title": "Rely first: production and training stay in sync",
-        "content": "Rely runs on the line. Rely Cloud is where we label images and train the models. Some clients have no Rely Cloud, some run it on their own servers, some use it in the cloud, and some are custom projects with their own interfaces. I had to design one link that worked for all of them.\n\nI decided production leads: you don't think about the cloud until you use the line. A station is one inspection point on the line. When you create one in Rely, its project in Rely Cloud is created too. A station has recipes, and a recipe is usually one part reference, with its own cameras, models and decisions for the PLC, camera or robot arm. Each recipe has views, one per side of the part, seen by one or more cameras while a robot arm turns it. Each view gets its own dataset and is trained on its own, because defects differ from one side to another.\n\nAll of this is created and linked automatically. Parts that pass the line land in the right dataset. In Rely Cloud people label them, by hand or with a model's predictions, train, and the new models show up already linked to their recipes. The user just sees things appear.\n\nTo get there I designed for the edge cases: users without the link key, and users who don't want Rely to lead. Rely first can be switched off, and a settings screen maps views to datasets by hand.\n\nThe loop closes in production. While reviewing parts the model has already judged, the user picks images to relabel and sends them to that view's dataset, another one or a new one. The labelling happens in Rely Cloud, and they choose whether it syncs back."
+        "content": "**Production leads.** Rely runs on the line and Rely Cloud is where images are labelled and models trained. Some clients have no Rely Cloud, some run it on their own servers or in the cloud, and some use their own interfaces. I designed one link that serves all of them.\n\n**Everything is created and linked on its own.** Creating a station in Rely creates its project in Rely Cloud. Each recipe is one part reference with one view per side; each view has its own dataset, because defects differ from side to side. Parts from the line land in the right dataset, and new models show up already linked to their recipe.\n\n**The loop closes on the line.** While reviewing parts the model has judged, the user picks images and sends them to be relabelled. For the edge cases, no link key or not wanting Rely to lead, Rely first can be switched off and linked by hand."
       },
       {
         "title": "Engineers build the inspection themselves",
-        "content": "We used to write a Python script for each line. I replaced it with a visual editor. The engineer connects blocks for the trigger, the cameras, the detection model and the rule that decides OK or KO, then publishes it to the station. Blocks are named after things they already know, like a camera or a PLC."
+        "content": "**A visual editor instead of a Python script per line.** The engineer connects blocks for the trigger, the cameras, the detection model and the rule that decides OK or KO, then publishes it to the station. Blocks are named after things they already know, like a camera or a PLC."
       },
       {
         "title": "Showing which recipe is running",
-        "content": "As stations and recipes multiplied, people lost track of which recipe was running on each line. A small \"live\" badge wasn't enough. I replaced it with a production slot: the active recipe plugs into it like a cartridge into a game console."
+        "content": "As stations and recipes multiplied, people lost track of which recipe was running on each line; a small \"live\" badge wasn't enough. **The active recipe now plugs into a production slot, like a cartridge into a game console.**"
       }
     ],
     "figures": [
@@ -148,8 +297,8 @@
         "caption": "The home screen: every station in the organisation. Pick one to work that line."
       },
       {
-        "alt": "Recipe editor with trigger, images, detector, live view and the evaluation panel",
-        "caption": "The recipe editor. Blocks run left to right, and the panel on the right edits the selected one."
+        "alt": "Recipe editor: trigger, images, detector, evaluation, final result and live view, with the add-node panel by type",
+        "caption": "The recipe editor. Blocks run left to right, and the panel on the right adds new ones by type: capture, detection, inputs and outputs."
       },
       {
         "alt": "Overlay settings: label corner, dashed region of interest, human vs model, with a preview of detection boxes",
@@ -166,13 +315,13 @@
     "role": "Solo Developer & Product Designer",
     "year": "2026",
     "stack": "Next.js · TypeScript · TurboRepo · Vercel",
-    "thesis": "Early-stage data app for Tercera División football clubs in Cantabria: all 5 clubs approached so far have already committed to it.",
+    "thesis": "A data app for Tercera División football clubs in Cantabria, in production with CI/CD.",
     "highlights": [
       "**Turned spreadsheet habits into a simple interface** for non-technical staff who lived in Excel.",
       "**Designed the data model** for the clubs' real volume (around 1,000×1,000 records).",
       "**Built it end to end**, from the first idea to the first clubs using it."
     ],
-    "context": "Loadzone is still being built, but every club we approached chose to back it, which says a lot about how underserved this space is and how quickly the product won them over. The users weren't technical, so I built fast and iterated on how they actually worked. It's a small-data project: the hard part wasn't scaling it but making it easy.",
+    "context": "The clubs had no tool built for them, only spreadsheets. The users weren't technical, so I built fast and iterated on how they actually worked. It's a small-data project: the hard part wasn't scaling it but making it easy.",
     "cromoCaption": "The Streak Cromo on the player's phone. Tilt it to see the foil. It's the reward for answering.",
     "cromo": {
       "sealTop": "TEAM STREAK",

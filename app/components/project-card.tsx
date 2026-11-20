@@ -10,6 +10,7 @@ interface ProjectCardProps {
   stack: string[];
   description: string;
   status: ProjectStatus;
+  statusLabel?: string;
   href?: string;
 }
 
@@ -26,14 +27,17 @@ function ProjectBody({
   stack,
   description,
   status,
+  statusLabel,
   href,
 }: ProjectCardProps): JSX.Element {
   const external = href !== undefined && isExternalHref(href);
 
   return (
     <>
-      <p className="font-mono text-caption capitalize text-text-weak">{status}</p>
-      <div className="mt-2 flex items-baseline justify-between gap-4">
+      <p className="font-mono text-caption capitalize text-text-weak">
+        {statusLabel ?? status}
+      </p>
+      <div className="mt-2 flex items-baseline gap-4">
         <h3 className="flex items-center gap-1.5 text-heading-section font-semibold text-text-strong underline decoration-transparent underline-offset-4 transition-colors group-hover:decoration-border-general">
           {name}
           {external ? (
@@ -70,12 +74,7 @@ function ProjectHref({
 
   if (isExternalHref(href)) {
     return (
-      <a
-        className={rowClassName}
-        href={href}
-        rel="noreferrer"
-        target="_blank"
-      >
+      <a className={rowClassName} href={href} rel="noreferrer" target="_blank">
         {children}
       </a>
     );

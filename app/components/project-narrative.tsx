@@ -1,6 +1,8 @@
 import Link from "next/link";
 import type { JSX } from "react";
 
+import { EmphasisText } from "./emphasis-text";
+
 const focusRing =
   "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-text-strong";
 
@@ -16,33 +18,6 @@ type ProjectNarrativeProps = {
   context: string;
   className?: string;
 };
-
-function EmphasisText({ value }: { value: string }): JSX.Element {
-  const parts = value.split("**");
-
-  return (
-    <>
-      {parts.map((part, index) => {
-        if (part.length === 0) {
-          return null;
-        }
-
-        if (index % 2 === 1) {
-          return (
-            <strong
-              className="font-semibold text-text-strong"
-              key={`${index}-${part}`}
-            >
-              {part}
-            </strong>
-          );
-        }
-
-        return <span key={`${index}-${part}`}>{part}</span>;
-      })}
-    </>
-  );
-}
 
 export function ProjectNarrative({
   name,
@@ -64,7 +39,7 @@ export function ProjectNarrative({
         </p>
       ) : null}
       {name ? (
-        <div className="mt-2 flex items-baseline justify-between gap-4">
+        <div className="mt-2 flex items-baseline gap-4">
           <h3 className="text-heading-section font-semibold text-text-strong">
             {nameHref ? (
               <Link

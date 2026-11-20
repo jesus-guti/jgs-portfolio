@@ -1,13 +1,13 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-surface-root: hsl(0, 9%, 7%);
-  --color-text-strong: hsl(0, 15%, 94%);
-  --color-text-default: hsl(0, 4%, 71%);
-  --color-text-weak: hsl(0, 2%, 49%);
-  --color-text-weaker: hsl(0, 3%, 28%);
-  --color-border-general: hsl(0, 3%, 28%);
-  --color-border-special: hsl(0, 4%, 23%);
+  --color-surface-root: hsl(40, 20%, 98%);
+  --color-text-strong: hsl(30, 8%, 12%);
+  --color-text-default: hsl(30, 5%, 27%);
+  --color-text-weak: hsl(30, 4%, 38%);
+  --color-text-weaker: hsl(30, 4%, 42%);
+  --color-border-general: hsl(35, 10%, 78%);
+  --color-border-special: hsl(35, 10%, 86%);
 
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
@@ -18,11 +18,29 @@
   --text-caption: 13px 1.5;
   --text-code: 14px 1.6875;
 
+  /* Hero 2.0. Tailwind 4 needs size and line-height as separate variables;
+     the shorthand tokens above compile to an invalid font-size. */
+  --text-hero: 26px;
+  --text-hero--line-height: 1.22;
+  --text-hero--letter-spacing: -0.022em;
+  --text-hero-lg: 34px;
+  --text-hero-lg--line-height: 1.16;
+  --text-hero-lg--letter-spacing: -0.026em;
+  --text-lead: 16px;
+  --text-lead--line-height: 1.625;
+  --text-meta: 13px;
+  --text-meta--line-height: 1.5;
+  --text-label: 11px;
+  --text-label--line-height: 16px;
+
+  --ease-out-quint: cubic-bezier(0.23, 1, 0.32, 1);
+  --duration-label: 160ms;
+
   --spacing-container-px: 64px;
   --spacing-section-py: 80px;
   --spacing-grid-gap: 64px;
 
-  --shadow-lightbox: 0 32px 80px hsl(0 0% 0% / 0.82);
+  --shadow-lightbox: 0 32px 80px hsl(30 8% 12% / 0.22);
 }
 
 :root {
@@ -43,21 +61,67 @@ html[data-theme="ibm"] {
   --font-rounded: var(--font-ibm-plex-mono);
 }
 
-html[data-theme="apple"] .font-sans {
-  font-family: var(--font-system-sans);
-}
-html[data-theme="apple"] .font-mono {
-  font-family: var(--font-system-mono);
-}
+/* The default "apple" theme used to swap Geist for the system stack, so the
+   site rendered in Arial on Linux and Windows. Geist is the documented font. */
 html[data-theme="apple"] {
   --font-rounded: var(--font-m-plus-rounded-1c);
 }
 
 html {
+  color-scheme: light;
   scrollbar-color: var(--color-border-general) var(--color-surface-root);
 }
 
 ::selection {
-  background: color-mix(in hsl, var(--color-text-strong) 18%, transparent);
+  background: color-mix(in hsl, var(--color-text-strong) 18%, var(--color-surface-root));
   color: var(--color-text-strong);
+}
+
+/* Labelling canvas (hero). The box follows the pointer 1:1; only the label
+   that appears on release animates, and only opacity under reduced motion. */
+@keyframes label-in {
+  from {
+    opacity: 0;
+    transform: translateY(2px) scale(0.96);
+  }
+}
+@keyframes label-in-reduced {
+  from {
+    opacity: 0;
+  }
+}
+.label-edge {
+  pointer-events: none;
+  position: absolute;
+  /* A dark hairline keeps the label visible over light image details. */
+  box-shadow:
+    0 0 0 1px color-mix(in hsl, var(--color-text-strong) 55%, transparent),
+    inset 0 0 0 1px color-mix(in hsl, var(--color-text-strong) 55%, transparent);
+}
+.label-in {
+  transform-origin: bottom left;
+  animation: label-in var(--duration-label) var(--ease-out-quint);
+}
+@media (prefers-reduced-motion: reduce) {
+  .label-edge {
+  pointer-events: none;
+  position: absolute;
+  /* A dark hairline keeps the label visible over light image details. */
+  box-shadow:
+    0 0 0 1px color-mix(in hsl, var(--color-text-strong) 55%, transparent),
+    inset 0 0 0 1px color-mix(in hsl, var(--color-text-strong) 55%, transparent);
+}
+.label-in {
+    animation-name: label-in-reduced;
+  }
+}
+
+/* A quiet stage gives project imagery space within the page grid. */
+.project-media {
+  background: hsl(220 16% 94%);
+  padding: clamp(1rem, 4vw, 3rem);
+}
+.project-media img, .project-media video {
+  border-radius: 0.5rem;
+  box-shadow: 0 12px 32px hsl(220 15% 20% / 0.13);
 }

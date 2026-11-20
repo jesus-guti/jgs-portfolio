@@ -91,7 +91,12 @@ export default async function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} ${ibmPlexMono.variable} ${mPlusRounded1c.variable} antialiased`}
     >
       <body className="bg-surface-root text-text-default font-sans">
-        <ThemeProvider>{children}</ThemeProvider>
+        <ThemeProvider>
+          {/* Corner diamonds (SectionIntersection) poke 6px past the 1200px
+              frame; at 768–1199px the page scrolled sideways. clip, not
+              hidden: no scroll container, so sticky keeps working. */}
+          <div className="overflow-x-clip">{children}</div>
+        </ThemeProvider>
       </body>
     </html>
   );

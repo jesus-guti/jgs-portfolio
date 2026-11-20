@@ -11,9 +11,24 @@
     "menu": "Menú"
   },
   "home": {
-    "role": "Frontend e ingeniería de producto",
-    "thesis": "Interfaces y sistemas de producto entregados bajo restricciones reales — plantas de fábrica, equipos de producción.",
-    "leadership": "Responsable de Frontend y Diseño en Siali desde 2022 · lideré hasta 12 personas",
+    "hero": {
+      "eyebrow": "Product engineer · Responsable de Frontend y Diseño en Siali",
+      "statement": "**Jesús Gutiérrez Siliceo** diseña y construye las interfaces de **Rely**, el sistema de visión que inspecciona piezas en **102 líneas de producción de 4 países**.",
+      "lead": "Desde 2022 dirijo diseño y frontend en Siali, con un equipo que llegó a 10 personas: pantallas en tiempo real para operarios, un editor sin código para los ingenieros de inspección y Rely Cloud, donde se han anotado 683.740 imágenes.",
+      "cta": "Leer el caso Rely",
+      "canvas": {
+        "alt": "Retrato de Jesús Gutiérrez Siliceo",
+        "prediction": "cara · 0,97",
+        "box": "caja",
+        "idle": "Arrastra para dibujar una caja",
+        "drawing": "Dibujando",
+        "clear": "Borrar",
+        "cleared": "Cajas borradas",
+        "announce": "Caja {n} dibujada, {w} por {h} píxeles",
+        "caption": "Una versión mínima del etiquetador que construí para Rely Cloud, hoy open source como",
+        "sorolla": "Sorolla"
+      }
+    },
     "contacts": {
       "email": "jesusgutierrezsiliceo@gmail.com",
       "linkedin": "LinkedIn"
@@ -26,17 +41,21 @@
       "year": "2023",
       "status": "en producción",
       "stack": "React · TypeScript · Vite · MobX · FastAPI (Python) · ClearML",
-      "lead": "Diseñé de punta a punta la plataforma que usan 200 organizaciones para etiquetar imágenes y entrenar modelos de visión por computador, con muchos usuarios trabajando dentro de cada una al mismo tiempo.",
+      "sidebarAlt": "Sidebar de Rely Cloud: el proyecto, sus datasets y los datos, modelos y calidad del dataset elegido",
+      "lead": "Diseñé de punta a punta la plataforma que usan 42 organizaciones para etiquetar imágenes y entrenar modelos de visión por computador, con muchos usuarios trabajando dentro de cada una al mismo tiempo.",
       "highlights": [
         "**Construí el etiquetador** en React y JavaScript (cajas delimitadoras, segmentación, cajas orientadas). **Después se convirtió en Sorolla**, mi librería open source.",
         "**Definí el modelo de datos**: cómo se crean y se guardan los datasets, las etiquetas y los entrenamientos. Los entrenamientos se encolan y se orquestan con ClearML y se siguen en directo con gráficas en tiempo real.",
-        "**Lideré el diseño y el front-end** de todo el producto."
+        "**Lideré el diseño y el front-end** de todo el producto.",
+        "**Diseñé el formulario de entrenamiento** para que un ingeniero de IA lance un entrenamiento rápido, equilibrado o de calidad sin conocer todos los parámetros; los extra se buscan, vienen explicados y se añaden con un clic.",
+        "**Diseñé el sidebar desde cero**: el proyecto, sus datasets y, de cada dataset, datos, modelos y calidad, sin perder nunca de qué proyecto vienes. Un icono indica el tipo de dataset y un punto avisa de un modelo nuevo por revisar."
       ],
-      "context": "Una herramienta interna y multi-tenant que nació de una necesidad real: el equipo etiquetaba y entrenaba a mano. Elegimos React a secas con Vite, y no un framework como Next, porque el backend ya era FastAPI y Next no habría aportado nada ahí. Diseñé la interfaz y el modelo de datos a medida que el producto crecía, construyendo cada pieza rápido, probándola con usuarios reales y ajustándola."
+      "context": "Una herramienta interna y multi-tenant que nació de una necesidad real: el equipo etiquetaba y entrenaba a mano. Elegimos React a secas con Vite, y no un framework como Next, porque el backend ya era FastAPI y Next no habría aportado nada ahí. Diseñé la interfaz y el modelo de datos a medida que el producto crecía, construyendo cada pieza rápido, probándola con usuarios reales y ajustándola.",
+      "dataAlt": "Vista de un dataset en Rely Cloud: el sidebar con proyecto y dataset, y una cuadrícula de imágenes etiquetadas con sus cajas y marcas de validación"
     },
     "projects": [
       {
-        "name": "rely v2",
+        "name": "Rely",
         "year": "2025",
         "stack": ["Next.js", "Go", "WebSockets", "Tailwind v4"],
         "description": "Rely revisa piezas en líneas de producción de fábricas en Europa y el resto del mundo. Si falla, la línea se para y el cliente pierde cientos de miles de euros. En 2025 rehice su frontend en Next.js junto a una compañera de backend.",
@@ -46,17 +65,32 @@
       {
         "name": "Safe",
         "year": "2023",
-        "stack": ["React", "WebRTC", "Multi-tenant", "Tailwind"],
-        "description": "Prevención de riesgos con las cámaras que la fábrica ya tiene. Lo hice desde cero. Detecta carretillas y su velocidad, y lleva los eventos en directo desde cámaras en red privada hasta la nube.",
+        "stack": ["React", "HLS · WebRTC", "Multi-tenant", "Tailwind"],
+        "description": "Prevención de riesgos con las cámaras que la fábrica ya tiene. Detecta carretillas y su velocidad, y lleva los eventos en directo desde cámaras en red privada hasta la nube. Lideré y diseñé la renovación de su sistema de gráficas: el widget base, las miniaturas de las gráficas, la grid ordenable y los layouts. También diseñé su sidebar, trabajé en el backend y en el vídeo con detecciones, y revisé el resto del frontend.",
         "status": "production",
-        "href": "https://www.safehs.ai/"
+        "href": "/projects/safe",
+        "video": {
+          "mp4": "/projects/safe/dashboard.mp4",
+          "webm": "/projects/safe/dashboard.webm",
+          "poster": "/projects/safe/dashboard-poster.jpg",
+          "width": 960,
+          "height": 502,
+          "alt": "El sistema de gráficas de Safe en modo edición: los widgets se arrastran, se redimensionan y se añaden desde la biblioteca"
+        }
       },
       {
         "name": "Sorolla",
-        "year": "2023",
+        "year": "2024",
         "stack": ["React", "TypeScript", "npm", "TurboRepo"],
-        "description": "Hecha por mí solo: una librería React open source para etiquetar imágenes y vídeo con cajas, máscaras y cajas rotadas. La usamos en nuestros productos y Zolara se construyó sobre ella.",
-        "status": "open source"
+        "description": "Hecha por mí solo: una librería React open source para etiquetar imágenes y vídeo con cajas, máscaras y cajas rotadas. Salió del etiquetador de Rely Cloud y la reutilizamos en nuestros productos y en proyectos de cliente.",
+        "status": "open source",
+        "href": "https://www.npmjs.com/package/@siali/sorolla",
+        "image": {
+          "src": "/projects/rely-cloud/labeller.png",
+          "width": 1920,
+          "height": 941,
+          "alt": "El etiquetador de Rely Cloud, que se convirtió en Sorolla: cajas etiquetadas sobre una imagen de microscopio, con la lista de clases y el panel de anotaciones"
+        }
       }
     ],
     "oneWeekProjects": [
@@ -66,15 +100,15 @@
         "description": "Bloques reutilizables de CMS con los que están hechas las webs de Rely y Safe.",
         "stack": "Storyblok, Tailwind",
         "hrefs": [
-          { "label": "relyqa.com", "href": "https://relyqa.com/" },
-          { "label": "safehs.ai", "href": "https://www.safehs.ai/" }
+          {
+            "label": "relyqa.com",
+            "href": "https://relyqa.com/"
+          },
+          {
+            "label": "safehs.ai",
+            "href": "https://www.safehs.ai/"
+          }
         ]
-      },
-      {
-        "name": "Zolara",
-        "description": "La construí en una semana sobre Sorolla para detectar bacterias en agua. Vendió unos 300.000 € en proyectos.",
-        "stack": "React, Sorolla",
-        "duration": "1 semana"
       },
       {
         "year": "2024",
@@ -105,7 +139,7 @@
     "paragraphs": [
       "Construyo software para gente que ya está en medio de otra cosa. En Siali esa cosa es una planta. Decido para qué sirve el producto y lo construyo: la interfaz, el sistema que hay detrás y lo que lo mantiene en marcha. Si esas partes no coinciden, la persona en planta toma la decisión equivocada. Vivo en Cantabria y trabajo desde aquí.",
       "Cómo se ve una cosa y para qué sirve son fáciles de separar y difíciles de mantener juntas. Una pantalla puede estar terminada y seguir sin servir. Prefiero quitar una parte que explicarla. La forma de los datos suele decidir la forma de la pantalla, así que las trato como la misma decisión.",
-      "También mantengo Loadzone, una aplicación en fase inicial para clubes de Tercera División en Cantabria. Quien la usa no es técnico. Tiene que ser obvio en una tarde cansada. Ese es el brief en el que confío."
+      "También mantengo Loadzone, una aplicación en producción para clubes de Tercera División en Cantabria. Quien la usa no es técnico. Tiene que ser obvio en una tarde cansada. Ese es el brief en el que confío."
     ]
   },
   "case": {
@@ -116,30 +150,145 @@
     "inProgress": "en curso",
     "context": "Contexto"
   },
+  "relyCloudCase": {
+    "origin": "Trabajo en empresa",
+    "role": "Frontend Lead y Product Designer",
+    "stack": "React, TypeScript, Vite, MobX, Konva.js, TanStack, FastAPI, ClearML",
+    "thesis": "Rely Cloud es donde etiquetamos imágenes de fábrica y entrenamos los modelos de visión que luego funcionan en la línea. La diseñé de punta a punta y lideré su frontend.",
+    "previewAlt": "Vista de un dataset en Rely Cloud: el sidebar con proyecto y dataset, y una cuadrícula de imágenes etiquetadas con sus cajas y marcas de validación",
+    "previewCaption": "Los datos de un dataset. Cada imagen muestra sus etiquetas, y el sidebar siempre dice en qué proyecto y dataset estás.",
+    "decisions": [
+      {
+        "title": "Un sidebar que siempre dice dónde estás",
+        "content": "Un proyecto tiene muchos datasets, y cada dataset tiene sus datos, sus modelos y su calidad. Diseñé el sidebar desde cero con ese orden: proyecto, después datasets y después las tres vistas del dataset elegido, con el nombre del proyecto siempre a la vista.\n\nCada dataset lleva un icono según su tipo. El icono cambia de color mientras ese dataset entrena, y un punto a la derecha avisa de que un modelo nuevo ha terminado y espera revisión. En el día a día resultó muy útil. El layout ha cambiado desde entonces, pero esta estructura sigue siendo su base."
+      },
+      {
+        "title": "Entrenar sin conocer todos los parámetros",
+        "content": "Un ingeniero de IA que lanza un entrenamiento no debería tener que entender todos los parámetros para obtener un resultado equilibrado. Diseñé el formulario de entrenamiento con tres perfiles, Rápido, Equilibrado y Calidad, para que lo habitual sea un clic más un nombre y un modelo base.\n\nEl resto de parámetros sigue ahí para quien lo necesite: una lista con buscador donde cada uno se explica en una frase y se añade al formulario con un clic. El formulario es corto salvo que pidas más."
+      },
+      {
+        "title": "Seguir un entrenamiento en directo",
+        "content": "Los entrenamientos se encolan y se orquestan con ClearML detrás de una capa en FastAPI. Definí el modelo de datos: cómo se crean y se guardan los datasets, las etiquetas y los entrenamientos.\n\nMientras un modelo entrena, el panel muestra cada paso al completarse, el error de validación en una gráfica en directo y la época actual frente al total."
+      },
+      {
+        "title": "El etiquetador se convirtió en Sorolla",
+        "content": "Construí el etiquetador en React: cajas, segmentación y cajas orientadas. En 2024 lo extraje a Sorolla, una librería open source, para reutilizarlo en otros productos de Siali y en proyectos de cliente.\n\nLa edición usa Konva.js. Para las pantallas que solo muestran anotaciones uso HTML Canvas nativo en un Canvas Viewer aparte, porque es más rápido cuando no hay nada que editar."
+      }
+    ],
+    "result": "En producción. 42 organizaciones han anotado 683.740 imágenes y entrenado 1.566 modelos de visión con ella, y el propio equipo de machine learning de Siali trabaja en ella a diario.",
+    "figures": [
+      {
+        "src": "/projects/rely-cloud/layout-models.png",
+        "width": 1920,
+        "height": 938,
+        "alt": "Layout de Rely Cloud: el sidebar con proyecto y dataset, y la tabla de modelos del dataset con estado, modelo base y épocas",
+        "caption": "El mismo layout en la página de modelos: estado, modelo base y épocas de cada entrenamiento."
+      },
+      {
+        "src": "/projects/rely-cloud/training-form.png",
+        "width": 980,
+        "height": 894,
+        "alt": "Formulario de entrenamiento con perfiles Rápido, Equilibrado y Calidad y una lista de parámetros extra con buscador, cada uno explicado",
+        "caption": "El formulario de entrenamiento. Tres perfiles cubren los casos habituales; los parámetros extra se buscan, se explican y se añaden uno a uno."
+      },
+      {
+        "src": "/projects/rely-cloud/training-progress.png",
+        "width": 457,
+        "height": 938,
+        "alt": "Un modelo entrenando: pasos completados, gráfica del error de validación en directo y época 128 de 1000",
+        "caption": "Un modelo entrenando. Pasos, error de validación en directo y épocas, en un solo panel."
+      },
+      {
+        "src": "/projects/rely-cloud/sidebar-expanded.png",
+        "width": 314,
+        "height": 861,
+        "alt": "Sidebar con el proyecto, sus datasets con iconos de tipo y puntos naranjas, y los datos, modelos y calidad del dataset elegido",
+        "caption": "El sidebar. El icono indica el tipo de dataset; un punto naranja, que hay un modelo nuevo por revisar."
+      },
+      {
+        "src": "/projects/rely-cloud/labeller.png",
+        "width": 1920,
+        "height": 941,
+        "alt": "El etiquetador: cajas etiquetadas sobre una imagen de microscopio, con la lista de clases y el panel de anotaciones",
+        "caption": "El etiquetador, antes de convertirse en Sorolla."
+      }
+    ]
+  },
+  "safeCase": {
+    "origin": "Trabajo en empresa",
+    "role": "Software Engineer · líder y diseñador del sistema de gráficas",
+    "stack": "React, Tailwind, MediaMTX (HLS · WebRTC), multi-tenant",
+    "externalLabel": "safehs.ai",
+    "thesis": "Safe vigila riesgos con las cámaras que la fábrica ya tiene: carretillas, su velocidad, personas en la zona equivocada. Lideré y diseñé la renovación de su sistema de gráficas, y trabajé en el resto del producto a distintos niveles, que esta página separa.",
+    "preview": {
+      "mp4": "/projects/safe/dashboard.mp4",
+      "webm": "/projects/safe/dashboard.webm",
+      "poster": "/projects/safe/dashboard-poster.jpg",
+      "width": 960,
+      "height": 502,
+      "alt": "El sistema de gráficas de Safe en modo edición: los widgets se arrastran, se redimensionan y se añaden desde la biblioteca",
+      "caption": "El sistema de gráficas en modo edición, en el entorno de demo con datos falsos."
+    },
+    "decisions": [
+      {
+        "title": "Un sistema de gráficas que cada usuario ordena",
+        "content": "Lideré y diseñé la renovación del sistema de gráficas de principio a fin: el widget base sobre el que se construye cada gráfica, las miniaturas de las gráficas, una grid donde los widgets se ordenan y se redimensionan, y los layouts guardados.\n\nEn modo edición, el usuario arrastra un widget, lo redimensiona o añade uno nuevo desde la biblioteca, y guarda esa disposición como layout."
+      },
+      {
+        "title": "Del panel a un reporte PDF",
+        "content": "El mismo panel se exporta como PDF. Una vista previa muestra cada bloque del reporte, con un interruptor para incluirlo o dejarlo fuera, antes de descargar el archivo.\n\nAquí mi papel fue de guía y product manager; no lo diseñé ni lo construí."
+      },
+      {
+        "title": "La vista en directo",
+        "content": "Diseñé el sidebar y trabajé en el backend y en mostrar el vídeo con sus detecciones dibujadas encima. El vídeo pasa por MediaMTX: HLS por defecto y WebRTC como opción.\n\nLa cuadrícula de cámaras y el resto de la vista en directo los hicieron otros; yo revisé ese código."
+      }
+    ],
+    "result": "En producción. Un mismo PC procesa hasta 13 cámaras, y un despliegue reparte 30 cámaras entre 3 PCs.",
+    "figures": [
+      {
+        "mp4": "/projects/safe/pdf.mp4",
+        "webm": "/projects/safe/pdf.webm",
+        "poster": "/projects/safe/pdf-poster.jpg",
+        "width": 960,
+        "height": 502,
+        "alt": "Vista previa del reporte PDF: bloques con interruptor para incluirlos y, después, el PDF descargado",
+        "caption": "Del panel al PDF: vista previa, elegir bloques, descargar. Esta parte la guié como product manager."
+      },
+      {
+        "mp4": "/projects/safe/live.mp4",
+        "webm": "/projects/safe/live.webm",
+        "poster": "/projects/safe/live-poster.jpg",
+        "width": 960,
+        "height": 502,
+        "alt": "Vista en directo de Safe con vídeo de cámaras, detecciones y el sidebar",
+        "caption": "La vista en directo. Mío: el sidebar, el backend y el vídeo con detecciones. No mío: la cuadrícula, que revisé."
+      }
+    ]
+  },
   "rely": {
     "origin": "Trabajo en empresa",
     "role": "Frontend Lead y Product Designer",
     "stack": "Next.js, Go, WebSockets, Tailwind v4",
-    "thesis": "Las fábricas usan Rely para revisar cada pieza de la línea. El operario necesita un veredicto que se lea de un vistazo. El ingeniero necesita configurar qué se revisa y entrenar los modelos que hay detrás. Diseñé y construí el frontend para los dos.",
-    "result": "Rely monitoriza fábricas de todo el mundo. Si falla, la línea se para y el cliente pierde cientos de miles de euros. En Siali asumimos los proyectos complejos que otras empresas rechazaban.",
+    "thesis": "Las fábricas usan Rely para revisar cada pieza de la línea. El operario necesita un veredicto que se lea de un vistazo; el ingeniero, configurar qué se revisa y entrenar los modelos. **Diseñé y construí el frontend para los dos.**",
+    "result": "Rely monitoriza fábricas de todo el mundo. **Si falla, la línea se para** y el cliente pierde cientos de miles de euros. En Siali asumimos los proyectos complejos que otras empresas rechazaban.",
     "leadership": {
       "title": "Cómo lidero",
       "content": "Asignaba y seguía el trabajo de unos 10 becarios y dos desarrolladores frontend. Diseñé sus pruebas y formación, y decidía quién se quedaba."
     },
-    "previewAlt": "Vista en directo de una estación con la cámara sobre una PCB, la identificación de la pieza, los defectos y los totales OK/KO",
+    "previewAlt": "Vista en directo de una estación con una tuerca soldada: la identificación de la pieza, cero defectos y una tarjeta grande de OK en verde",
     "previewCaption": "La vista en directo. El operario ve la pieza y una tarjeta grande de OK o KO, pensada para pantallas táctiles y manos con guantes.",
     "decisions": [
       {
         "title": "Rely primero: producción y entrenamiento sincronizados",
-        "content": "Rely funciona en la línea. Rely Cloud es donde etiquetamos imágenes y entrenamos los modelos. Hay clientes sin Rely Cloud, otros lo tienen en sus propios servidores, otros en la nube, y otros son proyectos a medida con sus propias interfaces. Tenía que diseñar un único enlace que sirviera a todos.\n\nDecidí que manda producción: no piensas en la nube hasta que usas la línea. Una estación es un punto de inspección de la línea. Cuando creas una en Rely, se crea también su proyecto en Rely Cloud. Una estación tiene recetas, y una receta suele ser una referencia de pieza, con sus cámaras, sus modelos y sus decisiones para el PLC, la cámara o el brazo robot. Cada receta tiene vistas, una por cara de la pieza, vista por una o varias cámaras mientras un brazo robot la gira. Cada vista tiene su propio dataset y se entrena por separado, porque los defectos cambian de una cara a otra.\n\nTodo esto se crea y se enlaza solo. Las piezas que pasan por la línea caen en el dataset correcto. En Rely Cloud se etiquetan, a mano o con predicciones de un modelo, se entrena, y los modelos nuevos aparecen ya enlazados a sus recetas. El usuario solo ve que las cosas aparecen.\n\nPara llegar ahí diseñé los casos límite: usuarios sin la clave del enlace y usuarios que no quieren que Rely mande. Rely primero se puede desactivar, y una pantalla de ajustes enlaza vistas y datasets a mano.\n\nEl ciclo se cierra en producción. Al revisar piezas que el modelo ya ha juzgado, el usuario elige imágenes para reetiquetar y las manda al dataset de esa vista, a otro o a uno nuevo. El etiquetado se hace en Rely Cloud, y decide si se sincroniza de vuelta."
+        "content": "**Manda producción.** Rely funciona en la línea y Rely Cloud es donde se etiquetan imágenes y se entrenan modelos. Unos clientes no tienen Rely Cloud, otros lo tienen en sus servidores o en la nube, y otros usan interfaces propias. Diseñé un único enlace que sirve a todos.\n\n**Todo se crea y se enlaza solo.** Al crear una estación en Rely se crea su proyecto en Rely Cloud. Cada receta es una referencia de pieza y tiene una vista por cara; cada vista tiene su propio dataset, porque los defectos cambian de una cara a otra. Las piezas de la línea caen en el dataset correcto y los modelos nuevos aparecen ya enlazados a su receta.\n\n**El ciclo se cierra en la línea.** Al revisar piezas ya juzgadas, el usuario elige imágenes y las manda a reetiquetar. Para los casos límite, sin la clave del enlace o sin querer que Rely mande, Rely primero se desactiva y se enlaza a mano."
       },
       {
         "title": "El ingeniero monta la inspección él mismo",
-        "content": "Antes escribíamos un script de Python por línea. Lo sustituí por un editor visual. El ingeniero conecta bloques para el disparador, las cámaras, el modelo de detección y la regla que decide OK o KO, y lo publica en la estación. Los bloques se llaman como cosas que ya conoce, como una cámara o un PLC."
+        "content": "**Un editor visual en lugar de un script de Python por línea.** El ingeniero conecta bloques para el disparador, las cámaras, el modelo de detección y la regla que decide OK o KO, y lo publica en la estación. Los bloques se llaman como cosas que ya conoce, como una cámara o un PLC."
       },
       {
         "title": "Ver qué receta está corriendo",
-        "content": "Al crecer las estaciones y las recetas, la gente perdía de vista qué receta corría en cada línea. Una etiqueta pequeña de \"en directo\" no bastaba. La cambié por una ranura de producción donde la receta activa se encaja como un cartucho en una consola."
+        "content": "Al crecer las estaciones y las recetas, la gente perdía de vista qué receta corría en cada línea; una etiqueta pequeña de «en directo» no bastaba. **La receta activa se encaja en una ranura de producción, como un cartucho en una consola.**"
       }
     ],
     "figures": [
@@ -148,8 +297,8 @@
         "caption": "La pantalla de inicio: todas las estaciones de la organización. Eliges una para trabajar esa línea."
       },
       {
-        "alt": "Editor de recetas con disparador, imágenes, detector, vista en directo y panel de evaluación",
-        "caption": "El editor de recetas. Los bloques van de izquierda a derecha y el panel de la derecha edita el seleccionado."
+        "alt": "Editor de recetas: disparador, imágenes, detector, evaluación, resultado final y vista en directo, con el panel para añadir nodos por tipo",
+        "caption": "El editor de recetas. Los bloques van de izquierda a derecha, y el panel de la derecha añade nuevos por tipo: captura, detección, entradas y salidas."
       },
       {
         "alt": "Ajustes de overlays: esquina de etiqueta, zona de interés discontinua, humano frente a modelo, con vista previa de cajas",
@@ -166,13 +315,13 @@
     "role": "Desarrollador y Product Designer",
     "year": "2026",
     "stack": "Next.js · TypeScript · TurboRepo · Vercel",
-    "thesis": "Aplicación de datos en fase inicial para clubes de fútbol de Tercera División en Cantabria: los 5 clubes a los que nos hemos acercado hasta ahora ya se han comprometido con ella.",
+    "thesis": "Aplicación de datos para clubes de fútbol de Tercera División en Cantabria, en producción con CI/CD.",
     "highlights": [
       "**Convertí los hábitos de hoja de cálculo en una interfaz simple** para personal no técnico que vivía en Excel.",
       "**Diseñé el modelo de datos** para el volumen real de los clubes (alrededor de 1.000×1.000 registros).",
       "**La construí de punta a punta**, desde la primera idea hasta los primeros clubes usándola."
     ],
-    "context": "Loadzone se sigue construyendo, pero todos los clubes a los que nos acercamos eligieron respaldarla, lo que dice mucho de lo desatendido que está este espacio y de lo rápido que el producto se los ganó. Los usuarios no eran técnicos, así que construí rápido e iteré sobre cómo trabajaban de verdad. Es un proyecto de datos pequeños: lo difícil no fue escalarlo, sino hacerlo fácil.",
+    "context": "Los clubes no tenían ninguna herramienta hecha para ellos, solo hojas de cálculo. Los usuarios no eran técnicos, así que construí rápido e iteré sobre cómo trabajaban de verdad. Es un proyecto de datos pequeños: lo difícil no fue escalarlo, sino hacerlo fácil.",
     "cromoCaption": "El Cromo de racha en el móvil del jugador. Inclínalo para ver el brillo. Es la recompensa por responder.",
     "cromo": {
       "sealTop": "RACHA DEL EQUIPO",

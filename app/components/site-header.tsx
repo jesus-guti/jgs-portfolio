@@ -16,7 +16,7 @@ export function SiteHeader({
   nav: Dictionary["nav"];
 }): JSX.Element {
   return (
-    <header className="flex items-center justify-between gap-4 border-b border-border-general px-6 py-5 md:px-container-px">
+    <header className="flex items-center justify-between gap-4 px-6 py-5 md:px-container-px">
       <Link
         className="flex min-h-11 min-w-0 items-center gap-2 text-body font-medium text-text-strong focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-text-strong"
         href={localePath(locale)}

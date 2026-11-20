@@ -9,7 +9,7 @@ export default async function AboutPage({
   const dict = await getDictionary(locale);
 
   return (
-    <div className="mx-auto max-w-[1080px] border-x border-b border-border-general">
+    <div className="mx-auto max-w-[1200px]">
       <SiteHeader locale={locale} nav={dict.nav} />
       <article className="mx-auto max-w-[640px] px-6 py-12 md:px-container-px">
         <h1 className="text-heading-display font-bold text-text-strong">
